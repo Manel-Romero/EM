@@ -1,0 +1,217 @@
+/* ==========================================================================
+   MOTION.CSS - ANIMATION ENGINE & TRANSITIONS (RETRO-MINIMALIST LIGHT THEME)
+   Fluid cubic-bezier(0.16, 1, 0.3, 1), Staggered Entrances, Fade to Black,
+   Floating Cards, Pulsing Badges, Dynamic Chart Bars.
+   ========================================================================== */
+
+/* --- OVERLAY DE TRANSICIÓN LIMPIA (FONDO BLANCO PURO / CLEAN BACKGROUND) --- */
+.blackout-curtain {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-stage, #FFFFFF);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Transición suave hacia el fondo blanco puro */
+  transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.blackout-curtain.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- CONTENEDOR DE ESCENAS --- */
+.scene-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  perspective: 1200px;
+}
+
+.scene-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px) scale(0.992);
+  transition: opacity 0.35s var(--ease-spring),
+              transform 0.35s var(--ease-spring);
+}
+
+.scene-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.scene-slide.exiting {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px) scale(0.992);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* --- ANIMACIONES DE ENTRADA SUAVE Y FLUIDA PARA CADA DIAPO --- */
+@keyframes cleanEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stagger-in {
+  opacity: 1;
+  animation: cleanEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Delays escalonados armónicos */
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 110ms; }
+.delay-3 { animation-delay: 180ms; }
+.delay-4 { animation-delay: 260ms; }
+.delay-5 { animation-delay: 340ms; }
+.delay-6 { animation-delay: 420ms; }
+.delay-7 { animation-delay: 500ms; }
+.delay-8 { animation-delay: 580ms; }
+
+/* Cascada de animación suave para elementos hijos de cada diapo */
+.micro-stage-center > * {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.micro-contrast-grid > *:nth-child(1) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+.micro-contrast-grid > *:nth-child(2) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+}
+.micro-contrast-grid > *:nth-child(3) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 240ms both;
+}
+
+.micro-chart-bars > *:nth-child(1) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+}
+.micro-chart-bars > *:nth-child(2) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 130ms both;
+}
+.micro-chart-bars > *:nth-child(3) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+.micro-chart-bars > *:nth-child(4) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 270ms both;
+}
+
+.micro-type-e-grid > *:nth-child(1) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+.micro-type-e-grid > *:nth-child(2) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
+}
+
+.micro-points-container .micro-pill-point:nth-child(1) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+.micro-points-container .micro-pill-point:nth-child(2) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+.micro-points-container .micro-pill-point:nth-child(3) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 280ms both;
+}
+
+/* --- FLOTACIÓN SUAVE RETRO (FLOATING CARDS) --- */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-subtle {
+  animation: softFloat 7s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: softFloat 7s ease-in-out 3.5s infinite;
+}
+
+/* --- PULSACIÓN SUTIL EDITORIAL --- */
+@keyframes pulseGlowVintage {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(62, 142, 126, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(62, 142, 126, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulseGlowVintage 3s infinite var(--ease-smooth);
+}
+
+/* --- BARRAS DE PROGRESO DE DATOS (GRÁFICAS) --- */
+.animated-bar {
+  position: relative;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  width: 0%;
+  transition: width 0.65s var(--ease-spring);
+}
+
+.scene-slide.active .animated-bar {
+  width: var(--target-width, 100%);
+}
+
+/* --- NÚMEROS INCREMENTALES DINÁMICOS --- */
+.counter-val {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* --- ELIMINACIÓN DE SUBTÍTULOS KINÉTICOS Y BARRA DE PROGRESO --- */
+.kinetic-caption-bar,
+.scene-progress-bar,
+.kinetic-text,
+.scene-progress-fill {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+/* --- OCULTAR INTERFAZ EN MODO GRABACIÓN LIMPIA (TECLA H) --- */
+.recording-clean-mode .hud-top,
+.recording-clean-mode .hud-bottom,
+.recording-clean-mode .hud-hints {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s var(--ease-smooth),
+              transform 0.35s var(--ease-smooth) !important;
+}
+
+.recording-clean-mode {
+  cursor: none !important;
+}

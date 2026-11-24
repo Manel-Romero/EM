@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo 14 • Contratación Pública y Comercio Internacional (OECD 2026)</title>
+
+  <!-- Google Fonts: Syne, Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos Modulares Retro-Minimalistas -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Viewport Principal a Pantalla Completa -->
+  <div class="player-viewport" id="player-viewport">
+
+    <!-- Capa de Fundido a Negro Suave (Fade to Black para DaVinci Resolve) -->
+    <div class="blackout-curtain" id="blackout-curtain"></div>
+
+    <!-- Escenario 16:9 Nativo Cinematográfico -->
+    <main class="player-stage" id="player-stage">
+
+      <!-- Orbes de Luz Ambiental con Desenfocado Suave Vintage -->
+      <div class="ambient-orb ambient-orb-1"></div>
+      <div class="ambient-orb ambient-orb-2"></div>
+      <div class="ambient-orb ambient-orb-3"></div>
+
+      <!-- BARRA SUPERIOR (TOP HUD) -->
+      <header class="hud-top">
+        <div class="brand-pill">
+          <div class="brand-dot"></div>
+          <div>
+            <span class="brand-title">Economía Mundial</span>
+            <span class="brand-subtitle" style="margin-left: 8px;">Grupo 14</span>
+          </div>
+        </div>
+
+        <!-- Pastilla del Ponente Activo -->
+        <div class="speaker-pill" id="speaker-pill-container">
+          <div class="speaker-avatar" id="speaker-avatar">G14</div>
+          <div class="speaker-info">
+            <span class="speaker-name" id="speaker-name">Manuel, Jorge y Aleksandr</span>
+            <span class="speaker-role" id="speaker-role">Presentación Conjunta</span>
+          </div>
+        </div>
+
+        <!-- Metadatos de la Escena -->
+        <div class="scene-meta-pill">
+          <span>ESCENA</span>
+          <span class="meta-scene-num" id="scene-counter-display">01 / 20</span>
+          <div class="meta-divider"></div>
+          <span style="color: var(--color-sage); font-weight: 700;">1080p 60fps</span>
+        </div>
+      </header>
+
+      <!-- ÁREA CENTRAL DE LA ESCENA DINÁMICA -->
+      <section class="scene-container">
+        <!-- Cabecera de la Escena Actual -->
+        <div class="scene-header stagger-in delay-1">
+          <h1 class="scene-title-large text-gradient-indigo" id="scene-title">
+            Contratación Pública, Comercio y Política Industrial
+          </h1>
+          <p class="scene-subtitle-lead" id="scene-subtitle">
+            Cómo los Estados utilizan su inmenso poder de compra ($11 billones) para transformar la economía global.
+          </p>
+        </div>
+
+        <!-- Contenido Inyectado Dinámicamente -->
+        <div id="scene-content-area" style="min-height: 520px;"></div>
+      </section>
+
+      <!-- Notificación Flotante Discreta de Cambio de Paleta (Tecla P) -->
+      <div class="palette-toast" id="palette-toast" aria-live="polite">
+        <span class="palette-toast-badge" id="palette-toast-badge">PALETA 0</span>
+        <span class="palette-toast-name" id="palette-toast-name">Retro Vintage</span>
+      </div>
+
+      <!-- BARRA INFERIOR (BOTTOM HUD & RECORDING CONTROLS) -->
+      <footer class="hud-bottom">
+        
+        <!-- Controles de Navegación y Línea de Tiempo para 45-55 Escenas -->
+        <div class="timeline-control-pill">
+          <button class="btn-icon-hud" id="btn-prev" title="Escena Anterior (Flecha Izquierda)" onclick="window.playerInstance.prevScene()">
+            ◀
+          </button>
+          <button class="btn-icon-hud primary" id="btn-play-pause" title="Reproducir / Pausar (Barra Espaciadora)" onclick="window.playerInstance.togglePlayPause()">
+            <span id="play-pause-icon">▶</span>
+          </button>
+          <button class="btn-icon-hud" id="btn-next" title="Siguiente Escena (Flecha Derecha)" onclick="window.playerInstance.nextScene()">
+            ▶
+          </button>
+
+          <!-- Navegador de Pasos / Mini-Track Scrubber para 45-55 Escenas -->
+          <div class="hud-scrubber-nav" id="hud-scrubber-nav">
+            <div class="hud-step-indicator" id="hud-step-indicator" title="Escena Actual / Total">
+              <span class="hud-step-curr" id="hud-step-curr">01</span>
+              <span class="hud-step-sep">/</span>
+              <span class="hud-step-total" id="hud-step-total">50</span>
+            </div>
+
+            <!-- Mini-Track Scrubber interactivo -->
+            <div class="hud-scrubber-rail-wrapper" id="hud-scrubber-rail-wrapper" title="Arrastra o haz clic para saltar entre escenas">
+              <div class="hud-scrubber-rail" id="hud-scrubber-rail">
+                <div class="hud-scrubber-fill" id="hud-scrubber-fill"></div>
+                <div class="hud-scrubber-thumb" id="hud-scrubber-thumb"></div>
+              </div>
+              <div class="hud-scrubber-tooltip" id="hud-scrubber-tooltip">Escena 01</div>
+            </div>
+          </div>
+
+          <!-- Indicadores de Escenas Opcionales (Dots) -->
+          <div class="timeline-dots" id="timeline-dots-container" style="display: none;"></div>
+
+          <!-- Estado de Autoplay -->
+          <div class="autoplay-status">
+            <div class="autoplay-dot paused" id="autoplay-dot"></div>
+            <span id="autoplay-status-text">PAUSADO</span>
+          </div>
+        </div>
+
+        <!-- Herramientas y Atajos para Grabación de Pantalla -->
+        <div class="hud-recording-tools">
+          <!-- Selector Visual de Paletas Cromáticas (Tecla P) -->
+          <div class="palette-picker-pill" id="hud-palette-picker" title="Cambiar paleta cromática (Atajo: Tecla P)">
+            <button class="palette-picker-label-btn" id="btn-palette-cycle" title="Ciclar paleta cromática (Tecla P)">
+              <span class="key-kbd">P</span>
+              <span class="palette-name-display" id="palette-name-display">Retro Vintage</span>
+            </button>
+            <div class="palette-swatches-strip" id="palette-swatches-strip"></div>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente">
+            <span class="key-kbd">H</span>
+            <span>Modo Grabación Limpia</span>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p">
+            <span class="key-kbd">F</span>
+            <span>Pantalla Completa</span>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Scripts del Motor y Datos -->
+  <script src="js/scenes-data.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>

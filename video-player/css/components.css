@@ -1,0 +1,1610 @@
+/* ==========================================================================
+   COMPONENTS.CSS - RETRO-MINIMALIST LIGHT THEME COMPONENTS & HUD
+   Grupo 14: Economía Mundial (UPV) | OECD 2026 Presentation Engine
+   Fondo blanco, paleta vintage exacta, líneas editoriales ultrafinas, ultra-redondeado.
+   ========================================================================== */
+
+/* --- BARRA SUPERIOR HUD (TOP HEADER) --- */
+.hud-top {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+  transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+}
+
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  box-shadow: 0 0 10px rgba(217, 108, 44, 0.45);
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-extrabold);
+  font-size: 15px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-petroleum);
+}
+
+.brand-subtitle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-sage);
+}
+
+/* --- SELECTOR DE PALETAS EN EL HUD SUPERIOR --- */
+.palette-picker-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.palette-picker-label {
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  margin-right: 2px;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.palette-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: all 0.2s var(--ease-spring);
+}
+
+.palette-pill-btn:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  transform: translateY(-1px);
+}
+
+.palette-pill-btn.active {
+  background: rgba(var(--color-primary-rgb), 0.12);
+  border-color: rgba(var(--color-primary-rgb), 0.28);
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.12);
+}
+
+.palette-dot-preview {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Presenter Speaker Pill */
+.speaker-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 10px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+  transition: all 0.3s var(--ease-spring);
+}
+
+.speaker-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-petroleum), var(--color-sage));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 76, 86, 0.25);
+}
+
+.speaker-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+  line-height: 1.2;
+}
+
+.speaker-role {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-terracotta);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Metadata / Scene Counter Pill */
+.scene-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 22px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.meta-scene-num {
+  font-weight: var(--weight-extrabold);
+  color: var(--color-petroleum);
+}
+
+.meta-divider {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-mustard);
+}
+
+/* --- TIPOGRAFÍA Y TÍTULOS EDITORIALES RETRO-MINIMALISTAS --- */
+.scene-header {
+  margin-bottom: 22px;
+}
+
+.scene-badge-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--color-sand);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-petroleum);
+  margin-bottom: 14px;
+}
+
+#speaker-pill-container,
+.speaker-pill {
+  display: none !important;
+}
+
+.scene-title-large {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: var(--weight-extrabold);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-primary);
+}
+
+/* Gradientes Tipográficos Sutiles y Legibles Adaptativos */
+.text-gradient-indigo {
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mint {
+  background: linear-gradient(135deg, var(--color-primary) 15%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, var(--color-accent-1) 10%, var(--color-accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, var(--color-accent-1) 20%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scene-subtitle-lead {
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  line-height: 1.48;
+  margin-top: 10px;
+  max-width: 1240px;
+}
+
+/* --- TARJETAS EDITORIALES LIMPIAS SIN RECUADRO --- */
+.card-glass {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 16px 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.card-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+/* Sin línea superior de recuadro */
+.card-glass::before {
+  display: none !important;
+}
+
+/* Normalización de colores para máxima legibilidad editorial */
+.card-glass h3,
+.card-glass h4,
+.scene-container h2,
+.scene-container h3,
+.scene-container h4 {
+  color: var(--color-petroleum) !important;
+}
+
+.card-glass p {
+  color: var(--text-secondary);
+}
+
+/* Override de estilos inline heredados de texto blanco a texto oscuro petróleo */
+[style*="color: #fff"],
+[style*="color:#fff"] {
+  color: var(--color-petroleum) !important;
+}
+
+[style*="background: rgba(255,255,255,0.03)"],
+[style*="background: rgba(255, 255, 255, 0.03)"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[style*="background: rgba(244,63,94,0.08)"] {
+  background: rgba(217, 108, 44, 0.08) !important;
+  border: 1px solid rgba(217, 108, 44, 0.15) !important;
+}
+
+/* Grillas Modernas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-hero-sidebar {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+}
+
+/* Tarjeta Métrica Hero Gigante */
+.metric-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.metric-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.metric-giant-number {
+  font-family: var(--font-display);
+  font-size: 92px;
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-tightest);
+  line-height: 0.95;
+  color: var(--color-petroleum);
+}
+
+.metric-unit {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: var(--weight-bold);
+  color: var(--color-sage);
+}
+
+.metric-badge-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  margin-top: 14px;
+}
+
+.trend-up {
+  background: rgba(62, 142, 126, 0.14);
+  color: var(--color-sage);
+}
+
+.trend-down {
+  background: rgba(217, 108, 44, 0.14);
+  color: var(--color-terracotta);
+}
+
+.trend-warning {
+  background: rgba(231, 168, 78, 0.18);
+  color: #B87B22;
+}
+
+.metric-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 16px;
+}
+
+/* Tarjeta Comparativa (Directa vs Indirecta / Abierta vs Protegida) */
+.comparison-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 18px;
+}
+
+.badge-direct {
+  background: rgba(217, 108, 44, 0.15);
+  color: var(--color-terracotta);
+}
+
+.badge-indirect {
+  background: rgba(231, 168, 78, 0.18);
+  color: #B87B22;
+}
+
+.badge-open {
+  background: rgba(62, 142, 126, 0.15);
+  color: var(--color-sage);
+}
+
+.badge-global {
+  background: rgba(39, 76, 86, 0.12);
+  color: var(--color-petroleum);
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.feature-icon-pill {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-top: 2px;
+  background: var(--bg-surface-2);
+  color: var(--color-petroleum);
+}
+
+.feature-content h4 {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+  margin-bottom: 4px;
+}
+
+.feature-content p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.42;
+}
+
+/* Barra de Datos con Porcentaje y Animación */
+.data-bar-row, .data-row {
+  margin-bottom: 20px;
+}
+
+.data-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.data-bar-label, .data-label {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  color: var(--color-petroleum);
+}
+
+.data-bar-val, .data-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+}
+
+.data-bar-track, .bar-track {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+}
+
+/* Pastilla de Cita Académica / Fuente Oficial */
+.citation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  margin-top: 18px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.citation-source {
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+}
+
+/* --- BARRA INFERIOR HUD DE CONTROL Y GRABACIÓN --- */
+.hud-bottom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+  margin-top: 20px;
+  transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+}
+
+.timeline-control-pill {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 24px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+}
+
+.btn-icon-hud {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-petroleum);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-icon-hud:hover {
+  background: var(--bg-surface-2);
+  transform: scale(1.08);
+}
+
+.btn-icon-hud:active {
+  transform: scale(0.95);
+}
+
+.btn-icon-hud.primary {
+  background: var(--color-petroleum);
+  color: #ffffff;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(39, 76, 86, 0.25);
+}
+
+.btn-icon-hud.primary:hover {
+  background: var(--color-sage);
+}
+
+/* --- NAVEGADOR DE PASOS Y MINI-TRACK SCRUBBER (45-55 ESCENAS) --- */
+.hud-scrubber-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px;
+}
+
+.hud-step-indicator {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(39, 76, 86, 0.04);
+}
+
+.hud-step-curr {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--color-petroleum);
+}
+
+.hud-step-sep {
+  font-size: 12px;
+  color: var(--color-mustard);
+  font-weight: 700;
+  margin: 0 2px;
+}
+
+.hud-step-total {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hud-scrubber-rail-wrapper {
+  position: relative;
+  width: 240px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hud-scrubber-rail {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-pill);
+  overflow: visible;
+  transition: height 0.18s var(--ease-spring);
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-rail {
+  height: 10px;
+}
+
+.hud-scrubber-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-petroleum) 0%, var(--color-sage) 65%, var(--color-mustard) 100%);
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+  transition: width 0.12s ease-out;
+}
+
+.hud-scrubber-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2.5px solid var(--color-petroleum);
+  box-shadow: 0 2px 8px rgba(39, 76, 86, 0.35);
+  pointer-events: none;
+  transition: transform 0.18s var(--ease-spring), left 0.12s ease-out;
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-thumb {
+  transform: translate(-50%, -50%) scale(1.3);
+  border-color: var(--color-terracotta);
+}
+
+.hud-scrubber-tooltip {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 6px 14px;
+  background: var(--color-petroleum);
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s, transform 0.18s;
+  box-shadow: 0 6px 18px rgba(39, 76, 86, 0.25);
+  z-index: 100;
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Indicadores de Escena Compactos (Dots compatibles) */
+.timeline-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 400px;
+  overflow-x: auto;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface-3);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+  flex-shrink: 0;
+}
+
+.timeline-dot.active {
+  width: 22px;
+  background: var(--color-petroleum);
+  box-shadow: 0 2px 8px rgba(39, 76, 86, 0.2);
+}
+
+.timeline-dot:hover:not(.active) {
+  background: var(--color-sage);
+}
+
+/* Indicador de Autoplay y Tiempo */
+.autoplay-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.autoplay-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  box-shadow: 0 0 8px rgba(62, 142, 126, 0.4);
+}
+
+.autoplay-dot.paused {
+  background: var(--color-mustard);
+  box-shadow: 0 0 8px rgba(231, 168, 78, 0.4);
+}
+
+/* Botones Auxiliares de Grabación (H, F) */
+.hud-recording-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tool-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-petroleum);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.tool-pill-btn:hover {
+  background: var(--bg-surface-1);
+  transform: translateY(-2px);
+}
+
+.key-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: var(--color-sand);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-extrabold);
+  color: var(--color-petroleum);
+}
+
+/* ==========================================================================
+   COMPONENTES ATÓMICOS DE IMPACTO PARA MICRO-ESCENAS ULTRA-MINIMALISTAS
+   Paleta cromática exacta:
+   - #F6E2B3 (Arena / crema cálido)
+   - #E7A84E (Mostaza / ámbar)
+   - #D96C2C (Terracota / óxido)
+   - #3E8E7E (Verde salvia / petróleo suave)
+   - #274C56 (Azul petróleo profundo)
+   ========================================================================== */
+
+/* Contenedor escénico centrado de alto impacto visual */
+.micro-stage-center {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO METRIC SOLO (.hero-metric-solo)
+   Número titánico centrado (120px+) con label inferior limpia de alto contraste.
+   -------------------------------------------------------------------------- */
+.hero-metric-solo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 12px auto 0;
+  padding: 16px 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+.hero-metric-solo::before {
+  display: none !important;
+}
+
+.hero-metric-solo.borderless {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 16px 0;
+}
+.hero-metric-solo.borderless::before {
+  display: none !important;
+}
+
+.hero-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(246, 226, 179, 0.45);
+}
+
+.hero-metric-number-box,
+.hero-metric-solo .micro-number-hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  line-height: 0.90;
+  margin: 4px 0;
+}
+
+.hero-metric-val,
+.hero-metric-value,
+.micro-number-val {
+  font-family: var(--font-display);
+  font-size: 136px; /* Titánico 120px+ */
+  font-weight: 900;
+  line-height: 0.90;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-petroleum);
+}
+
+.hero-metric-val.accent-terracotta,
+.micro-number-val.accent-terracotta {
+  color: var(--color-terracotta);
+}
+
+.hero-metric-val.accent-sage,
+.micro-number-val.accent-sage {
+  color: var(--color-sage);
+}
+
+.hero-metric-val.accent-mustard,
+.micro-number-val.accent-mustard {
+  color: var(--color-mustard);
+}
+
+.hero-metric-prefix {
+  font-family: var(--font-display);
+  font-size: 78px;
+  font-weight: 900;
+  color: var(--color-mustard);
+  line-height: 1;
+}
+
+.hero-metric-unit,
+.micro-number-unit {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-sage);
+  line-height: 1;
+}
+
+.hero-metric-label,
+.micro-number-label {
+  font-family: var(--font-ui);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-top: 20px;
+  max-width: 860px;
+}
+
+.hero-metric-sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 10px;
+  max-width: 780px;
+}
+
+/* --------------------------------------------------------------------------
+   2. DUAL STAT (.dual-stat)
+   Dos números enfrentados minimalistas de alto impacto.
+   -------------------------------------------------------------------------- */
+.dual-stat,
+.micro-contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 1260px;
+  margin: 16px auto 0;
+}
+
+.dual-stat-col,
+.micro-contrast-box {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 12px 24px !important;
+  text-align: center;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.dual-stat-col:hover,
+.micro-contrast-box:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+.dual-stat-col::before,
+.micro-contrast-box::before {
+  display: none !important;
+}
+
+.dual-stat-col.left::before,
+.dual-stat-col.theme-petroleum::before,
+.micro-contrast-box.left::before {
+  background: var(--color-petroleum);
+}
+
+.dual-stat-col.right::before,
+.dual-stat-col.theme-terracotta::before,
+.micro-contrast-box.right::before {
+  background: var(--color-terracotta);
+}
+
+.dual-stat-col.theme-sage::before {
+  background: var(--color-sage);
+}
+
+.dual-stat-col.theme-mustard::before {
+  background: var(--color-mustard);
+}
+
+.dual-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 14px;
+}
+
+.dual-stat-badge.badge-petroleum {
+  background: rgba(39, 76, 86, 0.10);
+  color: var(--color-petroleum);
+}
+
+.dual-stat-badge.badge-terracotta {
+  background: rgba(217, 108, 44, 0.12);
+  color: var(--color-terracotta);
+}
+
+.dual-stat-badge.badge-sage {
+  background: rgba(62, 142, 126, 0.12);
+  color: var(--color-sage);
+}
+
+.dual-stat-badge.badge-mustard {
+  background: rgba(231, 168, 78, 0.16);
+  color: #B87B22;
+}
+
+.dual-stat-number-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  line-height: 0.92;
+  margin: 4px 0;
+}
+
+.dual-stat-val,
+.dual-stat-number {
+  font-family: var(--font-display);
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-petroleum);
+}
+
+.dual-stat-unit {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-sage);
+}
+
+.dual-stat-label {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  margin-top: 16px;
+  line-height: 1.25;
+}
+
+.dual-stat-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.40;
+  margin-top: 8px;
+  max-width: 360px;
+}
+
+.dual-stat-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dual-stat-divider-line {
+  width: 2px;
+  height: 60px;
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-pill);
+}
+
+.dual-stat-vs,
+.micro-vs-pill {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(231, 168, 78, 0.35);
+  border: 2px solid #FFFFFF;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. PURE CHART (.pure-chart)
+   Gráfico de barras o porcentajes super estilizado sin etiquetas innecesarias.
+   -------------------------------------------------------------------------- */
+.pure-chart {
+  width: 100%;
+  max-width: 1040px;
+  margin: 16px auto 0;
+}
+
+.pure-chart-bars,
+.micro-chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.pure-chart-item,
+.micro-chart-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 0 !important;
+  box-shadow: none !important;
+}
+
+.pure-chart-header,
+.pure-chart-meta,
+.micro-chart-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.pure-chart-label,
+.pure-chart-name {
+  font-family: var(--font-ui);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+}
+
+.pure-chart-val,
+.pure-chart-value,
+.micro-chart-bar-val {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+}
+
+.pure-chart-rail,
+.pure-chart-track,
+.micro-chart-bar-track {
+  width: 100%;
+  height: 20px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.pure-chart-fill,
+.micro-chart-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  width: 0%;
+  transition: width 0.65s var(--ease-spring);
+}
+
+.pure-chart-fill.fill-petroleum,
+.color-petroleum .pure-chart-fill {
+  background: linear-gradient(90deg, #274C56, #3E8E7E);
+}
+
+.pure-chart-fill.fill-terracotta,
+.color-terracotta .pure-chart-fill {
+  background: linear-gradient(90deg, #D96C2C, #E7A84E);
+}
+
+.pure-chart-fill.fill-sage,
+.color-sage .pure-chart-fill {
+  background: linear-gradient(90deg, #3E8E7E, #274C56);
+}
+
+.pure-chart-fill.fill-mustard,
+.color-mustard .pure-chart-fill {
+  background: linear-gradient(90deg, #E7A84E, #F6E2B3);
+}
+
+/* Ratio Split Bar */
+.pure-chart-ratio {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  box-shadow: var(--shadow-ambient-md);
+  margin-top: 14px;
+}
+
+.pure-ratio-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  transition: width 0.65s var(--ease-spring);
+  padding: 0 16px;
+}
+
+.pure-ratio-pct {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pure-ratio-tag {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.95;
+  margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   4. CONCEPT PILL HERO (.concept-pill-hero)
+   Gran pastilla conceptual o frase corta tipográfica.
+   -------------------------------------------------------------------------- */
+.concept-pill-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 20px auto 0;
+}
+
+.concept-pill-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 48px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 2px solid var(--border-card);
+  box-shadow: var(--shadow-ambient-lg);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.concept-pill-hero:hover {
+  transform: translateY(-2px);
+}
+
+.concept-pill-hero.variant-sand {
+  background: var(--color-sand);
+  border-color: rgba(231, 168, 78, 0.45);
+}
+
+.concept-pill-hero.variant-petroleum {
+  background: var(--color-petroleum);
+  border-color: var(--color-petroleum);
+  color: #FFFFFF;
+}
+.concept-pill-hero.variant-petroleum .concept-pill-text {
+  color: #FFFFFF;
+}
+
+.concept-pill-hero.variant-terracotta {
+  background: rgba(217, 108, 44, 0.08);
+  border-color: rgba(217, 108, 44, 0.35);
+}
+
+.concept-pill-hero.variant-sage {
+  background: rgba(62, 142, 126, 0.08);
+  border-color: rgba(62, 142, 126, 0.35);
+}
+
+.concept-pill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.concept-pill-text {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-petroleum);
+  line-height: 1.25;
+}
+
+.concept-pill-sub {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 18px;
+  max-width: 820px;
+}
+
+/* --------------------------------------------------------------------------
+   5. IMPACT QUOTE (.impact-quote)
+   Cita / concepto clave de 4-6 palabras en tipografía display grande.
+   -------------------------------------------------------------------------- */
+.impact-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 32px 36px;
+}
+
+.impact-quote-mark {
+  font-family: var(--font-display);
+  font-size: 88px;
+  line-height: 0.5;
+  color: var(--color-sand);
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+.impact-quote-text,
+.micro-type-d-statement {
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--color-petroleum);
+  margin: 0;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.impact-quote-text .quote-accent-terracotta,
+.impact-quote-text .accent-highlight,
+.micro-type-d-statement .accent-highlight {
+  color: var(--color-terracotta);
+}
+
+.impact-quote-text .quote-accent-sage,
+.micro-type-d-statement .accent-sage {
+  color: var(--color-sage);
+}
+
+.impact-quote-text .quote-accent-mustard,
+.micro-type-d-statement .accent-mustard {
+  color: var(--color-mustard);
+}
+
+.impact-quote-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 8px 24px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.impact-quote-author .author-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   ESTILOS COMPATIBLES ADICIONALES (MICRO CARDS, DONUTS & PILL POINTS)
+   -------------------------------------------------------------------------- */
+.micro-card-atomic {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 10px 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.micro-card-atomic::before {
+  display: none !important;
+}
+
+/* Pastilla de Tag / Categoría interna de diapo (flotante, sin recuadro) */
+.micro-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  box-shadow: none;
+  border: none;
+}
+
+.micro-type-e-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.micro-type-e-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 16px !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.micro-type-e-card::before {
+  display: none !important;
+}
+
+.micro-type-e-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.micro-points-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.micro-pill-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: rgba(39, 76, 86, 0.05);
+  border: none !important;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+  box-shadow: none !important;
+}
+
+.micro-pill-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.micro-pill-icon.check { background: rgba(62, 142, 126, 0.18); color: var(--color-sage); }
+.micro-pill-icon.cross { background: rgba(217, 108, 44, 0.18); color: var(--color-terracotta); }
+.micro-pill-icon.arrow { background: rgba(231, 168, 78, 0.25); color: #B87B22; }
+
+/* Donut Chart Minimalista */
+.micro-donut-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.micro-donut-svg {
+  width: 220px;
+  height: 220px;
+  transform: rotate(-90deg);
+}
+
+.micro-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.micro-donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+}
+
+.micro-donut-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   REGLAS GLOBALES: CERO RECUADROS O BLOQUES BLANCOS (FLOTACIÓN PURA)
+   ========================================================================== */
+.hero-metric-box,
+.pure-chart-box,
+.card,
+.box,
+.chart-box,
+.metric-box,
+.card-glass,
+.hero-metric-solo,
+.micro-card-atomic,
+.dual-stat-col,
+.micro-contrast-box,
+.pure-chart-item,
+.micro-chart-bar-item,
+.micro-type-e-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.card-glass::before,
+.hero-metric-solo::before,
+.micro-card-atomic::before,
+.dual-stat-col::before,
+.micro-contrast-box::before,
+.micro-type-e-card::before {
+  display: none !important;
+}
+
+

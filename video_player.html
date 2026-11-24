@@ -1,0 +1,4701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo 14 • Contratación Pública y Comercio Internacional (OECD 2026)</title>
+
+  <!-- Google Fonts: Syne, Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+/* ==========================================================================
+   THEME.CSS - DESIGN TOKENS & VISUAL FOUNDATIONS (RETRO-MINIMALIST LIGHT THEME)
+   Grupo 14: Economía Mundial | OECD 2026 Presentation Engine
+   Estilo editorial vintage, minimalista, fondo blanco, ultra-redondeado, alta legibilidad.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root,
+[data-palette="0"] {
+  /* ==========================================================================
+     PALETA 0: RETRO VINTAGE (ORIGINAL RECONOCIBLE)
+     ========================================================================== */
+  --color-primary: #274C56;
+  --color-primary-rgb: 39, 76, 86;
+  --color-secondary: #3E8E7E;
+  --color-secondary-rgb: 62, 142, 126;
+  --color-accent-1: #D96C2C;
+  --color-accent-1-rgb: 217, 108, 44;
+  --color-accent-2: #E7A84E;
+  --color-accent-2-rgb: 231, 168, 78;
+  --color-surface-tint: #F6E2B3;
+  --color-surface-tint-rgb: 246, 226, 179;
+
+  --ambient-orb-1: rgba(246, 226, 179, 0.20);
+  --ambient-orb-2: rgba(62, 142, 126, 0.25);
+  --ambient-orb-3: rgba(231, 168, 78, 0.20);
+}
+
+[data-palette="1"] {
+  /* ==========================================================================
+     PALETA 1: PASTEL RETRO / TROPICAL SORBET
+     #57C7D0, #69D9D1, #CDB960, #E5A37A, #CC75A7 (Ancla oscura #225159 sobre blanco)
+     ========================================================================== */
+  --color-primary: #225159;
+  --color-primary-rgb: 34, 81, 89;
+  --color-secondary: #57C7D0;
+  --color-secondary-rgb: 87, 199, 208;
+  --color-accent-1: #CC75A7;
+  --color-accent-1-rgb: 204, 117, 167;
+  --color-accent-2: #E5A37A;
+  --color-accent-2-rgb: 229, 163, 122;
+  --color-surface-tint: #CDB960;
+  --color-surface-tint-rgb: 205, 185, 96;
+
+  --ambient-orb-1: rgba(205, 185, 96, 0.22);
+  --ambient-orb-2: rgba(87, 199, 208, 0.25);
+  --ambient-orb-3: rgba(204, 117, 167, 0.18);
+}
+
+[data-palette="2"] {
+  /* ==========================================================================
+     PALETA 2: SPRING MEADOW / MATCHA & SAKURA
+     #9DE7C4, #C8F0B8, #B7D687, #E6D992, #F6BCDC (Ancla oscura #1E3F2E sobre blanco)
+     ========================================================================== */
+  --color-primary: #1E3F2E;
+  --color-primary-rgb: 30, 63, 46;
+  --color-secondary: #3E7A4A;
+  --color-secondary-rgb: 62, 122, 74;
+  --color-accent-1: #C44C7C;
+  --color-accent-1-rgb: 196, 76, 124;
+  --color-accent-2: #947E24;
+  --color-accent-2-rgb: 148, 126, 36;
+  --color-surface-tint: #C8F0B8;
+  --color-surface-tint-rgb: 200, 240, 184;
+
+  --ambient-orb-1: rgba(200, 240, 184, 0.28);
+  --ambient-orb-2: rgba(157, 231, 196, 0.25);
+  --ambient-orb-3: rgba(246, 188, 220, 0.22);
+}
+
+[data-palette="3"] {
+  /* ==========================================================================
+     PALETA 3: AUTUMN PLUM / TERRACOTA A CIRUELA INTENSO
+     #E18338, #C66624, #973816, #6A0A08, #250033 (Ciruela para texto, óxidos para números)
+     ========================================================================== */
+  --color-primary: #250033;
+  --color-primary-rgb: 37, 0, 51;
+  --color-secondary: #973816;
+  --color-secondary-rgb: 151, 56, 22;
+  --color-accent-1: #C66624;
+  --color-accent-1-rgb: 198, 102, 36;
+  --color-accent-2: #E18338;
+  --color-accent-2-rgb: 225, 131, 56;
+  --color-surface-tint: #F6E6DC;
+  --color-surface-tint-rgb: 246, 230, 220;
+
+  --ambient-orb-1: rgba(225, 131, 56, 0.22);
+  --ambient-orb-2: rgba(198, 102, 36, 0.20);
+  --ambient-orb-3: rgba(106, 10, 8, 0.16);
+}
+
+[data-palette="4"] {
+  /* ==========================================================================
+     PALETA 4: MONOCROMÁTICO CARAMELO & ÁMBAR
+     #FCDDB0, #E3BD81, #D1A259, #B37E3E, #765317 (Café tostado texto, ocres datos)
+     ========================================================================== */
+  --color-primary: #765317;
+  --color-primary-rgb: 118, 83, 23;
+  --color-secondary: #B37E3E;
+  --color-secondary-rgb: 179, 126, 62;
+  --color-accent-1: #D1A259;
+  --color-accent-1-rgb: 209, 162, 89;
+  --color-accent-2: #E3BD81;
+  --color-accent-2-rgb: 227, 189, 129;
+  --color-surface-tint: #FCDDB0;
+  --color-surface-tint-rgb: 252, 221, 176;
+
+  --ambient-orb-1: rgba(252, 221, 176, 0.30);
+  --ambient-orb-2: rgba(209, 162, 89, 0.22);
+  --ambient-orb-3: rgba(179, 126, 62, 0.18);
+}
+
+[data-palette="5"] {
+  /* ==========================================================================
+     PALETA 5: SWISS EDITORIAL / NAVY & VERMILION
+     #1A365D, #D64527, #E59834, #2A6F5B, #F6E2B3 (Navy texto, Bermellón y Azafrán)
+     ========================================================================== */
+  --color-primary: #1A365D;
+  --color-primary-rgb: 26, 54, 93;
+  --color-secondary: #2A6F5B;
+  --color-secondary-rgb: 42, 111, 91;
+  --color-accent-1: #D64527;
+  --color-accent-1-rgb: 214, 69, 39;
+  --color-accent-2: #E59834;
+  --color-accent-2-rgb: 229, 152, 52;
+  --color-surface-tint: #F6E2B3;
+  --color-surface-tint-rgb: 246, 226, 179;
+
+  --ambient-orb-1: rgba(246, 226, 179, 0.24);
+  --ambient-orb-2: rgba(42, 111, 91, 0.22);
+  --ambient-orb-3: rgba(214, 69, 39, 0.16);
+}
+
+:root {
+  /* Aliases retrocompatibles para sincronía total */
+  --color-sand: var(--color-surface-tint);
+  --color-mustard: var(--color-accent-2);
+  --color-terracotta: var(--color-accent-1);
+  --color-sage: var(--color-secondary);
+  --color-petroleum: var(--color-primary);
+  --color-white: #FFFFFF;
+  --color-offwhite: #FAF9F6;
+
+  /* --- FONDOS Y SUPERFICIES (TEMA CLARO ULTRA-MINIMALISTA SIN RECUADROS) --- */
+  --bg-deep: #FFFFFF;
+  --bg-canvas: #FFFFFF;
+  --bg-stage: #FFFFFF;
+  --bg-surface-0: #FFFFFF;
+  --bg-surface-1: #FAF9F6;
+  --bg-surface-2: #F1EFEA;
+  --bg-surface-3: #E5E1D8;
+  --bg-surface-hover: #DCD7CD;
+  --bg-glass-card: transparent;
+  --bg-glass-pill: rgba(255, 255, 255, 0.96);
+  --bg-glass-hud: rgba(255, 255, 255, 0.98);
+
+  /* --- MAPEO DE ACENTOS RETRO-MINIMALISTAS ADAPTATIVOS --- */
+  --accent-indigo: var(--color-primary);
+  --accent-indigo-light: var(--color-secondary);
+  --accent-indigo-glow: rgba(var(--color-primary-rgb), 0.10);
+
+  --accent-mint: var(--color-secondary);
+  --accent-mint-light: var(--color-secondary);
+  --accent-mint-glow: rgba(var(--color-secondary-rgb), 0.14);
+
+  --accent-amber: var(--color-accent-2);
+  --accent-amber-light: var(--color-accent-2);
+  --accent-amber-glow: rgba(var(--color-accent-2-rgb), 0.16);
+
+  --accent-cyan: var(--color-secondary);
+  --accent-cyan-light: var(--color-primary);
+  --accent-cyan-glow: rgba(var(--color-secondary-rgb), 0.12);
+
+  --accent-rose: var(--color-accent-1);
+  --accent-rose-light: var(--color-accent-1);
+  --accent-rose-glow: rgba(var(--color-accent-1-rgb), 0.14);
+
+  --accent-purple: var(--color-primary);
+  --accent-purple-light: var(--color-secondary);
+  --accent-purple-glow: rgba(var(--color-primary-rgb), 0.10);
+
+  /* --- TEXTO Y CONTRASTE EDITORIAL ADAPTATIVO --- */
+  --text-primary: var(--color-primary);
+  --text-secondary: rgba(var(--color-primary-rgb), 0.78);
+  --text-muted: rgba(var(--color-primary-rgb), 0.52);
+  --text-inverse: #FFFFFF;
+
+  /* --- LÍNEAS EDITORIALES SUTILES ADAPTATIVAS --- */
+  --border-subtle: rgba(var(--color-primary-rgb), 0.08);
+  --border-card: rgba(var(--color-primary-rgb), 0.06);
+
+  /* --- TIPOGRAFÍAS MODERNAS Y ANCHAS --- */
+  --font-display: 'Syne', 'Outfit', sans-serif;
+  --font-body: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-ui: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* --- PESOS Y TRACKING --- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  --tracking-tightest: -0.04em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-widest: 0.10em;
+
+  /* --- RADIO DE ESQUINAS ULTRA-REDONDEADAS --- */
+  --radius-xs: 14px;
+  --radius-sm: 20px;
+  --radius-md: 28px;
+  --radius-lg: 34px;
+  --radius-xl: 48px;
+  --radius-pill: 9999px;
+
+  /* --- SOMBRAS SUAVES Y CÁLIDAS EDITORIALES --- */
+  --shadow-ambient-sm: 0 4px 18px rgba(var(--color-primary-rgb), 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-ambient-md: 0 12px 36px rgba(var(--color-primary-rgb), 0.06), 0 3px 10px rgba(0, 0, 0, 0.02);
+  --shadow-ambient-lg: 0 24px 64px rgba(var(--color-primary-rgb), 0.08), 0 6px 18px rgba(0, 0, 0, 0.02);
+  --shadow-card: 0 8px 24px rgba(var(--color-primary-rgb), 0.04);
+  --shadow-glow-terracotta: 0 8px 24px rgba(var(--color-accent-1-rgb), 0.16);
+  --shadow-glow-sage: 0 8px 24px rgba(var(--color-secondary-rgb), 0.16);
+  --shadow-glow-mustard: 0 8px 24px rgba(var(--color-accent-2-rgb), 0.16);
+
+  /* --- CURVAS DE ANIMACIÓN Y TIMING RÁPIDO PARA MICRO-ESCENAS --- */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --duration-fast: 140ms;
+  --duration-normal: 240ms;
+  --duration-scene: 350ms;
+  --duration-fade: 280ms; /* Fundido a negro dinámico de ~280ms para DaVinci */
+}
+
+/* Reset y Reglas Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* Canvas del Reproductor 16:9 Nativo */
+.player-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+.player-stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  flex-shrink: 0;
+  transform-origin: center center;
+  aspect-ratio: 16 / 9;
+  background-color: #FFFFFF;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(246, 226, 179, 0.20) 0%, transparent 35%),
+    radial-gradient(circle at 90% 90%, rgba(62, 142, 126, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, #FFFFFF 0%, #FAF9F6 100%);
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 72px 42px 72px;
+}
+
+/* Orbes ambientales decorativos vintage suaves */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.20;
+  transition: all 1.8s var(--ease-spring);
+}
+
+.ambient-orb-1 {
+  width: 550px;
+  height: 550px;
+  top: -160px;
+  left: -120px;
+  background: radial-gradient(circle, var(--ambient-orb-1, var(--color-sand)) 0%, transparent 70%);
+}
+
+.ambient-orb-2 {
+  width: 500px;
+  height: 500px;
+  bottom: -140px;
+  right: -100px;
+  background: radial-gradient(circle, var(--ambient-orb-2, rgba(62, 142, 126, 0.25)) 0%, transparent 70%);
+}
+
+.ambient-orb-3 {
+  width: 440px;
+  height: 440px;
+  top: 35%;
+  right: 22%;
+  background: radial-gradient(circle, var(--ambient-orb-3, rgba(231, 168, 78, 0.20)) 0%, transparent 70%);
+  opacity: 0.18;
+}
+
+/* --- CLASES DE UTILIDAD CROMÁTICA EXACTA Y SEMÁNTICA DINÁMICA --- */
+.color-sand { color: var(--color-sand) !important; }
+.color-mustard { color: var(--color-mustard) !important; }
+.color-terracotta { color: var(--color-terracotta) !important; }
+.color-sage { color: var(--color-sage) !important; }
+.color-petroleum { color: var(--color-petroleum) !important; }
+
+.color-primary { color: var(--color-primary, var(--color-petroleum)) !important; }
+.color-accent-1 { color: var(--color-accent-1, var(--color-sage)) !important; }
+.color-accent-2 { color: var(--color-accent-2, var(--color-terracotta)) !important; }
+.color-accent-3 { color: var(--color-accent-2, var(--color-mustard)) !important; }
+
+.bg-sand { background-color: var(--color-sand) !important; }
+.bg-mustard { background-color: var(--color-mustard) !important; }
+.bg-terracotta { background-color: var(--color-terracotta) !important; }
+.bg-sage { background-color: var(--color-sage) !important; }
+.bg-petroleum { background-color: var(--color-petroleum) !important; }
+
+.bg-primary { background-color: var(--color-primary, var(--color-petroleum)) !important; }
+.bg-accent-1 { background-color: var(--color-accent-1, var(--color-sage)) !important; }
+.bg-accent-2 { background-color: var(--color-accent-2, var(--color-terracotta)) !important; }
+
+.border-sand { border-color: var(--color-sand) !important; }
+.border-mustard { border-color: var(--color-mustard) !important; }
+.border-terracotta { border-color: var(--color-terracotta) !important; }
+.border-sage { border-color: var(--color-sage) !important; }
+.border-petroleum { border-color: var(--color-petroleum) !important; }
+
+.border-primary { border-color: var(--color-primary, var(--color-petroleum)) !important; }
+.border-accent-1 { border-color: var(--color-accent-1, var(--color-sage)) !important; }
+.border-accent-2 { border-color: var(--color-accent-2, var(--color-terracotta)) !important; }
+
+/* Resaltado editorial dinámico sin cajas ni recuadros blancos */
+.accent-highlight {
+  color: var(--color-terracotta) !important;
+  background: transparent !important;
+}
+
+.micro-pill-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: rgba(var(--color-primary-rgb), 0.06) !important;
+  border: none !important;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-primary) !important;
+  box-shadow: none !important;
+}
+
+/* Transición suave entre paletas cromáticas */
+body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   SELECTOR VISUAL DE PALETAS CROMÁTICAS EN HUD Y NOTIFICACIÓN TOAST
+   ========================================================================== */
+.palette-picker-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.palette-picker-pill:hover {
+  background: var(--bg-surface-1);
+}
+
+.palette-picker-label-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+.palette-picker-label-btn:hover {
+  color: var(--color-accent-1);
+}
+
+.palette-name-display {
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.palette-swatches-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.palette-swatch-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 1px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s var(--ease-spring), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.palette-swatch-btn:hover {
+  transform: scale(1.22);
+}
+
+.palette-swatch-btn.active {
+  border-color: var(--color-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.swatch-preview {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: block;
+  pointer-events: none;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Toast Flotante Discreto para Notificación de Paleta (Tecla P) */
+.palette-toast {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-spring), transform 0.28s var(--ease-spring);
+}
+
+.palette-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.palette-toast-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  background: var(--color-sand);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+
+.palette-toast-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   MOTION.CSS - ANIMATION ENGINE & TRANSITIONS (RETRO-MINIMALIST LIGHT THEME)
+   Fluid cubic-bezier(0.16, 1, 0.3, 1), Staggered Entrances, Fade to Black,
+   Floating Cards, Pulsing Badges, Dynamic Chart Bars.
+   ========================================================================== */
+
+/* --- OVERLAY DE TRANSICIÓN LIMPIA (FONDO BLANCO PURO / CLEAN BACKGROUND) --- */
+.blackout-curtain {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-stage, #FFFFFF);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  /* Transición suave hacia el fondo blanco puro */
+  transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.blackout-curtain.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- CONTENEDOR DE ESCENAS --- */
+.scene-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  perspective: 1200px;
+}
+
+.scene-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px) scale(0.992);
+  transition: opacity 0.35s var(--ease-spring),
+              transform 0.35s var(--ease-spring);
+}
+
+.scene-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.scene-slide.exiting {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px) scale(0.992);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* --- ANIMACIONES DE ENTRADA SUAVE Y FLUIDA PARA CADA DIAPO --- */
+@keyframes cleanEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stagger-in {
+  opacity: 1;
+  animation: cleanEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Delays escalonados armónicos */
+.delay-1 { animation-delay: 40ms; }
+.delay-2 { animation-delay: 110ms; }
+.delay-3 { animation-delay: 180ms; }
+.delay-4 { animation-delay: 260ms; }
+.delay-5 { animation-delay: 340ms; }
+.delay-6 { animation-delay: 420ms; }
+.delay-7 { animation-delay: 500ms; }
+.delay-8 { animation-delay: 580ms; }
+
+/* Cascada de animación suave para elementos hijos de cada diapo */
+.micro-stage-center > * {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.micro-contrast-grid > *:nth-child(1) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+.micro-contrast-grid > *:nth-child(2) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
+}
+.micro-contrast-grid > *:nth-child(3) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 240ms both;
+}
+
+.micro-chart-bars > *:nth-child(1) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 60ms both;
+}
+.micro-chart-bars > *:nth-child(2) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 130ms both;
+}
+.micro-chart-bars > *:nth-child(3) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+.micro-chart-bars > *:nth-child(4) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 270ms both;
+}
+
+.micro-type-e-grid > *:nth-child(1) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+.micro-type-e-grid > *:nth-child(2) {
+  animation: cleanEntrance 0.52s cubic-bezier(0.16, 1, 0.3, 1) 180ms both;
+}
+
+.micro-points-container .micro-pill-point:nth-child(1) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+.micro-points-container .micro-pill-point:nth-child(2) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+.micro-points-container .micro-pill-point:nth-child(3) {
+  animation: cleanEntrance 0.48s cubic-bezier(0.16, 1, 0.3, 1) 280ms both;
+}
+
+/* --- FLOTACIÓN SUAVE RETRO (FLOATING CARDS) --- */
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-subtle {
+  animation: softFloat 7s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: softFloat 7s ease-in-out 3.5s infinite;
+}
+
+/* --- PULSACIÓN SUTIL EDITORIAL --- */
+@keyframes pulseGlowVintage {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(62, 142, 126, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(62, 142, 126, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulseGlowVintage 3s infinite var(--ease-smooth);
+}
+
+/* --- BARRAS DE PROGRESO DE DATOS (GRÁFICAS) --- */
+.animated-bar {
+  position: relative;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  width: 0%;
+  transition: width 0.65s var(--ease-spring);
+}
+
+.scene-slide.active .animated-bar {
+  width: var(--target-width, 100%);
+}
+
+/* --- NÚMEROS INCREMENTALES DINÁMICOS --- */
+.counter-val {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* --- ELIMINACIÓN DE SUBTÍTULOS KINÉTICOS Y BARRA DE PROGRESO --- */
+.kinetic-caption-bar,
+.scene-progress-bar,
+.kinetic-text,
+.scene-progress-fill {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+/* --- OCULTAR INTERFAZ EN MODO GRABACIÓN LIMPIA (TECLA H) --- */
+.recording-clean-mode .hud-top,
+.recording-clean-mode .hud-bottom,
+.recording-clean-mode .hud-hints {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(20px) !important;
+  transition: opacity 0.35s var(--ease-smooth),
+              transform 0.35s var(--ease-smooth) !important;
+}
+
+.recording-clean-mode {
+  cursor: none !important;
+}
+
+/* ==========================================================================
+   COMPONENTS.CSS - RETRO-MINIMALIST LIGHT THEME COMPONENTS & HUD
+   Grupo 14: Economía Mundial (UPV) | OECD 2026 Presentation Engine
+   Fondo blanco, paleta vintage exacta, líneas editoriales ultrafinas, ultra-redondeado.
+   ========================================================================== */
+
+/* --- BARRA SUPERIOR HUD (TOP HEADER) --- */
+.hud-top {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+  transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+}
+
+.brand-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  box-shadow: 0 0 10px rgba(217, 108, 44, 0.45);
+}
+
+.brand-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-extrabold);
+  font-size: 15px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-petroleum);
+}
+
+.brand-subtitle {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-sage);
+}
+
+/* --- SELECTOR DE PALETAS EN EL HUD SUPERIOR --- */
+.palette-picker-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.palette-picker-label {
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  margin-right: 2px;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.palette-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: all 0.2s var(--ease-spring);
+}
+
+.palette-pill-btn:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  transform: translateY(-1px);
+}
+
+.palette-pill-btn.active {
+  background: rgba(var(--color-primary-rgb), 0.12);
+  border-color: rgba(var(--color-primary-rgb), 0.28);
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.12);
+}
+
+.palette-dot-preview {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Presenter Speaker Pill */
+.speaker-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px 8px 10px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-sm);
+  transition: all 0.3s var(--ease-spring);
+}
+
+.speaker-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-petroleum), var(--color-sage));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(39, 76, 86, 0.25);
+}
+
+.speaker-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+  line-height: 1.2;
+}
+
+.speaker-role {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-terracotta);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Metadata / Scene Counter Pill */
+.scene-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 22px;
+  background: var(--bg-glass-pill);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.meta-scene-num {
+  font-weight: var(--weight-extrabold);
+  color: var(--color-petroleum);
+}
+
+.meta-divider {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-mustard);
+}
+
+/* --- TIPOGRAFÍA Y TÍTULOS EDITORIALES RETRO-MINIMALISTAS --- */
+.scene-header {
+  margin-bottom: 22px;
+}
+
+.scene-badge-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--color-sand);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--weight-extrabold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-petroleum);
+  margin-bottom: 14px;
+}
+
+#speaker-pill-container,
+.speaker-pill {
+  display: none !important;
+}
+
+.scene-title-large {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: var(--weight-extrabold);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-primary);
+}
+
+/* Gradientes Tipográficos Sutiles y Legibles Adaptativos */
+.text-gradient-indigo {
+  background: linear-gradient(135deg, var(--color-primary) 30%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mint {
+  background: linear-gradient(135deg, var(--color-primary) 15%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, var(--color-accent-1) 10%, var(--color-accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, var(--color-accent-1) 20%, var(--color-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.scene-subtitle-lead {
+  font-family: var(--font-body);
+  font-size: 21px;
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+  line-height: 1.48;
+  margin-top: 10px;
+  max-width: 1240px;
+}
+
+/* --- TARJETAS EDITORIALES LIMPIAS SIN RECUADRO --- */
+.card-glass {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 16px 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.card-glass:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+/* Sin línea superior de recuadro */
+.card-glass::before {
+  display: none !important;
+}
+
+/* Normalización de colores para máxima legibilidad editorial */
+.card-glass h3,
+.card-glass h4,
+.scene-container h2,
+.scene-container h3,
+.scene-container h4 {
+  color: var(--color-petroleum) !important;
+}
+
+.card-glass p {
+  color: var(--text-secondary);
+}
+
+/* Override de estilos inline heredados de texto blanco a texto oscuro petróleo */
+[style*="color: #fff"],
+[style*="color:#fff"] {
+  color: var(--color-petroleum) !important;
+}
+
+[style*="background: rgba(255,255,255,0.03)"],
+[style*="background: rgba(255, 255, 255, 0.03)"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+[style*="background: rgba(244,63,94,0.08)"] {
+  background: rgba(217, 108, 44, 0.08) !important;
+  border: 1px solid rgba(217, 108, 44, 0.15) !important;
+}
+
+/* Grillas Modernas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-hero-sidebar {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 28px;
+}
+
+/* Tarjeta Métrica Hero Gigante */
+.metric-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.metric-number-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.metric-giant-number {
+  font-family: var(--font-display);
+  font-size: 92px;
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-tightest);
+  line-height: 0.95;
+  color: var(--color-petroleum);
+}
+
+.metric-unit {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: var(--weight-bold);
+  color: var(--color-sage);
+}
+
+.metric-badge-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  margin-top: 14px;
+}
+
+.trend-up {
+  background: rgba(62, 142, 126, 0.14);
+  color: var(--color-sage);
+}
+
+.trend-down {
+  background: rgba(217, 108, 44, 0.14);
+  color: var(--color-terracotta);
+}
+
+.trend-warning {
+  background: rgba(231, 168, 78, 0.18);
+  color: #B87B22;
+}
+
+.metric-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 16px;
+}
+
+/* Tarjeta Comparativa (Directa vs Indirecta / Abierta vs Protegida) */
+.comparison-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 18px;
+}
+
+.badge-direct {
+  background: rgba(217, 108, 44, 0.15);
+  color: var(--color-terracotta);
+}
+
+.badge-indirect {
+  background: rgba(231, 168, 78, 0.18);
+  color: #B87B22;
+}
+
+.badge-open {
+  background: rgba(62, 142, 126, 0.15);
+  color: var(--color-sage);
+}
+
+.badge-global {
+  background: rgba(39, 76, 86, 0.12);
+  color: var(--color-petroleum);
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.feature-icon-pill {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  margin-top: 2px;
+  background: var(--bg-surface-2);
+  color: var(--color-petroleum);
+}
+
+.feature-content h4 {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+  margin-bottom: 4px;
+}
+
+.feature-content p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.42;
+}
+
+/* Barra de Datos con Porcentaje y Animación */
+.data-bar-row, .data-row {
+  margin-bottom: 20px;
+}
+
+.data-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.data-bar-label, .data-label {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: var(--weight-medium);
+  color: var(--color-petroleum);
+}
+
+.data-bar-val, .data-value {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+}
+
+.data-bar-track, .bar-track {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+}
+
+/* Pastilla de Cita Académica / Fuente Oficial */
+.citation-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 22px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  margin-top: 18px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.citation-source {
+  font-weight: var(--weight-bold);
+  color: var(--color-petroleum);
+}
+
+/* --- BARRA INFERIOR HUD DE CONTROL Y GRABACIÓN --- */
+.hud-bottom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 50;
+  margin-top: 20px;
+  transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-smooth);
+}
+
+.timeline-control-pill {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 24px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+}
+
+.btn-icon-hud {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-petroleum);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.btn-icon-hud:hover {
+  background: var(--bg-surface-2);
+  transform: scale(1.08);
+}
+
+.btn-icon-hud:active {
+  transform: scale(0.95);
+}
+
+.btn-icon-hud.primary {
+  background: var(--color-petroleum);
+  color: #ffffff;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(39, 76, 86, 0.25);
+}
+
+.btn-icon-hud.primary:hover {
+  background: var(--color-sage);
+}
+
+/* --- NAVEGADOR DE PASOS Y MINI-TRACK SCRUBBER (45-55 ESCENAS) --- */
+.hud-scrubber-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px;
+}
+
+.hud-step-indicator {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  user-select: none;
+  box-shadow: 0 1px 4px rgba(39, 76, 86, 0.04);
+}
+
+.hud-step-curr {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--color-petroleum);
+}
+
+.hud-step-sep {
+  font-size: 12px;
+  color: var(--color-mustard);
+  font-weight: 700;
+  margin: 0 2px;
+}
+
+.hud-step-total {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hud-scrubber-rail-wrapper {
+  position: relative;
+  width: 240px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hud-scrubber-rail {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-pill);
+  overflow: visible;
+  transition: height 0.18s var(--ease-spring);
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-rail {
+  height: 10px;
+}
+
+.hud-scrubber-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-petroleum) 0%, var(--color-sage) 65%, var(--color-mustard) 100%);
+  border-radius: var(--radius-pill);
+  pointer-events: none;
+  transition: width 0.12s ease-out;
+}
+
+.hud-scrubber-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2.5px solid var(--color-petroleum);
+  box-shadow: 0 2px 8px rgba(39, 76, 86, 0.35);
+  pointer-events: none;
+  transition: transform 0.18s var(--ease-spring), left 0.12s ease-out;
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-thumb {
+  transform: translate(-50%, -50%) scale(1.3);
+  border-color: var(--color-terracotta);
+}
+
+.hud-scrubber-tooltip {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: 6px 14px;
+  background: var(--color-petroleum);
+  color: #FFFFFF;
+  border-radius: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s, transform 0.18s;
+  box-shadow: 0 6px 18px rgba(39, 76, 86, 0.25);
+  z-index: 100;
+}
+
+.hud-scrubber-rail-wrapper:hover .hud-scrubber-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Indicadores de Escena Compactos (Dots compatibles) */
+.timeline-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 400px;
+  overflow-x: auto;
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface-3);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+  flex-shrink: 0;
+}
+
+.timeline-dot.active {
+  width: 22px;
+  background: var(--color-petroleum);
+  box-shadow: 0 2px 8px rgba(39, 76, 86, 0.2);
+}
+
+.timeline-dot:hover:not(.active) {
+  background: var(--color-sage);
+}
+
+/* Indicador de Autoplay y Tiempo */
+.autoplay-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.autoplay-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-sage);
+  box-shadow: 0 0 8px rgba(62, 142, 126, 0.4);
+}
+
+.autoplay-dot.paused {
+  background: var(--color-mustard);
+  box-shadow: 0 0 8px rgba(231, 168, 78, 0.4);
+}
+
+/* Botones Auxiliares de Grabación (H, F) */
+.hud-recording-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tool-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-petroleum);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.tool-pill-btn:hover {
+  background: var(--bg-surface-1);
+  transform: translateY(-2px);
+}
+
+.key-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  background: var(--color-sand);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-extrabold);
+  color: var(--color-petroleum);
+}
+
+/* ==========================================================================
+   COMPONENTES ATÓMICOS DE IMPACTO PARA MICRO-ESCENAS ULTRA-MINIMALISTAS
+   Paleta cromática exacta:
+   - #F6E2B3 (Arena / crema cálido)
+   - #E7A84E (Mostaza / ámbar)
+   - #D96C2C (Terracota / óxido)
+   - #3E8E7E (Verde salvia / petróleo suave)
+   - #274C56 (Azul petróleo profundo)
+   ========================================================================== */
+
+/* Contenedor escénico centrado de alto impacto visual */
+.micro-stage-center {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO METRIC SOLO (.hero-metric-solo)
+   Número titánico centrado (120px+) con label inferior limpia de alto contraste.
+   -------------------------------------------------------------------------- */
+.hero-metric-solo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 12px auto 0;
+  padding: 16px 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+}
+
+.hero-metric-solo::before {
+  display: none !important;
+}
+
+.hero-metric-solo.borderless {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 16px 0;
+}
+.hero-metric-solo.borderless::before {
+  display: none !important;
+}
+
+.hero-metric-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 10px rgba(246, 226, 179, 0.45);
+}
+
+.hero-metric-number-box,
+.hero-metric-solo .micro-number-hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  line-height: 0.90;
+  margin: 4px 0;
+}
+
+.hero-metric-val,
+.hero-metric-value,
+.micro-number-val {
+  font-family: var(--font-display);
+  font-size: 136px; /* Titánico 120px+ */
+  font-weight: 900;
+  line-height: 0.90;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-petroleum);
+}
+
+.hero-metric-val.accent-terracotta,
+.micro-number-val.accent-terracotta {
+  color: var(--color-terracotta);
+}
+
+.hero-metric-val.accent-sage,
+.micro-number-val.accent-sage {
+  color: var(--color-sage);
+}
+
+.hero-metric-val.accent-mustard,
+.micro-number-val.accent-mustard {
+  color: var(--color-mustard);
+}
+
+.hero-metric-prefix {
+  font-family: var(--font-display);
+  font-size: 78px;
+  font-weight: 900;
+  color: var(--color-mustard);
+  line-height: 1;
+}
+
+.hero-metric-unit,
+.micro-number-unit {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-sage);
+  line-height: 1;
+}
+
+.hero-metric-label,
+.micro-number-label {
+  font-family: var(--font-ui);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-top: 20px;
+  max-width: 860px;
+}
+
+.hero-metric-sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 10px;
+  max-width: 780px;
+}
+
+/* --------------------------------------------------------------------------
+   2. DUAL STAT (.dual-stat)
+   Dos números enfrentados minimalistas de alto impacto.
+   -------------------------------------------------------------------------- */
+.dual-stat,
+.micro-contrast-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+  max-width: 1260px;
+  margin: 16px auto 0;
+}
+
+.dual-stat-col,
+.micro-contrast-box {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 12px 24px !important;
+  text-align: center;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.dual-stat-col:hover,
+.micro-contrast-box:hover {
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+.dual-stat-col::before,
+.micro-contrast-box::before {
+  display: none !important;
+}
+
+.dual-stat-col.left::before,
+.dual-stat-col.theme-petroleum::before,
+.micro-contrast-box.left::before {
+  background: var(--color-petroleum);
+}
+
+.dual-stat-col.right::before,
+.dual-stat-col.theme-terracotta::before,
+.micro-contrast-box.right::before {
+  background: var(--color-terracotta);
+}
+
+.dual-stat-col.theme-sage::before {
+  background: var(--color-sage);
+}
+
+.dual-stat-col.theme-mustard::before {
+  background: var(--color-mustard);
+}
+
+.dual-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: 14px;
+}
+
+.dual-stat-badge.badge-petroleum {
+  background: rgba(39, 76, 86, 0.10);
+  color: var(--color-petroleum);
+}
+
+.dual-stat-badge.badge-terracotta {
+  background: rgba(217, 108, 44, 0.12);
+  color: var(--color-terracotta);
+}
+
+.dual-stat-badge.badge-sage {
+  background: rgba(62, 142, 126, 0.12);
+  color: var(--color-sage);
+}
+
+.dual-stat-badge.badge-mustard {
+  background: rgba(231, 168, 78, 0.16);
+  color: #B87B22;
+}
+
+.dual-stat-number-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+  line-height: 0.92;
+  margin: 4px 0;
+}
+
+.dual-stat-val,
+.dual-stat-number {
+  font-family: var(--font-display);
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: var(--tracking-tightest);
+  color: var(--color-petroleum);
+}
+
+.dual-stat-unit {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-sage);
+}
+
+.dual-stat-label {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  margin-top: 16px;
+  line-height: 1.25;
+}
+
+.dual-stat-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.40;
+  margin-top: 8px;
+  max-width: 360px;
+}
+
+.dual-stat-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dual-stat-divider-line {
+  width: 2px;
+  height: 60px;
+  background: var(--bg-surface-3);
+  border-radius: var(--radius-pill);
+}
+
+.dual-stat-vs,
+.micro-vs-pill {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(231, 168, 78, 0.35);
+  border: 2px solid #FFFFFF;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. PURE CHART (.pure-chart)
+   Gráfico de barras o porcentajes super estilizado sin etiquetas innecesarias.
+   -------------------------------------------------------------------------- */
+.pure-chart {
+  width: 100%;
+  max-width: 1040px;
+  margin: 16px auto 0;
+}
+
+.pure-chart-bars,
+.micro-chart-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.pure-chart-item,
+.micro-chart-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 0 !important;
+  box-shadow: none !important;
+}
+
+.pure-chart-header,
+.pure-chart-meta,
+.micro-chart-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.pure-chart-label,
+.pure-chart-name {
+  font-family: var(--font-ui);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+}
+
+.pure-chart-val,
+.pure-chart-value,
+.micro-chart-bar-val {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+}
+
+.pure-chart-rail,
+.pure-chart-track,
+.micro-chart-bar-track {
+  width: 100%;
+  height: 20px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.pure-chart-fill,
+.micro-chart-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  width: 0%;
+  transition: width 0.65s var(--ease-spring);
+}
+
+.pure-chart-fill.fill-petroleum,
+.color-petroleum .pure-chart-fill {
+  background: linear-gradient(90deg, #274C56, #3E8E7E);
+}
+
+.pure-chart-fill.fill-terracotta,
+.color-terracotta .pure-chart-fill {
+  background: linear-gradient(90deg, #D96C2C, #E7A84E);
+}
+
+.pure-chart-fill.fill-sage,
+.color-sage .pure-chart-fill {
+  background: linear-gradient(90deg, #3E8E7E, #274C56);
+}
+
+.pure-chart-fill.fill-mustard,
+.color-mustard .pure-chart-fill {
+  background: linear-gradient(90deg, #E7A84E, #F6E2B3);
+}
+
+/* Ratio Split Bar */
+.pure-chart-ratio {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  box-shadow: var(--shadow-ambient-md);
+  margin-top: 14px;
+}
+
+.pure-ratio-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  transition: width 0.65s var(--ease-spring);
+  padding: 0 16px;
+}
+
+.pure-ratio-pct {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pure-ratio-tag {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.95;
+  margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   4. CONCEPT PILL HERO (.concept-pill-hero)
+   Gran pastilla conceptual o frase corta tipográfica.
+   -------------------------------------------------------------------------- */
+.concept-pill-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 20px auto 0;
+}
+
+.concept-pill-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 48px;
+  border-radius: var(--radius-pill);
+  background: #FFFFFF;
+  border: 2px solid var(--border-card);
+  box-shadow: var(--shadow-ambient-lg);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.concept-pill-hero:hover {
+  transform: translateY(-2px);
+}
+
+.concept-pill-hero.variant-sand {
+  background: var(--color-sand);
+  border-color: rgba(231, 168, 78, 0.45);
+}
+
+.concept-pill-hero.variant-petroleum {
+  background: var(--color-petroleum);
+  border-color: var(--color-petroleum);
+  color: #FFFFFF;
+}
+.concept-pill-hero.variant-petroleum .concept-pill-text {
+  color: #FFFFFF;
+}
+
+.concept-pill-hero.variant-terracotta {
+  background: rgba(217, 108, 44, 0.08);
+  border-color: rgba(217, 108, 44, 0.35);
+}
+
+.concept-pill-hero.variant-sage {
+  background: rgba(62, 142, 126, 0.08);
+  border-color: rgba(62, 142, 126, 0.35);
+}
+
+.concept-pill-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-sand);
+  color: var(--color-petroleum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.concept-pill-text {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-petroleum);
+  line-height: 1.25;
+}
+
+.concept-pill-sub {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-top: 18px;
+  max-width: 820px;
+}
+
+/* --------------------------------------------------------------------------
+   5. IMPACT QUOTE (.impact-quote)
+   Cita / concepto clave de 4-6 palabras en tipografía display grande.
+   -------------------------------------------------------------------------- */
+.impact-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 16px auto 0;
+  padding: 32px 36px;
+}
+
+.impact-quote-mark {
+  font-family: var(--font-display);
+  font-size: 88px;
+  line-height: 0.5;
+  color: var(--color-sand);
+  margin-bottom: 12px;
+  user-select: none;
+}
+
+.impact-quote-text,
+.micro-type-d-statement {
+  font-family: var(--font-display);
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--color-petroleum);
+  margin: 0;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.impact-quote-text .quote-accent-terracotta,
+.impact-quote-text .accent-highlight,
+.micro-type-d-statement .accent-highlight {
+  color: var(--color-terracotta);
+}
+
+.impact-quote-text .quote-accent-sage,
+.micro-type-d-statement .accent-sage {
+  color: var(--color-sage);
+}
+
+.impact-quote-text .quote-accent-mustard,
+.micro-type-d-statement .accent-mustard {
+  color: var(--color-mustard);
+}
+
+.impact-quote-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 8px 24px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+  box-shadow: var(--shadow-ambient-sm);
+}
+
+.impact-quote-author .author-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+}
+
+/* --------------------------------------------------------------------------
+   ESTILOS COMPATIBLES ADICIONALES (MICRO CARDS, DONUTS & PILL POINTS)
+   -------------------------------------------------------------------------- */
+.micro-card-atomic {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 10px 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.micro-card-atomic::before {
+  display: none !important;
+}
+
+/* Pastilla de Tag / Categoría interna de diapo (flotante, sin recuadro) */
+.micro-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  box-shadow: none;
+  border: none;
+}
+
+.micro-type-e-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.micro-type-e-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 8px 16px !important;
+  box-shadow: none !important;
+  position: relative;
+  overflow: visible !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.micro-type-e-card::before {
+  display: none !important;
+}
+
+.micro-type-e-title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--color-petroleum);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.micro-points-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.micro-pill-point {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  background: rgba(39, 76, 86, 0.05);
+  border: none !important;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+  box-shadow: none !important;
+}
+
+.micro-pill-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.micro-pill-icon.check { background: rgba(62, 142, 126, 0.18); color: var(--color-sage); }
+.micro-pill-icon.cross { background: rgba(217, 108, 44, 0.18); color: var(--color-terracotta); }
+.micro-pill-icon.arrow { background: rgba(231, 168, 78, 0.25); color: #B87B22; }
+
+/* Donut Chart Minimalista */
+.micro-donut-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.micro-donut-svg {
+  width: 220px;
+  height: 220px;
+  transform: rotate(-90deg);
+}
+
+.micro-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.micro-donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-petroleum);
+}
+
+.micro-donut-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   REGLAS GLOBALES: CERO RECUADROS O BLOQUES BLANCOS (FLOTACIÓN PURA)
+   ========================================================================== */
+.hero-metric-box,
+.pure-chart-box,
+.card,
+.box,
+.chart-box,
+.metric-box,
+.card-glass,
+.hero-metric-solo,
+.micro-card-atomic,
+.dual-stat-col,
+.micro-contrast-box,
+.pure-chart-item,
+.micro-chart-bar-item,
+.micro-type-e-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.card-glass::before,
+.hero-metric-solo::before,
+.micro-card-atomic::before,
+.dual-stat-col::before,
+.micro-contrast-box::before,
+.micro-type-e-card::before {
+  display: none !important;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Viewport Principal a Pantalla Completa -->
+  <div class="player-viewport" id="player-viewport">
+
+    <!-- Capa de Fundido a Negro Suave (Fade to Black) -->
+    <div class="blackout-curtain" id="blackout-curtain"></div>
+
+    <!-- Escenario 16:9 Nativo Cinematográfico -->
+    <main class="player-stage" id="player-stage">
+
+      <!-- Orbes de Luz Ambiental con Desenfocado Suave Vintage -->
+      <div class="ambient-orb ambient-orb-1"></div>
+      <div class="ambient-orb ambient-orb-2"></div>
+      <div class="ambient-orb ambient-orb-3"></div>
+
+      <!-- BARRA SUPERIOR (TOP HUD) -->
+      <header class="hud-top">
+        <div class="brand-pill">
+          <div class="brand-dot"></div>
+          <div>
+            <span class="brand-title">Economía Mundial</span>
+            <span class="brand-subtitle" style="margin-left: 8px;">Grupo 14</span>
+          </div>
+        </div>
+
+        <!-- Selector Rápido de Paletas en el HUD -->
+        <div class="palette-picker-pill" id="hud-palette-picker" title="Cambiar Paleta Cromática (Atajo: Tecla P)">
+          <span class="palette-picker-label">PALETA:</span>
+          <button class="palette-pill-btn active" data-palette="0" title="Paleta 0: Retro Actual" onclick="window.playerInstance.setPalette('0')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #274C56, #3E8E7E, #D96C2C);"></span>
+            <span>0</span>
+          </button>
+          <button class="palette-pill-btn" data-palette="1" title="Paleta 1: Neo-Teal & Mauve" onclick="window.playerInstance.setPalette('1')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #57C7D0, #CC75A7, #E5A37A);"></span>
+            <span>1</span>
+          </button>
+          <button class="palette-pill-btn" data-palette="2" title="Pastel Garden" onclick="window.playerInstance.setPalette('2')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #9DE7C4, #B7D687, #F6BCDC);"></span>
+            <span>2</span>
+          </button>
+          <button class="palette-pill-btn" data-palette="3" title="Paleta 3: Crimson & Ochre" onclick="window.playerInstance.setPalette('3')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #250033, #6A0A08, #E18338);"></span>
+            <span>3</span>
+          </button>
+          <button class="palette-pill-btn" data-palette="4" title="Paleta 4: Warm Bronze" onclick="window.playerInstance.setPalette('4')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #765317, #B37E3E, #D1A259);"></span>
+            <span>4</span>
+          </button>
+          <button class="palette-pill-btn" data-palette="5" title="Paleta 5: Swiss Editorial" onclick="window.playerInstance.setPalette('5')">
+            <span class="palette-dot-preview" style="background: linear-gradient(135deg, #1A365D, #D64527, #2A6F5B);"></span>
+            <span>5</span>
+          </button>
+        </div>
+
+        <!-- Pastilla del Ponente Activo -->
+        <div class="speaker-pill" id="speaker-pill-container" style="display: none;">
+          <div class="speaker-avatar" id="speaker-avatar">G14</div>
+          <div class="speaker-info">
+            <span class="speaker-name" id="speaker-name">Manuel, Jorge y Aleksandr</span>
+            <span class="speaker-role" id="speaker-role">Presentación Conjunta</span>
+          </div>
+        </div>
+
+        <!-- Metadatos de la Escena -->
+        <div class="scene-meta-pill">
+          <span>ESCENA</span>
+          <span class="meta-scene-num" id="scene-counter-display">01 / 50</span>
+          <div class="meta-divider"></div>
+          <span style="color: var(--color-secondary); font-weight: 700;">1080p 60fps</span>
+        </div>
+      </header>
+
+      <!-- ÁREA CENTRAL DE LA ESCENA DINÁMICA -->
+      <section class="scene-container">
+        <!-- Cabecera de la Escena Actual -->
+        <div class="scene-header stagger-in delay-1">
+          <h1 class="scene-title-large text-gradient-indigo" id="scene-title">
+            Contratación Pública, Comercio y Política Industrial
+          </h1>
+          <p class="scene-subtitle-lead" id="scene-subtitle">
+            OECD (2026) • Supporting National Priorities
+          </p>
+        </div>
+
+        <!-- Contenido Inyectado Dinámicamente -->
+        <div id="scene-content-area" style="min-height: 520px;"></div>
+      </section>
+
+      <!-- BARRA INFERIOR (BOTTOM HUD & RECORDING CONTROLS) -->
+      <footer class="hud-bottom">
+        
+        <!-- Controles de Navegación y Línea de Tiempo -->
+        <div class="timeline-control-pill">
+          <button class="btn-icon-hud" id="btn-prev" title="Escena Anterior (Flecha Izquierda)" onclick="window.playerInstance.prevScene()">
+            ◀
+          </button>
+          <button class="btn-icon-hud primary" id="btn-play-pause" title="Reproducir / Pausar (Barra Espaciadora)" onclick="window.playerInstance.togglePlayPause()">
+            <span id="play-pause-icon">▶</span>
+          </button>
+          <button class="btn-icon-hud" id="btn-next" title="Siguiente Escena (Flecha Derecha)" onclick="window.playerInstance.nextScene()">
+            ▶
+          </button>
+
+          <!-- Navegador de Pasos / Mini-Track Scrubber para 45-55 Escenas -->
+          <div class="hud-scrubber-nav" id="hud-scrubber-nav">
+            <div class="hud-step-indicator" id="hud-step-indicator" title="Escena Actual / Total">
+              <span class="hud-step-curr" id="hud-step-curr">01</span>
+              <span class="hud-step-sep">/</span>
+              <span class="hud-step-total" id="hud-step-total">50</span>
+            </div>
+            <div class="hud-scrubber-rail-wrapper" id="hud-scrubber-rail-wrapper" title="Arrastra o haz clic para saltar entre escenas">
+              <div class="hud-scrubber-rail" id="hud-scrubber-rail">
+                <div class="hud-scrubber-fill" id="hud-scrubber-fill"></div>
+                <div class="hud-scrubber-thumb" id="hud-scrubber-thumb"></div>
+              </div>
+              <div class="hud-scrubber-tooltip" id="hud-scrubber-tooltip">Escena 01</div>
+            </div>
+          </div>
+
+          <!-- Indicadores de Escenas Opcionales (Dots) -->
+          <div class="timeline-dots" id="timeline-dots-container" style="display: none;"></div>
+
+          <!-- Estado de Autoplay -->
+          <div class="autoplay-status">
+            <div class="autoplay-dot paused" id="autoplay-dot"></div>
+            <span id="autoplay-status-text">PAUSADO</span>
+          </div>
+        </div>
+
+        <!-- Herramientas y Atajos para Grabación de Pantalla -->
+        <div class="hud-recording-tools">
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente">
+            <span class="key-kbd">H</span>
+            <span>Modo Grabación Limpia</span>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p">
+            <span class="key-kbd">F</span>
+            <span>Pantalla Completa</span>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+/* ==========================================================================
+   SCENES-DATA.JS - 50 MICRO-ESCENAS ULTRA-MINIMALISTAS (GRUPO 14 - UPV)
+   OECD (2026) Public Procurement, Trade and Industrial Policies
+   Paleta: #F6E2B3, #E7A84E, #D96C2C, #3E8E7E, #274C56 sobre fondo blanco.
+   ========================================================================== */
+
+const SCENES_DATA = [
+  // --- ESCENA 1: SCENE-1 ---
+  {
+    id: "scene-1",
+    category: "PANORAMA GLOBAL",
+    title: "Contrataci\u00f3n P\u00fablica, Comercio y Pol\u00edtica Industrial",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "OECD (2026) \u2022 Supporting National Priorities",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary);">Informe Oficial OCDE 2026</span>
+          <h1 class="micro-type-d-statement" style="font-size: 58px; margin: 18px 0;">
+            Contratación Pública, <span class="accent-highlight">Comercio</span> y <span class="accent-sage">Política Industrial</span>
+          </h1>
+          <div style="display: flex; gap: 14px; margin-top: 14px;">
+            <span class="micro-pill-point" style="font-size: 16px;">OECD Public Procurement Report 2026</span>
+            <span class="micro-pill-point" style="font-size: 16px;">Comercio y Política Industrial</span>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 2: SCENE-2 ---
+  {
+    id: "scene-2",
+    category: "DEMANDA AGREGADA",
+    title: "Demanda Agregada Mundial",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Volumen anual del mercado de contrataci\u00f3n p\u00fablica en el mundo",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Demanda Agregada Global</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">$</span>
+            <span class="micro-number-val counter-val" data-target="11">0</span>
+            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-secondary);">Billones</span>
+          </div>
+          <p class="micro-number-label">Gasto público anual en compras gubernamentales</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 3: SCENE-3 ---
+  {
+    id: "scene-3",
+    category: "IMPACTO MACROECON\u00d3MICO",
+    title: "Impacto en las Econom\u00edas Avanzadas",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Media oficial en los pa\u00edses miembros de la OCDE",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="13">0</span>
+              <span class="micro-number-unit">%</span>
+            </div>
+            <p class="micro-number-label">Del PIB de la OCDE</p>
+          </div>
+          <div class="micro-vs-pill">VS</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="29">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+            </div>
+            <p class="micro-number-label">Del Gasto Público Total</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 4: SCENE-4 ---
+  {
+    id: "scene-4",
+    category: "CAMBIO DE PARADIGMA",
+    title: "La Ruptura de Paradigma",
+    titleGradient: "text-gradient-amber",
+    subtitle: "De la minimizaci\u00f3n del coste contable a la soberan\u00eda geopol\u00edtica",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Giro Neomercantilista</span>
+          <h2 class="micro-type-d-statement" style="margin: 20px 0;">
+            <span style="color: var(--color-primary);">Coste Mínimo</span>
+            <span class="micro-type-d-arrow">➔</span>
+            <span class="accent-highlight">Seguridad Nacional</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px; margin-top: 10px;">
+            OECD (2026): El nuevo rol geopolítico de la compra estatal
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 5: SCENE-5 ---
+  {
+    id: "scene-5",
+    category: "DESCENTRALIZACI\u00d3N FISCAL",
+    title: "Descentralizaci\u00f3n Territorial",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Porcentaje ejecutado fuera del gobierno central",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Nivel Subnacional</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-sage counter-val" data-target="62.5">0</span>
+            <span class="micro-number-unit">%</span>
+          </div>
+          <p class="micro-number-label">Ejecutado por regiones, provincias y municipios</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 6: SCENE-6 ---
+  {
+    id: "scene-6",
+    category: "DISTRIBUCI\u00d3N DEL GASTO",
+    title: "Reparto Territorial del Gasto",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Dificultad de supervisi\u00f3n en tratados comerciales",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary); margin-bottom: 28px;">Gobiernos OCDE</span>
+          <div class="micro-chart-bars">
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Administraciones Subnacionales (Regiones / Municipios)</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-secondary);">62,5%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 62.5%; background: var(--color-secondary);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Gobierno Central o Federal</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-primary);">37,5%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 37.5%; background: var(--color-primary);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 7: SCENE-7 ---
+  {
+    id: "scene-7",
+    category: "SECTOR SANITARIO",
+    title: "Gasto en Sanidad P\u00fablica",
+    titleGradient: "text-gradient-rose",
+    subtitle: "El sector prioritario de mayor cuant\u00eda en compras p\u00fablicas",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Sector Sanitario</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-unit" style="font-size: 90px; color: var(--color-accent-1);">&gt;</span>
+            <span class="micro-number-val accent-terracotta counter-val" data-target="30">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+          </div>
+          <p class="micro-number-label">Del gasto total de contratación pública en la OCDE</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 8: SCENE-8 ---
+  {
+    id: "scene-8",
+    category: "DOCTRINA Y DILEMAS",
+    title: "Colisi\u00f3n de Paradigmas",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "El dilema central del comercio internacional",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">OMC • ACP / GPA</span>
+            <h3 class="micro-type-e-title">Doctrina de Eficiencia</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Trato Nacional Sin Fronteras</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Máximo Valor por Dinero</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Geopolítica Actual</span>
+            <h3 class="micro-type-e-title">Doctrina de Seguridad</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Soberanía Industrial Local</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Reservas de Mercado Nacional</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 9: SCENE-9 ---
+  {
+    id: "scene-9",
+    category: "SHOCKS GLOBALES",
+    title: "Los Shocks Catalizadores",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Tres crisis consecutivas que transformaron la pol\u00edtica econ\u00f3mica",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Disrupciones de Suministro</span>
+          <h2 class="micro-type-d-statement" style="font-size: 58px; margin: 20px 0;">
+            <span style="color: var(--color-primary);">COVID-19</span>
+            <span class="micro-type-d-arrow">➔</span>
+            <span class="accent-highlight">Guerra Ucrania</span>
+            <span class="micro-type-d-arrow">➔</span>
+            <span class="accent-sage">Taiwán</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Riesgo extremo de desabastecimiento en insumos críticos
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 10: SCENE-10 ---
+  {
+    id: "scene-10",
+    category: "POL\u00cdTICA INDUSTRIAL",
+    title: "La Compra como Palanca",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "El Estado genera mercados asegurados para sectores estrat\u00e9gicos",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary);">Nuevo Enfoque Teórico</span>
+          <h2 class="micro-type-d-statement" style="margin: 18px 0;">
+            Política Industrial <span class="accent-highlight">desde la Demanda</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Garantía estatal de compra para impulsar tecnologías verdes y estratégicas
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 11: SCENE-11 ---
+  {
+    id: "scene-11",
+    category: "ARSENAL DE MEDIDAS",
+    title: "El Arsenal de Medidas",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Clasificaci\u00f3n oficial de intervenciones seg\u00fan la OCDE",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Capítulo 2.1</span>
+            <h3 class="micro-type-e-title">Medidas Directas</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Contenido Nacional (DCRs)</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Preferencias de Precio Local</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Contratos Reservados a PYMEs</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-mustard">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Capítulo 2.2</span>
+            <h3 class="micro-type-e-title">Medidas Indirectas</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Compras Verdes / Cadenas Cortas</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Soberanía Tecnológica y Cloud</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Compra Pública de Innovación</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 12: SCENE-12 ---
+  {
+    id: "scene-12",
+    category: "BUY AMERICAN ACT",
+    title: "Buy American Act en EE.UU.",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Umbral m\u00ednimo legal de componentes locales en 2024",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Estados Unidos 2024</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val counter-val" data-target="65">0</span>
+            <span class="micro-number-unit">%</span>
+          </div>
+          <p class="micro-number-label">Insumos nacionales obligatorios en compras federales</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 13: SCENE-13 ---
+  {
+    id: "scene-13",
+    category: "ESCALADA PROTECCIONISTA",
+    title: "Escalada Proteccionista en EE.UU.",
+    titleGradient: "text-gradient-amber",
+    subtitle: "La senda legislativa de endurecimiento comercial",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Requisito de Contenido Nacional</span>
+          <h2 class="micro-type-d-statement" style="margin: 20px 0;">
+            Buy American: <span style="color: var(--color-primary);">65%</span>
+            <span class="micro-type-d-arrow">➔</span>
+            <span class="accent-highlight">75% en 2029</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Cierre progresivo del mayor mercado federal del planeta
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 14: SCENE-14 ---
+  {
+    id: "scene-14",
+    category: "TRAYECTORIA LEGISLATIVA",
+    title: "Trayectoria del Buy American",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Evoluci\u00f3n porcentual del umbral exigido",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary); margin-bottom: 28px;">Umbral BAA</span>
+          <div class="micro-chart-bars">
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Año 2022 (Nivel Histórico Previo)</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-secondary);">55%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 55%; background: var(--color-secondary);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Año 2024 (Umbral Actual Vigente)</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-2);">65%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 65%; background: var(--color-accent-2);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Año 2029 (Exigencia Legal Fijada)</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-1);">75%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 75%; background: var(--color-accent-1);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 15: SCENE-15 ---
+  {
+    id: "scene-15",
+    category: "BABA ACT 2021",
+    title: "BABA Act: Infraestructura Federal",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Build America, Buy America Act (2021)",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Acero, Hierro y Materiales</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-terracotta counter-val" data-target="100">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+          </div>
+          <p class="micro-number-label">Fabricación nacional obligatoria en obras subvencionadas</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 16: SCENE-16 ---
+  {
+    id: "scene-16",
+    category: "PLAN M\u00c9XICO 2025",
+    title: "Plan M\u00e9xico 2025",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Estrategia de sustituci\u00f3n de importaciones asi\u00e1ticas",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">América Latina</span>
+          <h2 class="micro-type-d-statement" style="font-size: 60px; margin: 20px 0;">
+            Plan México: <span class="accent-highlight">65%</span> Contenido Local
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Elevado desde el 50% previo para blindar la industria nacional
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 17: SCENE-17 ---
+  {
+    id: "scene-17",
+    category: "INCENTIVOS LOCALES",
+    title: "Doble Incentivo en M\u00e9xico",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Reserva de cuota y ventaja en precio para oferentes locales",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="65">0</span>
+              <span class="micro-number-unit">%</span>
+            </div>
+            <p class="micro-number-label">Contenido Nacional Obligatorio</p>
+          </div>
+          <div class="micro-vs-pill">+</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="15">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+            </div>
+            <p class="micro-number-label">Margen de Preferencia en Precio</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 18: SCENE-18 ---
+  {
+    id: "scene-18",
+    category: "ARANCELES Y RECARGOS",
+    title: "Recargo a Importaciones",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Pol\u00edticas de penalizaci\u00f3n a bienes for\u00e1neos en Ocean\u00eda",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Australia Occidental</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val counter-val" data-target="20">0</span>
+            <span class="micro-number-unit">%</span>
+          </div>
+          <p class="micro-number-label">Recargo evaluativo sobre bienes importados en licitaciones</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 19: SCENE-19 ---
+  {
+    id: "scene-19",
+    category: "DEBATE EN LA UE",
+    title: "El Debate en la Uni\u00f3n Europea",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Tensi\u00f3n pol\u00edtica interna en el mercado comunitario",
+    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Francia • Informe Draghi</span>
+            <h3 class="micro-type-e-title">Preferencia Europea</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Buy European prioritario</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Subsidio a campeones industriales</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Finlandia • Nórdicos</span>
+            <h3 class="micro-type-e-title">Mercado Concurrente</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Alerta formal ante el sobrecoste fiscal</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Protección de la libre concurrencia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 20: SCENE-20 ---
+  {
+    id: "scene-20",
+    category: "SUBSIDIOS ESTATALES",
+    title: "Subsidios Estatales en China",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Apoyo p\u00fablico masivo a la cadena de automoci\u00f3n (2009-2023)",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Distorsión Global de Precios</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">$</span>
+            <span class="micro-number-val accent-terracotta counter-val" data-target="231">0</span>
+            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-accent-1);">Mil M</span>
+          </div>
+          <p class="micro-number-label">Subsidios acumulados de China a vehículos eléctricos</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 21: SCENE-21 ---
+  {
+    id: "scene-21",
+    category: "SUBSIDIOS FERROVIARIOS",
+    title: "El Gigante Ferroviario CRRC",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Ayudas directas permanentes de la administraci\u00f3n china",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Sector Ferroviario</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">&gt;$</span>
+            <span class="micro-number-val counter-val" data-target="1000">0</span>
+            <span class="micro-number-unit" style="font-size: 60px; color: var(--color-secondary);">M / año</span>
+          </div>
+          <p class="micro-number-label">Subvenciones anuales a CRRC para ofertar en el exterior</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 22: SCENE-22 ---
+  {
+    id: "scene-22",
+    category: "DISTORSI\u00d3N DE PRECIOS",
+    title: "Precios Predatorios en Europa",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Distorsi\u00f3n de licitaciones p\u00fablicas por empresas subsidiadas",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="100">0</span>
+            </div>
+            <p class="micro-number-label">Precio Coste Europeo (Alstom / Siemens)</p>
+          </div>
+          <div class="micro-vs-pill">VS</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="75">0</span>
+            </div>
+            <p class="micro-number-label">Oferta Subsidiada (-25% Baja Temeraria)</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 23: SCENE-23 ---
+  {
+    id: "scene-23",
+    category: "IMPACTO AMBIENTAL",
+    title: "El Mito Ecol\u00f3gico",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Desmontando la falacia de la huella de transporte local",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Evidencia Empírica OCDE</span>
+          <h2 class="micro-type-d-statement" style="font-size: 72px; margin: 20px 0;">
+            Comprar Local <span class="accent-highlight">≠</span> Ser Verde
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            El transporte marítimo representa solo una mínima fracción del CO2
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 24: SCENE-24 ---
+  {
+    id: "scene-24",
+    category: "HUELLA DE CARBONO",
+    title: "La Paradoja de Emisiones",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Comparativa de eficiencia en ciclos de vida de producto",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Producción Local Térmica</span>
+            <h3 class="micro-type-e-title">Invernadero Calentado</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Consumo intensivo de gas o fuel</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Huella de carbono 4 veces superior</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Comercio Internacional</span>
+            <h3 class="micro-type-e-title">Importación Solar</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Cultivo natural en climas cálidos</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Menor impacto de carbono total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 25: SCENE-25 ---
+  {
+    id: "scene-25",
+    category: "AUTONOM\u00cdA SANITARIA",
+    title: "F\u00e1rmacos Esenciales Cr\u00edticos",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Critical Medicines Act de la Comisi\u00f3n Europea (2025)",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Agencia Europea de Medicamentos</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val counter-val" data-target="299">0</span>
+          </div>
+          <p class="micro-number-label">Medicamentos esenciales bajo alerta por dependencia extrema</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 26: SCENE-26 ---
+  {
+    id: "scene-26",
+    category: "CADENAS CR\u00cdTICAS",
+    title: "Dependencia en Antibi\u00f3ticos",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Vulnerabilidad estrat\u00e9gica del sistema sanitario comunitario",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Principio Activo Esencial</span>
+          <h2 class="micro-type-d-statement" style="font-size: 64px; margin: 20px 0;">
+            Amoxicilina: <span class="accent-highlight">80%</span> Depende de China
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Riesgo inminente de colapso hospitalario ante shocks geopolíticos
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 27: SCENE-27 ---
+  {
+    id: "scene-27",
+    category: "TRANSICI\u00d3N VERDE",
+    title: "Net-Zero Industry Act",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Reglamento UE 2024/1735 sobre tecnolog\u00edas limpias",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Salvaguardia de Diversificación</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-mustard counter-val" data-target="50">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-2);">%</span>
+          </div>
+          <p class="micro-number-label">Umbral de dependencia exterior que activa reservas obligatorias</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 28: SCENE-28 ---
+  {
+    id: "scene-28",
+    category: "INNOVACI\u00d3N P\u00daBLICA",
+    title: "Compra P\u00fablica de Innovaci\u00f3n",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Transformaci\u00f3n industrial documentada por la OCDE",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="94">0</span>
+              <span class="micro-number-unit">%</span>
+            </div>
+            <p class="micro-number-label">Países OCDE usan compra de innovación</p>
+          </div>
+          <div class="micro-vs-pill">➔</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-sage counter-val" data-target="95">0</span>
+              <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
+            </div>
+            <p class="micro-number-label">Adjudicatarias se vuelven exportadoras regulares</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 29: SCENE-29 ---
+  {
+    id: "scene-29",
+    category: "CADENAS GLOBALES",
+    title: "Cadenas Globales de Valor",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Estructura productiva real del comercio contempor\u00e1neo",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Comercio Global Interconectado</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val counter-val" data-target="70">0</span>
+            <span class="micro-number-unit">%</span>
+          </div>
+          <p class="micro-number-label">Del comercio mundial corresponde a bienes intermedios</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 30: SCENE-30 ---
+  {
+    id: "scene-30",
+    category: "INSUMOS INTERMEDIOS",
+    title: "Composici\u00f3n del Comercio Global",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Insumos intermedios frente a productos finales terminados",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary); margin-bottom: 24px;">Flujos Transfronterizos</span>
+          <div class="micro-donut-wrapper">
+            <svg class="micro-donut-svg" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="var(--bg-surface-2)" stroke-width="18"/>
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="var(--color-primary)" stroke-width="18"
+                      stroke-dasharray="167.1 238.8" stroke-dashoffset="0"/>
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="var(--color-accent-2)" stroke-width="18"
+                      stroke-dasharray="71.6 238.8" stroke-dashoffset="-167.1"/>
+            </svg>
+            <div class="micro-donut-legend">
+              <div class="micro-donut-legend-item">
+                <span class="micro-donut-dot" style="background: var(--color-primary);"></span>
+                <span><strong>70%</strong> Bienes Intermedios (Insumos y Componentes)</span>
+              </div>
+              <div class="micro-donut-legend-item">
+                <span class="micro-donut-dot" style="background: var(--color-accent-2);"></span>
+                <span><strong>30%</strong> Bienes Finales Terminados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 31: SCENE-31 ---
+  {
+    id: "scene-31",
+    category: "PRODUCTO DOM\u00c9STICO",
+    title: "La Falacia del Producto Dom\u00e9stico",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Imposibilidad f\u00edsica del aislamiento productivo en tecnolog\u00eda",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Evidencia Técnica</span>
+          <h2 class="micro-type-d-statement" style="font-size: 64px; margin: 20px 0;">
+            No existe ningún bien complejo <span class="accent-highlight">100% nacional</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Exigir producción local encarece los insumos de la propia industria interna
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 32: SCENE-32 ---
+  {
+    id: "scene-32",
+    category: "COSTE DEL RESHORING",
+    title: "Coste del Reshoring Forzado",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Simulaciones cuantitativas de la OCDE (Arriola et al., 2020)",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Colapso del Comercio</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-terracotta counter-val" data-target="-18">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+          </div>
+          <p class="micro-number-label">Caída proyectada del comercio mundial ante una relocalización obligatoria</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 33: SCENE-33 ---
+  {
+    id: "scene-33",
+    category: "IMPACTO EN EL PIB",
+    title: "Destrucci\u00f3n del PIB Global",
+    titleGradient: "text-gradient-rose",
+    subtitle: "P\u00e9rdida irreversible de renta per c\u00e1pita mundial",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Pérdida Neta de Riqueza</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-terracotta counter-val" data-target="-5">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+          </div>
+          <p class="micro-number-label">Destrucción permanente del producto interior bruto global</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 34: SCENE-34 ---
+  {
+    id: "scene-34",
+    category: "P\u00c9RDIDA ASIM\u00c9TRICA",
+    title: "P\u00e9rdida de PIB por Pa\u00edses",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Impacto asim\u00e9trico del reshoring en econom\u00edas abiertas",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1); margin-bottom: 24px;">Arriola et al. (OCDE)</span>
+          <div class="micro-chart-bars">
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Canadá (Alta Integración Externa)</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-1);">-13,1%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 85%; background: var(--color-accent-1);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Reino Unido</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-1);">-12,2%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 79%; background: var(--color-accent-1);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Media Mundial</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-primary);">-5,0%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 32%; background: var(--color-primary);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 35: SCENE-35 ---
+  {
+    id: "scene-35",
+    category: "RESILIENCIA ECON\u00d3MICA",
+    title: "La Falacia de la Resiliencia",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Por qu\u00e9 la econom\u00eda aut\u00e1rquica sufre mayores shocks",
+    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Conclusión del Modelo</span>
+          <h2 class="micro-type-d-statement" style="margin: 20px 0;">
+            Autarquía <span class="accent-highlight">= Mayor Vulnerabilidad</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Imposibilidad de recurrir a proveedores alternativos externos ante un shock local
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 36: SCENE-36 ---
+  {
+    id: "scene-36",
+    category: "FRIEND-SHORING",
+    title: "El Coste del Friend-Shoring",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Impacto de la divisi\u00f3n del mundo en bloques geopol\u00edticos (Javorcik et al.)",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Fragmentación Geoeconómica</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">-</span>
+            <span class="micro-number-val accent-terracotta counter-val" data-target="4.6">0</span>
+            <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+          </div>
+          <p class="micro-number-label">Pérdida adicional de PIB global por fragmentación en bloques cerrados</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 37: SCENE-37 ---
+  {
+    id: "scene-37",
+    category: "TRAMPA BUROCR\u00c1TICA",
+    title: "La Trampa Burocr\u00e1tica",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Bosio, Djankov, Glaeser y Shleifer (AER 2022)",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Capacidad Alta</span>
+            <h3 class="micro-type-e-title">Administración Eficaz</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Compra estratégica viable</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Control estricto de sobrecostes</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Capacidad Baja</span>
+            <h3 class="micro-type-e-title">Burocracia Débil</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Disparo del gasto ineficiente</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Mayor riesgo de captura y corrupción</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 38: SCENE-38 ---
+  {
+    id: "scene-38",
+    category: "EVIDENCIA EMP\u00cdRICA",
+    title: "Evidencia Emp\u00edrica Global",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Estudio publicado en American Economic Review",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Muestra Cuantitativa Global</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val counter-val" data-target="187">0</span>
+          </div>
+          <p class="micro-number-label">Países analizados empíricamente por Bosio et al.</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 39: SCENE-39 ---
+  {
+    id: "scene-39",
+    category: "ACUERDO ACP / GPA",
+    title: "El L\u00edmite del GPA de la OMC",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "El club restringido del comercio multilateral en compras",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="48">0</span>
+            </div>
+            <p class="micro-number-label">Países Miembros del GPA</p>
+          </div>
+          <div class="micro-vs-pill">VS</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="142">0</span>
+            </div>
+            <p class="micro-number-label">Países Fuera del Tratado Multilateral</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 40: SCENE-40 ---
+  {
+    id: "scene-40",
+    category: "SUR GLOBAL",
+    title: "Los Grandes Emergentes",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Por qu\u00e9 las mayores econom\u00edas del Sur Global no firman el GPA",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Ausencias Estratégicas</span>
+          <h2 class="micro-type-d-statement" style="font-size: 60px; margin: 20px 0;">
+            <span class="accent-highlight">China, India y Brasil</span> Fuera del GPA
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Reservan su contratación estatal como instrumento soberano de desarrollo
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 41: SCENE-41 ---
+  {
+    id: "scene-41",
+    category: "INSTRUMENTO IPI",
+    title: "El Instrumento IPI Europeo",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Reglamento UE 2022/1031 de Contrataci\u00f3n Internacional",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Mecanismo de Reciprocidad Forzada</span>
+          <h2 class="micro-type-d-statement" style="margin: 20px 0;">
+            IPI: <span class="accent-highlight">Apertura Condicional</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Sanciones y exclusión a empresas de países que bloquean a licitadores europeos
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 42: SCENE-42 ---
+  {
+    id: "scene-42",
+    category: "PENALIZACIONES IPI",
+    title: "Sanciones del Instrumento IPI",
+    titleGradient: "text-gradient-rose",
+    subtitle: "El r\u00e9gimen sancionador de la Comisi\u00f3n Europea",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">-</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="50">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
+            </div>
+            <p class="micro-number-label">Penalización en Puntuación Técnica</p>
+          </div>
+          <div class="micro-vs-pill">O</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-unit" style="color: var(--color-primary);">-</span>
+              <span class="micro-number-val counter-val" data-target="100">0</span>
+              <span class="micro-number-unit">%</span>
+            </div>
+            <p class="micro-number-label">Exclusión Total en Concursos por Precio</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 43: SCENE-43 ---
+  {
+    id: "scene-43",
+    category: "SENTENCIA KOLIN",
+    title: "Sentencia Kolin del TJUE",
+    titleGradient: "text-gradient-amber",
+    subtitle: "Asunto C-652/22 (2024): Precedente legal de m\u00e1ximo calado",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Jurisprudencia Vinculante</span>
+          <h2 class="micro-type-d-statement" style="font-size: 60px; margin: 20px 0;">
+            Sin Tratado <span class="micro-type-d-arrow">➔</span> <span class="accent-highlight">Sin Recurso Legal</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Licitadores de países sin GPA carecen de tutela judicial para impugnar exclusiones
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 44: SCENE-44 ---
+  {
+    id: "scene-44",
+    category: "MAPA LEGAL",
+    title: "El Nuevo Mapa Legal de Licitaci\u00f3n",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Diferenciaci\u00f3n estricta entre socios comerciales y terceros",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Países Cubiertos por GPA</span>
+            <h3 class="micro-type-e-title">Garantías Plenas</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Trato Nacional obligatorio</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Derecho directo de recurso judicial</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Terceros Países sin Acuerdo</span>
+            <h3 class="micro-type-e-title">Acceso Condicionado</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Posibilidad de exclusión directa</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Sin legitimación activa ante tribunales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 45: SCENE-45 ---
+  {
+    id: "scene-45",
+    category: "D\u00c9FICIT DE EVALUACI\u00d3N",
+    title: "El D\u00e9ficit de Evaluaci\u00f3n",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "La falta de medici\u00f3n de costes reales en los pa\u00edses de la OCDE",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="23">0</span>
+              <span class="micro-number-unit">%</span>
+            </div>
+            <p class="micro-number-label">Evalúa Impacto Económico Real</p>
+          </div>
+          <div class="micro-vs-pill">&amp;</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-mustard counter-val" data-target="10">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-2);">%</span>
+            </div>
+            <p class="micro-number-label">Evalúa Impacto Ambiental o Social</p>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 46: SCENE-46 ---
+  {
+    id: "scene-46",
+    category: "AUDITOR\u00cdA DEL GASTO",
+    title: "Evaluaci\u00f3n Emp\u00edrica en la OCDE",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Porcentaje de administraciones que auditan los sobrecostes",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary); margin-bottom: 24px;">Gobernanza Basada en Evidencia</span>
+          <div class="micro-chart-bars">
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Evalúan Impacto Económico Ex-Post</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-secondary);">23%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 23%; background: var(--color-secondary);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Evalúan Impacto Ambiental o Social</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-2);">10%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 10%; background: var(--color-accent-2);"></div>
+              </div>
+            </div>
+            <div class="micro-chart-bar-item">
+              <div class="micro-chart-bar-header">
+                <span>Sin Medición Sistemática de Sobrecostes</span>
+                <span class="micro-chart-bar-val" style="color: var(--color-accent-1);">77%</span>
+              </div>
+              <div class="micro-chart-bar-track">
+                <div class="micro-chart-bar-fill animated-bar" style="--target-width: 77%; background: var(--color-accent-1);"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 47: SCENE-47 ---
+  {
+    id: "scene-47",
+    category: "DIGITALIZACI\u00d3N",
+    title: "Digitalizaci\u00f3n e-Procurement",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Implantaci\u00f3n de plataformas electr\u00f3nicas \u00fanicas de licitaci\u00f3n",
+    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Transparencia y Eficiencia</span>
+          <div class="micro-number-hero">
+            <span class="micro-number-val accent-sage counter-val" data-target="98">0</span>
+            <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
+          </div>
+          <p class="micro-number-label">Países OCDE con portales digitales únicos de contratación</p>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 48: SCENE-48 ---
+  {
+    id: "scene-48",
+    category: "TRANSPARENCIA Y PYMES",
+    title: "El Efecto Democratizador",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Impacto de la tecnolog\u00eda digital en la transparencia",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Efecto Pro-Competitivo</span>
+          <h2 class="micro-type-d-statement" style="margin: 20px 0;">
+            Más Ofertas <span class="micro-type-d-arrow">➔</span> <span class="accent-highlight">Menos Colusión</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Eliminación de costes de transacción para PYMEs y oferentes internacionales
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 49: SCENE-49 ---
+  {
+    id: "scene-49",
+    category: "DILEMA ESTRAT\u00c9GICO",
+    title: "El Gran Dilema Global",
+    titleGradient: "text-gradient-amber",
+    subtitle: "La encrucijada estrat\u00e9gica documentada por la OCDE",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 7,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-type-e-grid">
+          <div class="micro-type-e-card theme-terracotta">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Ruta Proteccionista</span>
+            <h3 class="micro-type-e-title">Autarquía Cerrada</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> -18% en el comercio mundial</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Mayor vulnerabilidad ante crisis</div>
+            </div>
+          </div>
+          <div class="micro-type-e-card theme-sage">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Ruta OCDE 2026</span>
+            <h3 class="micro-type-e-title">Resiliencia Inteligente</h3>
+            <div class="micro-points-container">
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Diversificación global de suministros</div>
+              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Evaluación rigurosa de sobrecostes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  },
+
+  // --- ESCENA 50: SCENE-50 ---
+  {
+    id: "scene-50",
+    category: "S\u00cdNTESIS FINAL",
+    title: "Econom\u00eda Mundial \u2022 UPV",
+    titleGradient: "text-gradient-indigo",
+    subtitle: "Grado en ADE + INF / MAT \u2022 Curso 2026-2027",
+    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    duration: 6,
+    renderContent: () => `
+<div class="micro-stage-center stagger-in delay-2">
+        <div class="micro-card-atomic">
+          <span class="micro-tag" style="background: var(--color-surface-tint); color: var(--color-primary);">Síntesis del Proyecto • OCDE 2026</span>
+          <h2 class="micro-type-d-statement" style="font-size: 64px; margin: 20px 0;">
+            Rigor Científico, <span class="accent-highlight">Datos Reales</span> y <span class="accent-sage">Evidencia</span>
+          </h2>
+          <div style="display: flex; gap: 14px; margin-top: 14px;">
+            <span class="micro-pill-point" style="font-size: 17px;">Grado en ADE + INF / MAT</span>
+            <span class="micro-pill-point" style="font-size: 17px;">Universitat Politècnica de València</span>
+          </div>
+        </div>
+      </div>
+    `,
+    subtitles: []
+  }
+];
+
+/* ==========================================================================
+   ENGINE.JS - RETRO-MINIMALIST PRESENTATION & PLAYBACK ENGINE
+   Grupo 14: Economía Mundial (UPV) | OECD 2026 Presentation Engine
+   Diseñado para tema claro, limpio, sin barra de progreso ni subtítulos,
+   con soporte total de autoplay, atajos H (grabar), F (fullscreen) y flechas.
+   ========================================================================== */
+
+class MotionGraphicsPlayer {
+  constructor(scenes, options = {}) {
+    this.scenes = scenes;
+    this.currentIndex = 0;
+    this.isPlaying = false;
+    this.isRecordingClean = false;
+    this.isTransitioning = false;
+    this.sceneElapsedMs = 0;
+    this.tickInterval = 50; // ms
+    this.timer = null;
+    this.cursorTimeout = null;
+
+    // DOM Elements Cache
+    this.stage = document.getElementById('player-stage');
+    this.viewport = document.getElementById('player-viewport');
+    this.curtain = document.getElementById('blackout-curtain');
+    this.sceneContent = document.getElementById('scene-content-area');
+    this.categoryEl = document.getElementById('scene-category-pill');
+    this.titleEl = document.getElementById('scene-title');
+    this.subtitleEl = document.getElementById('scene-subtitle');
+    this.speakerAvatar = document.getElementById('speaker-avatar');
+    this.speakerName = document.getElementById('speaker-name');
+    this.speakerRole = document.getElementById('speaker-role');
+    this.sceneCounter = document.getElementById('scene-counter-display');
+    this.progressBar = document.getElementById('scene-progress-fill');
+    this.kineticContainer = document.getElementById('kinetic-caption-track');
+    this.playPauseBtn = document.getElementById('btn-play-pause');
+    this.playPauseIcon = document.getElementById('play-pause-icon');
+    this.autoplayDot = document.getElementById('autoplay-dot');
+    this.autoplayText = document.getElementById('autoplay-status-text');
+    this.timelineDotsContainer = document.getElementById('timeline-dots-container');
+
+    // Scrubber & Step Navigation Cache (45-55 micro-escenas)
+    this.scrubberNav = document.getElementById('hud-scrubber-nav');
+    this.hudStepCurr = document.getElementById('hud-step-curr');
+    this.hudStepTotal = document.getElementById('hud-step-total');
+    this.scrubberRailWrapper = document.getElementById('hud-scrubber-rail-wrapper');
+    this.scrubberRail = document.getElementById('hud-scrubber-rail');
+    this.scrubberFill = document.getElementById('hud-scrubber-fill');
+    this.scrubberThumb = document.getElementById('hud-scrubber-thumb');
+    this.scrubberTooltip = document.getElementById('hud-scrubber-tooltip');
+    this.isScrubbing = false;
+
+    this.init();
+  }
+
+  init() {
+    this.setupResponsiveScaling();
+    this.setupPaletteSystem();
+    this.setupScrubber();
+    this.renderTimelineDots();
+    this.bindKeyboardShortcuts();
+    this.bindMouseInactivity();
+    this.loadScene(0, false);
+  }
+
+  // --- DEFINICIÓN DE PALETAS CROMÁTICAS DE ALTA LEGIBILIDAD ---
+  static get PALETTES() {
+    return [
+      {
+        id: '0',
+        name: 'Retro Vintage',
+        subtitle: 'Petróleo & Terracota (Original)',
+        gradient: 'linear-gradient(135deg, #274C56 0%, #3E8E7E 50%, #D96C2C 100%)'
+      },
+      {
+        id: '1',
+        name: 'Tropical Sorbet',
+        subtitle: 'Pastel Retro / Turquesa & Frambuesa',
+        gradient: 'linear-gradient(135deg, #225159 0%, #57C7D0 50%, #CC75A7 100%)'
+      },
+      {
+        id: '2',
+        name: 'Matcha & Sakura',
+        subtitle: 'Spring Meadow / Matcha & Sakura',
+        gradient: 'linear-gradient(135deg, #1E3F2E 0%, #B7D687 50%, #F6BCDC 100%)'
+      },
+      {
+        id: '3',
+        name: 'Autumn Plum',
+        subtitle: 'Terracota a Ciruela Intenso',
+        gradient: 'linear-gradient(135deg, #250033 0%, #C66624 50%, #E18338 100%)'
+      },
+      {
+        id: '4',
+        name: 'Caramelo & Ámbar',
+        subtitle: 'Monocromático Tostado & Ocre',
+        gradient: 'linear-gradient(135deg, #765317 0%, #D1A259 50%, #E3BD81 100%)'
+      },
+      {
+        id: '5',
+        name: 'Swiss Editorial',
+        subtitle: 'Navy & Vermilion Suizo',
+        gradient: 'linear-gradient(135deg, #1A365D 0%, #D64527 50%, #2A6F5B 100%)'
+      }
+    ];
+  }
+
+  // --- SISTEMA DINÁMICO DE PALETAS (0 A 5) ---
+  setupPaletteSystem() {
+    this.palettes = MotionGraphicsPlayer.PALETTES;
+    this.currentPalette = '0';
+    this.paletteToastTimeout = null;
+
+    try {
+      const saved = localStorage.getItem('g14_active_palette') || localStorage.getItem('em_active_palette');
+      if (saved !== null && ['0','1','2','3','4','5'].includes(saved)) {
+        this.currentPalette = saved;
+      }
+    } catch (e) {}
+
+    // Cachear elementos de UI de paleta
+    this.palettePicker = document.getElementById('hud-palette-picker');
+    this.paletteNameDisplay = document.getElementById('palette-name-display');
+    this.paletteSwatchesStrip = document.getElementById('palette-swatches-strip');
+    this.paletteToast = document.getElementById('palette-toast');
+    this.paletteToastBadge = document.getElementById('palette-toast-badge');
+    this.paletteToastName = document.getElementById('palette-toast-name');
+
+    // Inicializar strip de botones con circulitos de muestra
+    this.renderPaletteSwatches();
+
+    // Vincular botón selector si existe
+    const cycleBtn = document.getElementById('btn-palette-cycle');
+    if (cycleBtn) {
+      cycleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.cyclePalette();
+      });
+    }
+
+    this.setPalette(this.currentPalette, false);
+  }
+
+  renderPaletteSwatches() {
+    if (!this.paletteSwatchesStrip) return;
+    this.paletteSwatchesStrip.innerHTML = '';
+
+    this.palettes.forEach(p => {
+      const btn = document.createElement('button');
+      btn.className = `palette-swatch-btn ${p.id === this.currentPalette ? 'active' : ''}`;
+      btn.setAttribute('data-palette', p.id);
+      btn.title = `Paleta ${p.id}: ${p.name} (${p.subtitle})`;
+      btn.innerHTML = `<span class="swatch-preview" style="background: ${p.gradient};"></span>`;
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.setPalette(p.id, true);
+      });
+      this.paletteSwatchesStrip.appendChild(btn);
+    });
+  }
+
+  setPalette(paletteId, showNotice = true) {
+    this.currentPalette = String(paletteId);
+    document.documentElement.setAttribute('data-palette', this.currentPalette);
+    if (document.body) {
+      document.body.setAttribute('data-palette', this.currentPalette);
+    }
+
+    try {
+      localStorage.setItem('g14_active_palette', this.currentPalette);
+      localStorage.setItem('em_active_palette', this.currentPalette);
+    } catch (e) {}
+
+    // Actualizar nombre visible en el HUD
+    const paletteInfo = this.palettes ? this.palettes.find(p => p.id === this.currentPalette) : null;
+    if (this.paletteNameDisplay && paletteInfo) {
+      this.paletteNameDisplay.textContent = paletteInfo.name;
+    }
+
+    // Actualizar botones swatch en el HUD
+    if (this.paletteSwatchesStrip) {
+      this.paletteSwatchesStrip.querySelectorAll('.palette-swatch-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-palette') === this.currentPalette);
+      });
+    }
+
+    // Actualizar otros botones de paleta si existiesen
+    document.querySelectorAll('.palette-pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-palette') === this.currentPalette);
+    });
+
+    // Mostrar aviso visual discreto tipo toast
+    if (showNotice && paletteInfo) {
+      this.showPaletteToast(paletteInfo);
+    }
+  }
+
+  cyclePalette() {
+    const currentNum = parseInt(this.currentPalette || '0', 10);
+    const next = (currentNum + 1) % (this.palettes ? this.palettes.length : 6);
+    this.setPalette(String(next), true);
+  }
+
+  showPaletteToast(paletteInfo) {
+    if (!this.paletteToast) {
+      this.paletteToast = document.getElementById('palette-toast');
+      this.paletteToastBadge = document.getElementById('palette-toast-badge');
+      this.paletteToastName = document.getElementById('palette-toast-name');
+    }
+    if (!this.paletteToast) return;
+
+    if (this.paletteToastBadge) {
+      this.paletteToastBadge.textContent = `PALETA ${paletteInfo.id}`;
+    }
+    if (this.paletteToastName) {
+      this.paletteToastName.textContent = paletteInfo.name;
+    }
+
+    this.paletteToast.classList.add('show');
+    clearTimeout(this.paletteToastTimeout);
+    this.paletteToastTimeout = setTimeout(() => {
+      if (this.paletteToast) {
+        this.paletteToast.classList.remove('show');
+      }
+    }, 1500);
+  }
+
+  // --- ESCALADO RESPONSIVO PROPORCIONAL 16:9 NATIVO ---
+  setupResponsiveScaling() {
+    const handleResize = () => {
+      if (!this.stage) return;
+      const targetW = 1920;
+      const targetH = 1080;
+      const winW = window.innerWidth;
+      const winH = window.innerHeight;
+      const scale = Math.min(winW / targetW, winH / targetH);
+      this.stage.style.transform = `scale(${scale})`;
+    };
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    handleResize();
+  }
+
+  // --- NAVEGADOR DE PASOS Y MINI-TRACK SCRUBBER (45-55 ESCENAS) ---
+  setupScrubber() {
+    // Si no está en el DOM, crearlo automáticamente para retrocompatibilidad total
+    if (!this.scrubberNav) {
+      const pill = document.querySelector('.timeline-control-pill');
+      if (pill) {
+        const navDiv = document.createElement('div');
+        navDiv.className = 'hud-scrubber-nav';
+        navDiv.id = 'hud-scrubber-nav';
+        navDiv.innerHTML = `
+          <div class="hud-step-indicator" id="hud-step-indicator" title="Escena Actual / Total">
+            <span class="hud-step-curr" id="hud-step-curr">01</span>
+            <span class="hud-step-sep">/</span>
+            <span class="hud-step-total" id="hud-step-total">${String(this.scenes.length).padStart(2, '0')}</span>
+          </div>
+          <div class="hud-scrubber-rail-wrapper" id="hud-scrubber-rail-wrapper" title="Arrastra o haz clic para saltar entre escenas">
+            <div class="hud-scrubber-rail" id="hud-scrubber-rail">
+              <div class="hud-scrubber-fill" id="hud-scrubber-fill"></div>
+              <div class="hud-scrubber-thumb" id="hud-scrubber-thumb"></div>
+            </div>
+            <div class="hud-scrubber-tooltip" id="hud-scrubber-tooltip">Escena 01</div>
+          </div>
+        `;
+        if (this.timelineDotsContainer) {
+          pill.insertBefore(navDiv, this.timelineDotsContainer);
+          this.timelineDotsContainer.style.display = 'none';
+        } else {
+          pill.appendChild(navDiv);
+        }
+        this.scrubberNav = navDiv;
+        this.hudStepCurr = document.getElementById('hud-step-curr');
+        this.hudStepTotal = document.getElementById('hud-step-total');
+        this.scrubberRailWrapper = document.getElementById('hud-scrubber-rail-wrapper');
+        this.scrubberRail = document.getElementById('hud-scrubber-rail');
+        this.scrubberFill = document.getElementById('hud-scrubber-fill');
+        this.scrubberThumb = document.getElementById('hud-scrubber-thumb');
+        this.scrubberTooltip = document.getElementById('hud-scrubber-tooltip');
+      }
+    }
+
+    if (!this.scrubberRailWrapper) return;
+
+    const calculateTarget = (e) => {
+      const rect = this.scrubberRail.getBoundingClientRect();
+      const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      const targetIdx = Math.round(ratio * (this.scenes.length - 1));
+      return { ratio, targetIdx };
+    };
+
+    const updateTooltip = (ratio, targetIdx) => {
+      if (!this.scrubberTooltip) return;
+      const scene = this.scenes[targetIdx];
+      if (scene) {
+        const num = String(targetIdx + 1).padStart(2, '0');
+        const shortTitle = scene.title ? (scene.title.length > 26 ? scene.title.substring(0, 24) + '...' : scene.title) : `Escena ${num}`;
+        this.scrubberTooltip.textContent = `${num} • ${shortTitle}`;
+        this.scrubberTooltip.style.left = `${ratio * 100}%`;
+      }
+    };
+
+    this.scrubberRailWrapper.addEventListener('click', (e) => {
+      const { targetIdx } = calculateTarget(e);
+      if (targetIdx !== this.currentIndex) {
+        this.loadScene(targetIdx, true);
+      }
+    });
+
+    this.scrubberRailWrapper.addEventListener('mousedown', (e) => {
+      this.isScrubbing = true;
+      const { targetIdx } = calculateTarget(e);
+      if (targetIdx !== this.currentIndex) {
+        this.loadScene(targetIdx, true);
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (this.isScrubbing && this.scrubberRail) {
+        const { ratio, targetIdx } = calculateTarget(e);
+        updateTooltip(ratio, targetIdx);
+        if (targetIdx !== this.currentIndex) {
+          this.loadScene(targetIdx, false);
+        }
+      } else if (this.scrubberRailWrapper && this.scrubberRailWrapper.matches(':hover') && this.scrubberRail) {
+        const { ratio, targetIdx } = calculateTarget(e);
+        updateTooltip(ratio, targetIdx);
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (this.isScrubbing) {
+        this.isScrubbing = false;
+      }
+    });
+  }
+
+  // --- RENDERIZADO DE PUNTOS DE LA LÍNEA TEMPORAL (OPCIONAL / COMPATIBLE) ---
+  renderTimelineDots() {
+    if (!this.timelineDotsContainer) return;
+    // Si hay más de 20 escenas, ocultar dots tradicionales y priorizar el scrubber track
+    if (this.scenes.length > 20) {
+      this.timelineDotsContainer.style.display = 'none';
+      return;
+    }
+    this.timelineDotsContainer.innerHTML = '';
+    this.scenes.forEach((_, idx) => {
+      const dot = document.createElement('div');
+      dot.className = `timeline-dot ${idx === this.currentIndex ? 'active' : ''}`;
+      dot.title = `Ir a Escena ${idx + 1}`;
+      dot.addEventListener('click', () => {
+        if (this.currentIndex !== idx) this.loadScene(idx, true);
+      });
+      this.timelineDotsContainer.appendChild(dot);
+    });
+  }
+
+  // --- ACTUALIZACIÓN SINCRONIZADA DEL HUD TRACK Y SCRUBBER ---
+  updateHUDTrack() {
+    const total = this.scenes.length;
+    const current = this.currentIndex;
+    const currentFormatted = String(current + 1).padStart(2, '0');
+    const totalFormatted = String(total).padStart(2, '0');
+
+    // Actualizar contador del Top HUD
+    if (this.sceneCounter) {
+      this.sceneCounter.textContent = `${currentFormatted} / ${totalFormatted}`;
+    }
+
+    // Actualizar indicador de paso del Bottom HUD
+    if (this.hudStepCurr) this.hudStepCurr.textContent = currentFormatted;
+    if (this.hudStepTotal) this.hudStepTotal.textContent = totalFormatted;
+
+    // Actualizar scrubber rail fill y thumb
+    const progressPct = (total > 1) ? (current / (total - 1)) * 100 : 100;
+    if (this.scrubberFill) this.scrubberFill.style.width = `${progressPct}%`;
+    if (this.scrubberThumb) this.scrubberThumb.style.left = `${progressPct}%`;
+
+    // Actualizar dots tradicionales si estuviesen visibles
+    if (this.timelineDotsContainer && this.timelineDotsContainer.style.display !== 'none') {
+      const dots = this.timelineDotsContainer.querySelectorAll('.timeline-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === current);
+      });
+    }
+  }
+
+  updateTimelineDots() {
+    this.updateHUDTrack();
+  }
+
+  // --- CARGA Y TRANSICIÓN LIMPIA DE ESCENAS (PAUSA DE ~1S CON SOLO EL FONDO BLANCO LIMPIO) ---
+  loadScene(index, withFade = true) {
+    if (this.isTransitioning) return;
+    if (index < 0 || index >= this.scenes.length) return;
+
+    if (withFade) {
+      this.isTransitioning = true;
+
+      // 1. Desvanecer suavemente hacia el fondo blanco puro limpio (~300ms)
+      if (this.curtain) {
+        this.curtain.classList.add('active');
+      }
+
+      setTimeout(() => {
+        // 2. Limpiar el contenido anterior para dejar visible ÚNICAMENTE el fondo limpio
+        if (this.sceneContent) this.sceneContent.innerHTML = '';
+        if (this.titleEl) this.titleEl.textContent = '';
+        if (this.subtitleEl) this.subtitleEl.textContent = '';
+        if (this.categoryEl) this.categoryEl.textContent = '';
+
+        // Mantener la pantalla limpia con solo el fondo durante ~850-900ms ("un segundo")
+        setTimeout(() => {
+          // 3. Cargar la nueva escena y sincronizar HUD
+          this.applySceneData(index);
+          this.resetSceneTimer();
+          this.updateHUDTrack();
+
+          // 4. Iniciar transición limpia hacia la nueva diapo con animación suave
+          requestAnimationFrame(() => {
+            if (this.curtain) {
+              this.curtain.classList.remove('active');
+            }
+
+            // Permitir que la animación suave de entrada se complete
+            setTimeout(() => {
+              this.isTransitioning = false;
+            }, 450);
+          });
+        }, 850);
+      }, 300);
+    } else {
+      this.applySceneData(index);
+      this.resetSceneTimer();
+      this.updateHUDTrack();
+    }
+  }
+
+  applySceneData(index) {
+    this.currentIndex = index;
+    const scene = this.scenes[index];
+
+    // Ocultar permanentemente la etiqueta de BLOQUE X NOMBRE
+    if (this.categoryEl) {
+      this.categoryEl.textContent = '';
+      this.categoryEl.style.display = 'none';
+      if (this.categoryEl.parentElement) {
+        this.categoryEl.parentElement.style.display = 'none';
+      }
+    }
+
+    // Reactivar animación suave en la cabecera de la diapo
+    const headerEl = document.querySelector('.scene-header');
+    if (headerEl) {
+      headerEl.classList.remove('stagger-in');
+      void headerEl.offsetWidth; // Forzar reflow para reiniciar keyframe
+      headerEl.classList.add('stagger-in');
+    }
+
+    if (this.titleEl) {
+      this.titleEl.textContent = scene.title || '';
+      this.titleEl.className = `scene-title-large ${scene.titleGradient || 'text-gradient-indigo'}`;
+    }
+    if (this.subtitleEl) {
+      this.subtitleEl.textContent = scene.subtitle || '';
+    }
+
+    // Actualizar orador
+    if (this.speakerAvatar) this.speakerAvatar.textContent = scene.speaker ? scene.speaker.initials : 'G14';
+    if (this.speakerName) this.speakerName.textContent = scene.speaker ? scene.speaker.name : '';
+    if (this.speakerRole) this.speakerRole.textContent = scene.speaker ? scene.speaker.role : '';
+
+    // Renderizar cuerpo de la escena (flotante directamente sobre el fondo limpio)
+    if (this.sceneContent) {
+      this.sceneContent.innerHTML = scene.renderContent ? scene.renderContent() : '';
+    }
+
+    // Disparar animaciones numéricas y barras de datos con cadencia suave
+    setTimeout(() => {
+      this.animateCounters();
+      this.animateBars();
+    }, 80);
+  }
+
+  // --- ANIMACIÓN DE CONTADORES NUMÉRICOS INCREMENTALES (SNAPPY 650ms) ---
+  animateCounters() {
+    if (!this.sceneContent) return;
+    const counterElements = this.sceneContent.querySelectorAll('.counter-val');
+    counterElements.forEach(el => {
+      const rawTarget = el.dataset.target;
+      const target = parseFloat(rawTarget);
+      if (isNaN(target)) return;
+
+      const decimals = rawTarget.includes('.') ? (rawTarget.split('.')[1] || '').length : 0;
+      const duration = 650; // ms - dinámico y ágil para micro-escenas
+      const startTime = performance.now();
+      const isNegative = target < 0;
+      const absTarget = Math.abs(target);
+
+      const updateCount = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentVal = easeProgress * absTarget;
+
+        el.textContent = (isNegative ? '-' : '') + (decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal));
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = (isNegative ? '-' : '') + (decimals > 0 ? absTarget.toFixed(decimals) : absTarget);
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    });
+  }
+
+  // --- ANIMACIÓN DE BARRAS DE DATOS EN GRÁFICAS ---
+  animateBars() {
+    if (!this.sceneContent) return;
+    const bars = this.sceneContent.querySelectorAll('.animated-bar, .pure-chart-fill, .micro-chart-bar-fill');
+    bars.forEach(bar => {
+      const targetWidth = bar.style.getPropertyValue('--target-width') || bar.getAttribute('data-width') || '100%';
+      bar.style.width = '0%';
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          bar.style.width = targetWidth;
+        }, 30);
+      });
+    });
+  }
+
+  // --- RELOJ Y PROGRESO DE AUTOPLAY (SIN BARRA DE PROGRESO NI SUBTÍTULOS) ---
+  resetSceneTimer() {
+    this.sceneElapsedMs = 0;
+    if (this.progressBar) {
+      this.progressBar.style.width = '0%';
+    }
+  }
+
+  togglePlayPause() {
+    this.isPlaying = !this.isPlaying;
+    if (this.isPlaying) {
+      this.startPlayback();
+    } else {
+      this.pausePlayback();
+    }
+  }
+
+  startPlayback() {
+    this.isPlaying = true;
+    if (this.playPauseIcon) this.playPauseIcon.textContent = '⏸';
+    if (this.autoplayDot) this.autoplayDot.classList.remove('paused');
+    if (this.autoplayText) this.autoplayText.textContent = 'AUTOPLAY ACTIVO';
+
+    clearInterval(this.timer);
+    this.timer = setInterval(() => {
+      if (this.isTransitioning) return;
+      const scene = this.scenes[this.currentIndex];
+      const durationMs = (scene.duration || 15) * 1000;
+
+      this.sceneElapsedMs += this.tickInterval;
+
+      // Si existe algún elemento de barra residual en el DOM, sincronizarlo sin errores
+      if (this.progressBar) {
+        const progressRatio = Math.min(this.sceneElapsedMs / durationMs, 1);
+        this.progressBar.style.width = `${progressRatio * 100}%`;
+      }
+
+      if (this.sceneElapsedMs >= durationMs) {
+        if (this.currentIndex < this.scenes.length - 1) {
+          this.loadScene(this.currentIndex + 1, true);
+        } else {
+          // Última escena completada
+          this.pausePlayback();
+        }
+      }
+    }, this.tickInterval);
+  }
+
+  pausePlayback() {
+    this.isPlaying = false;
+    clearInterval(this.timer);
+    if (this.playPauseIcon) this.playPauseIcon.textContent = '▶';
+    if (this.autoplayDot) this.autoplayDot.classList.add('paused');
+    if (this.autoplayText) this.autoplayText.textContent = 'PAUSADO';
+  }
+
+  nextScene() {
+    if (this.currentIndex < this.scenes.length - 1) {
+      this.loadScene(this.currentIndex + 1, true);
+    }
+  }
+
+  prevScene() {
+    if (this.currentIndex > 0) {
+      this.loadScene(this.currentIndex - 1, true);
+    }
+  }
+
+  // --- MODO GRABACIÓN LIMPIA (ZERO UI - TECLA H) ---
+  toggleCleanRecordingMode() {
+    this.isRecordingClean = !this.isRecordingClean;
+    if (this.stage) {
+      this.stage.classList.toggle('recording-clean-mode', this.isRecordingClean);
+    }
+    if (this.viewport) {
+      this.viewport.classList.toggle('recording-clean-mode', this.isRecordingClean);
+    }
+  }
+
+  // --- FULLSCREEN NATIVO (16:9 - TECLA F) ---
+  toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      if (this.viewport && this.viewport.requestFullscreen) {
+        this.viewport.requestFullscreen();
+      } else if (this.viewport && this.viewport.webkitRequestFullscreen) {
+        this.viewport.webkitRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+
+  // --- CONTROL DE INACTIVIDAD DEL RATÓN ---
+  bindMouseInactivity() {
+    window.addEventListener('mousemove', () => {
+      if (this.viewport) this.viewport.style.cursor = 'default';
+      clearTimeout(this.cursorTimeout);
+      this.cursorTimeout = setTimeout(() => {
+        if (this.isPlaying || this.isRecordingClean) {
+          if (this.viewport) this.viewport.style.cursor = 'none';
+        }
+      }, 2500);
+    });
+  }
+
+  // --- ATAJOS DE TECLADO COMPLETOS PARA MICRO-ESCENAS ---
+  bindKeyboardShortcuts() {
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+
+      switch (e.code) {
+        case 'Space':
+        case 'KeyK':
+          e.preventDefault();
+          this.togglePlayPause();
+          break;
+        case 'ArrowRight':
+        case 'KeyL':
+          e.preventDefault();
+          this.nextScene();
+          break;
+        case 'ArrowLeft':
+        case 'KeyJ':
+          e.preventDefault();
+          this.prevScene();
+          break;
+        case 'Home':
+          e.preventDefault();
+          this.loadScene(0, true);
+          break;
+        case 'End':
+          e.preventDefault();
+          this.loadScene(this.scenes.length - 1, true);
+          break;
+        case 'PageUp':
+          e.preventDefault();
+          this.loadScene(Math.max(0, this.currentIndex - 5), true);
+          break;
+        case 'PageDown':
+          e.preventDefault();
+          this.loadScene(Math.min(this.scenes.length - 1, this.currentIndex + 5), true);
+          break;
+        case 'KeyF':
+          e.preventDefault();
+          this.toggleFullscreen();
+          break;
+        case 'KeyH':
+          e.preventDefault();
+          this.toggleCleanRecordingMode();
+          break;
+        case 'KeyP':
+          e.preventDefault();
+          this.cyclePalette();
+          break;
+        case 'Digit1': case 'Digit2': case 'Digit3': case 'Digit4':
+        case 'Digit5': case 'Digit6': case 'Digit7': case 'Digit8':
+        case 'Digit9': {
+          const sceneNum = parseInt(e.key, 10) - 1;
+          if (sceneNum < this.scenes.length) {
+            this.loadScene(sceneNum, true);
+          }
+          break;
+        }
+        case 'Digit0': {
+          if (this.scenes.length >= 10) {
+            this.loadScene(9, true);
+          }
+          break;
+        }
+      }
+    });
+  }
+}
+
+// Inicialización automática tras cargar el DOM
+window.addEventListener('DOMContentLoaded', () => {
+  if (typeof SCENES_DATA !== 'undefined') {
+    window.playerInstance = new MotionGraphicsPlayer(SCENES_DATA);
+  }
+});
+
+  </script>
+</body>
+</html>
