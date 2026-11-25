@@ -57,18 +57,20 @@ video-player/
 
 ---
 
-## 4. Guion de las 10 Escenas Preconfiguradas
+## 4. Estructura de las 50 Micro-Escenas y Reparto por Ponentes
 
-1. **Escena 1 (Portada Cinematográfica):** Presentación del Grupo 14, contextualización del informe OCDE (2026) y reparto de los 3 bloques.
-2. **Escena 2 (Bloque 1 - Manuel Romero):** Magnitud macroeconómica (13% del PIB en la OCDE, $11 billones anuales, 62,5% subnacional).
-3. **Escena 3 (Bloque 1 - Manuel Romero):** El choque de paradigmas (Eficiencia GATT/OMC vs. Seguridad Estratégica neomercantilista).
-4. **Escena 4 (Bloque 1 - Manuel Romero):** Medidas Directas (*Buy American* 65%➔75%, Plan México) vs. Medidas Indirectas (Compras verdes, Net-Zero Industry Act).
-5. **Escena 5 (Bloque 2 - Jorge Cañete):** Cadenas Globales de Valor (70% bienes intermedios, paradoja del contenido local y trade-off institucional de Bosio et al.).
-6. **Escena 6 (Bloque 2 - Jorge Cañete):** La falacia del *reshoring* (Modelizaciones de Arriola et al.: caída del 18% en comercio y -5% del PIB; falsa resiliencia autárquica).
-7. **Escena 7 (Bloque 2 - Jorge Cañete):** Distorsiones por subsidios extranjeros (China EV $231.000M, CRRC $1.000M/año con bajas temerarias del 25%).
-8. **Escena 8 (Bloque 3 - Aleksandr Globa):** Gobernanza multilateral y reciprocidad (Límites del GPA 48 miembros, IPI de la UE 2022/1031 y Sentencia Kolin 2024).
-9. **Escena 9 (Bloque 3 - Aleksandr Globa):** Diagnóstico empírico y recomendaciones (Solo 23% mide impacto económico, 98% portales e-procurement).
-10. **Escena 10 (Conclusión Conjunta):** Mensaje final del Grupo 14 (Apertura recíproca, digitalización y diversificación frente al cierre comercial).
+El motor cuenta con **50 micro-escenas atómicas** (4 a 8 segundos cada una) diseñadas para proyectarse en B-roll y sincronizarse con el guion maestro de 15 minutos en DaVinci Resolve ([`GUION_Y_ESCALETA_VIDEO_DAVINCI.md`](file:///home/manel/UPV/INF-ADE/2-curso/EM/GUION_Y_ESCALETA_VIDEO_DAVINCI.md)):
+
+* **Apertura Institucional (G14: Manuel, Jorge y Aleksandr • Escenas 1 a 4):**
+  * Título oficial OCDE (2026), demanda agregada global ($11–13 billones), peso en el PIB (12,7% en 2023) y giro neomercantilista.
+* **Bloque 1: Manuel Romero Álvarez (Escenas 5 a 19 • Macroeconomía y Medidas Directas):**
+  * Descentralización territorial (62,5% subnacional), peso del gasto sanitario (>30%), colisión de paradigmas (eficiencia vs seguridad), Buy American Act en EE.UU. (65%➔75% en 2029), Ley BABA (100% acero), Plan México 2025 (65% local + 15% precio), Directiva 2014/25 art. 85 (>50%) y bonificaciones (Ontario BOBI 10% y Compre Argentino 8-15%).
+* **Bloque 2: Jorge Cañete Morató (Escenas 20 a 35 • Subsidios, Sanidad y Cadenas Globales):**
+  * Subsidios de China en VE ($230.900M) y ferrocarril CRRC (>$1.000M/año con contrato en Rumanía de 957M€), mito ecológico (invernaderos vs transporte solar eficiente), 299 fármacos esenciales de la EMA, amoxicilina 65% de China, Net-Zero Industry Act (50%), Compra Pública de Innovación, y simulación de Arriola et al. (-18% comercio mundial, -5% PIB global, Canadá -13,1%, UK -12,2%).
+* **Bloque 3: Aleksandr Globa (Escenas 36 a 47 • Marco Legal, Reciprocidad y Gobernanza):**
+  * Coste del friend-shoring (-0,6% a -4,6% PIB), sobrecostes por cuotas locales (+15% a +30%), régimen del GPA (22 partes / 49 miembros vs ~75% fuera), Instrumento IPI de la UE (Reglamento 2022/1031 y veto a productos médicos chinos con Reg. 2025/1197), Sentencia Kolin del TJUE (C-652/22 de 22 de octubre de 2024), déficit de evaluación (23% económico y 10% ambiental) e implantación de e-procurement (98% de países OCDE).
+* **Cierre y Síntesis Final (G14: Manuel, Jorge y Aleksandr • Escenas 48 a 50):**
+  * Democratización para PYMEs, gran dilema de política comercial y conclusiones conjuntas para el tribunal evaluador.
 
 ---
 

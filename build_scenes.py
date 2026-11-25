@@ -9,10 +9,10 @@ import json
 # Paleta: #F6E2B3, #E7A84E, #D96C2C, #3E8E7E, #274C56 sobre fondo blanco.
 # ==============================================================================
 
-G14 = {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"}
-MR = {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"}
-JC = {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"}
-AG = {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"}
+G14 = {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"}
+MR = {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"}
+JC = {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"}
+AG = {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"}
 
 scenes = [
     # -------------------------------------------------------------
@@ -50,7 +50,7 @@ scenes = [
         "category": "DEMANDA AGREGADA",
         "title": "Demanda Agregada Mundial",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Volumen anual del mercado de contratación pública en el mundo",
+        "subtitle": "Gasto anual mundial estimado entre 11 y 13 billones de dólares",
         "speaker": G14,
         "duration": 6,
         "content": """
@@ -60,9 +60,9 @@ scenes = [
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">$</span>
             <span class="micro-number-val counter-val" data-target="11">0</span>
-            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-secondary);">Billones</span>
+            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-secondary);">–13 Billones</span>
           </div>
-          <p class="micro-number-label">Gasto público anual en compras gubernamentales</p>
+          <p class="micro-number-label">Gasto público anual en compras gubernamentales en todo el mundo</p>
         </div>
       </div>
         """,
@@ -75,7 +75,7 @@ scenes = [
         "category": "IMPACTO MACROECONÓMICO",
         "title": "Impacto en las Economías Avanzadas",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Media oficial en los países miembros de la OCDE",
+        "subtitle": "12,7% del PIB en 2023 (13% de media) y un tercio del gasto público",
         "speaker": G14,
         "duration": 6,
         "content": """
@@ -83,18 +83,18 @@ scenes = [
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="13">0</span>
+              <span class="micro-number-val counter-val" data-target="12.7">0</span>
               <span class="micro-number-unit">%</span>
             </div>
-            <p class="micro-number-label">Del PIB de la OCDE</p>
+            <p class="micro-number-label">Del PIB de la OCDE (2023; media 13%)</p>
           </div>
           <div class="micro-vs-pill">VS</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="29">0</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="33">0</span>
               <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Del Gasto Público Total</p>
+            <p class="micro-number-label">Del Gasto Público Consolidado (≈1/3)</p>
           </div>
         </div>
       </div>
@@ -267,15 +267,15 @@ scenes = [
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Disrupciones de Suministro</span>
-          <h2 class="micro-type-d-statement" style="font-size: 58px; margin: 20px 0;">
+          <h2 class="micro-type-d-statement" style="font-size: 54px; margin: 20px 0;">
             <span style="color: var(--color-primary);">COVID-19</span>
             <span class="micro-type-d-arrow">➔</span>
-            <span class="accent-highlight">Guerra Ucrania</span>
+            <span class="accent-highlight">Crisis Ucrania</span>
             <span class="micro-type-d-arrow">➔</span>
-            <span class="accent-sage">Taiwán</span>
+            <span class="accent-sage">Tensiones China</span>
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Riesgo extremo de desabastecimiento en insumos críticos
+            Riesgo extremo de desabastecimiento en insumos y reactivación neomercantilista
           </div>
         </div>
       </div>
@@ -525,57 +525,57 @@ scenes = [
         "subtitles": []
     },
 
-    # 18. AUSTRALIA OCCIDENTAL RECARGO 20% (Tipo A)
+    # 18. DIRECTIVA UE 2014/25 ART. 85 (>50%) (Tipo A)
     {
         "id": "scene-18",
-        "category": "ARANCELES Y RECARGOS",
-        "title": "Recargo a Importaciones",
+        "category": "DIRECTIVA UE 2014/25",
+        "title": "Excepción del Artículo 85",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Políticas de penalización a bienes foráneos en Oceanía",
+        "subtitle": "Sectores de agua, energía, transportes y servicios postales",
         "speaker": MR,
         "duration": 6,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Australia Occidental</span>
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Directiva 2014/25/UE • Art. 85</span>
           <div class="micro-number-hero">
-            <span class="micro-number-val counter-val" data-target="20">0</span>
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">&gt;</span>
+            <span class="micro-number-val counter-val" data-target="50">0</span>
             <span class="micro-number-unit">%</span>
           </div>
-          <p class="micro-number-label">Recargo evaluativo sobre bienes importados en licitaciones</p>
+          <p class="micro-number-label">Umbral de productos de terceros países que permite rechazar la oferta</p>
         </div>
       </div>
         """,
         "subtitles": []
     },
 
-    # 19. PREFERENCIA EUROPEA VS MERCADO ABIERTO (Tipo E)
+    # 19. PREFERENCIAS DE PRECIO: ONTARIO BOBI Y ARGENTINA (Tipo C)
     {
         "id": "scene-19",
-        "category": "DEBATE EN LA UE",
-        "title": "El Debate en la Unión Europea",
+        "category": "PREFERENCIAS DE PRECIO",
+        "title": "Bonificaciones de Precio Local",
         "titleGradient": "text-gradient-amber",
-        "subtitle": "Tensión política interna en el mercado comunitario",
+        "subtitle": "Ontario BOBI (Canadá) y Ley Compre Argentino (Ley 27.437)",
         "speaker": MR,
         "duration": 7,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
-        <div class="micro-type-e-grid">
-          <div class="micro-type-e-card theme-terracotta">
-            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Francia • Informe Draghi</span>
-            <h3 class="micro-type-e-title">Preferencia Europea</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Buy European prioritario</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Subsidio a campeones industriales</div>
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="10">0</span>
+              <span class="micro-number-unit">%</span>
             </div>
+            <p class="micro-number-label">Ontario BOBI (Canadá): Ventaja a firmas locales</p>
           </div>
-          <div class="micro-type-e-card theme-sage">
-            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Finlandia • Nórdicos</span>
-            <h3 class="micro-type-e-title">Mercado Concurrente</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Alerta formal ante el sobrecoste fiscal</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Protección de la libre concurrencia</div>
+          <div class="micro-vs-pill">&amp;</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="15">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
+            <p class="micro-number-label">Argentina Ley 27.437: 8% general y hasta 15% PYMEs</p>
           </div>
         </div>
       </div>
@@ -592,7 +592,7 @@ scenes = [
         "category": "SUBSIDIOS ESTATALES",
         "title": "Subsidios Estatales en China",
         "titleGradient": "text-gradient-rose",
-        "subtitle": "Apoyo público masivo a la cadena de automoción (2009-2023)",
+        "subtitle": "CSIS (OCDE): Subsidios públicos a vehículos eléctricos (2009-2023)",
         "speaker": JC,
         "duration": 6,
         "content": """
@@ -601,10 +601,10 @@ scenes = [
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Distorsión Global de Precios</span>
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">$</span>
-            <span class="micro-number-val accent-terracotta counter-val" data-target="231">0</span>
+            <span class="micro-number-val accent-terracotta counter-val" data-target="230.9">0</span>
             <span class="micro-number-unit" style="font-size: 70px; color: var(--color-accent-1);">Mil M</span>
           </div>
-          <p class="micro-number-label">Subsidios acumulados de China a vehículos eléctricos</p>
+          <p class="micro-number-label">230.900 millones $ a fabricantes chinos (CSIS / OCDE; 45.000 M$ en 2023)</p>
         </div>
       </div>
         """,
@@ -617,32 +617,32 @@ scenes = [
         "category": "SUBSIDIOS FERROVIARIOS",
         "title": "El Gigante Ferroviario CRRC",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Ayudas directas permanentes de la administración china",
+        "subtitle": "Base MAGIC OCDE (2020-2024): Subsidios masivos al sector ferroviario",
         "speaker": JC,
         "duration": 6,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Sector Ferroviario</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Sector Ferroviario • Base MAGIC OCDE</span>
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">&gt;$</span>
             <span class="micro-number-val counter-val" data-target="1000">0</span>
             <span class="micro-number-unit" style="font-size: 60px; color: var(--color-secondary);">M / año</span>
           </div>
-          <p class="micro-number-label">Subvenciones anuales a CRRC para ofertar en el exterior</p>
+          <p class="micro-number-label">Subvenciones anuales a fabricantes chinos como CRRC para licitar en el exterior</p>
         </div>
       </div>
         """,
         "subtitles": []
     },
 
-    # 22. PRECIOS PREDATORIOS (-25%) (Tipo C)
+    # 22. CASO CRRC EN RUMANÍA (957 M€ / 80% PRECIO) (Tipo C)
     {
         "id": "scene-22",
         "category": "DISTORSIÓN DE PRECIOS",
-        "title": "Precios Predatorios en Europa",
+        "title": "Caso CRRC en Rumanía (2019)",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Distorsión de licitaciones públicas por empresas subsidiadas",
+        "subtitle": "Impacto real de los subsidios en concursos públicos de la UE",
         "speaker": JC,
         "duration": 6,
         "content": """
@@ -650,16 +650,18 @@ scenes = [
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="100">0</span>
+              <span class="micro-number-val counter-val" data-target="957">0</span>
+              <span class="micro-number-unit">M€</span>
             </div>
-            <p class="micro-number-label">Precio Coste Europeo (Alstom / Siemens)</p>
+            <p class="micro-number-label">Contrato Ferroviario Ganado por CRRC</p>
           </div>
-          <div class="micro-vs-pill">VS</div>
+          <div class="micro-vs-pill">CON</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="75">0</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="80">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Oferta Subsidiada (-25% Baja Temeraria)</p>
+            <p class="micro-number-label">Peso del Criterio Precio en la Puntuación</p>
           </div>
         </div>
       </div>
@@ -749,7 +751,7 @@ scenes = [
         "subtitles": []
     },
 
-    # 26. AMOXICILINA 80% CHINA (Tipo D)
+    # 26. AMOXICILINA 65% CHINA (Tipo D)
     {
         "id": "scene-26",
         "category": "CADENAS CRÍTICAS",
@@ -762,11 +764,11 @@ scenes = [
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Principio Activo Esencial</span>
-          <h2 class="micro-type-d-statement" style="font-size: 64px; margin: 20px 0;">
-            Amoxicilina: <span class="accent-highlight">80%</span> Depende de China
+          <h2 class="micro-type-d-statement" style="font-size: 58px; margin: 20px 0;">
+            Amoxicilina: <span class="accent-highlight">65%</span> de China
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Riesgo inminente de colapso hospitalario ante shocks geopolíticos
+            Hasta el 80% en otros fármacos críticos (Agencia Europea de Medicamentos)
           </div>
         </div>
       </div>
@@ -798,13 +800,13 @@ scenes = [
         "subtitles": []
     },
 
-    # 28. COMPRA PÚBLICA DE INNOVACIÓN (Tipo C)
+    # 28. COMPRA PÚBLICA DE INNOVACIÓN Y PATENTES (Tipo C)
     {
         "id": "scene-28",
         "category": "INNOVACIÓN PÚBLICA",
-        "title": "Compra Pública de Innovación",
+        "title": "Patentes y Exportación (Aghion et al.)",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Transformación industrial documentada por la OCDE",
+        "subtitle": "Estudio en Francia (1995-2012) citado en el informe de la OCDE",
         "speaker": JC,
         "duration": 6,
         "content": """
@@ -812,18 +814,17 @@ scenes = [
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="94">0</span>
-              <span class="micro-number-unit">%</span>
-            </div>
-            <p class="micro-number-label">Países OCDE usan compra de innovación</p>
-          </div>
-          <div class="micro-vs-pill">➔</div>
-          <div class="micro-contrast-box right">
-            <div class="micro-number-hero">
               <span class="micro-number-val accent-sage counter-val" data-target="95">0</span>
               <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
             </div>
-            <p class="micro-number-label">Adjudicatarias se vuelven exportadoras regulares</p>
+            <p class="micro-number-label">Empresas con patentes que exportan (Francia)</p>
+          </div>
+          <div class="micro-vs-pill">➔</div>
+          <div class="micro-contrast-box right" style="padding: 16px;">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1); margin-bottom: 8px;">Aviso OCDE</span>
+            <p style="font-size: 15px; line-height: 1.35; color: var(--color-ink-light); margin: 0;">
+              La compra pública fortalece la competitividad, pero su vínculo causal directo con exportaciones no está formalmente demostrado.
+            </p>
           </div>
         </div>
       </div>
@@ -1042,13 +1043,13 @@ scenes = [
     # -------------------------------------------------------------
     # PARTE 3: GOBERNANZA, RECIPROCIDAD Y DIGITALIZACIÓN (ESCENAS 36 - 47)
     # -------------------------------------------------------------
-    # 36. FRIEND-SHORING -4.6% (Tipo A)
+    # 36. FRIEND-SHORING -0.6% A -4.6% (Tipo A)
     {
         "id": "scene-36",
         "category": "FRIEND-SHORING",
         "title": "El Coste del Friend-Shoring",
         "titleGradient": "text-gradient-rose",
-        "subtitle": "Impacto de la división del mundo en bloques geopolíticos (Javorcik et al.)",
+        "subtitle": "Javorcik et al. (2023): Costes económicos de la fragmentación en bloques",
         "speaker": AG,
         "duration": 6,
         "content": """
@@ -1056,44 +1057,43 @@ scenes = [
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Fragmentación Geoeconómica</span>
           <div class="micro-number-hero">
-            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">-</span>
+            <span class="micro-number-unit" style="font-size: 60px; color: var(--color-accent-1);">-0,6% a</span>
             <span class="micro-number-val accent-terracotta counter-val" data-target="4.6">0</span>
             <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
           </div>
-          <p class="micro-number-label">Pérdida adicional de PIB global por fragmentación en bloques cerrados</p>
+          <p class="micro-number-label">Pérdida de PIB mundial a medio plazo por división en dos bloques comerciales</p>
         </div>
       </div>
         """,
         "subtitles": []
     },
 
-    # 37. BOSIO ET AL: CAPACIDAD INSTITUCIONAL (Tipo E)
+    # 37. SOBRECOSTE DE CUOTAS LOCALES (Tipo C)
     {
         "id": "scene-37",
-        "category": "TRAMPA BUROCRÁTICA",
-        "title": "La Trampa Burocrática",
+        "category": "TEORÍA DEL COMERCIO",
+        "title": "Sobrecoste del Proteccionismo",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Bosio, Djankov, Glaeser y Shleifer (AER 2022)",
+        "subtitle": "Ricardo, Heckscher-Ohlin y Modelo Gravitacional de Comercio",
         "speaker": AG,
         "duration": 7,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
-        <div class="micro-type-e-grid">
-          <div class="micro-type-e-card theme-sage">
-            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Capacidad Alta</span>
-            <h3 class="micro-type-e-title">Administración Eficaz</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Compra estratégica viable</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Control estricto de sobrecostes</div>
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">+</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="15">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">–30%</span>
             </div>
+            <p class="micro-number-label">Sobrecoste de contratación por cuotas de contenido local</p>
           </div>
-          <div class="micro-type-e-card theme-terracotta">
-            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Capacidad Baja</span>
-            <h3 class="micro-type-e-title">Burocracia Débil</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Disparo del gasto ineficiente</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Mayor riesgo de captura y corrupción</div>
-            </div>
+          <div class="micro-vs-pill">VS</div>
+          <div class="micro-contrast-box right" style="padding: 16px;">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary); margin-bottom: 8px;">Aranceles Encubiertos</span>
+            <p style="font-size: 15px; line-height: 1.35; color: var(--color-ink-light); margin: 0;">
+              Destrucción de ventajas comparativas (Ricardo) y desconexión tecnológica de la industria nacional.
+            </p>
           </div>
         </div>
       </div>
@@ -1101,36 +1101,38 @@ scenes = [
         "subtitles": []
     },
 
-    # 38. 187 PAÍSES ANALIZADOS (Tipo A)
+    # 38. PRIMER CASO IPI: DISPOSITIVOS MÉDICOS (Tipo D)
     {
         "id": "scene-38",
-        "category": "EVIDENCIA EMPÍRICA",
-        "title": "Evidencia Empírica Global",
-        "titleGradient": "text-gradient-indigo",
-        "subtitle": "Estudio publicado en American Economic Review",
+        "category": "PRIMER CASO IPI",
+        "title": "Reglamento de Ejecución UE 2025/1197",
+        "titleGradient": "text-gradient-rose",
+        "subtitle": "Primera aplicación sancionadora del IPI en la historia comunitaria",
         "speaker": AG,
         "duration": 6,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Muestra Cuantitativa Global</span>
-          <div class="micro-number-hero">
-            <span class="micro-number-val counter-val" data-target="187">0</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Primer Veto IPI • Junio 2025</span>
+          <h2 class="micro-type-d-statement" style="font-size: 52px; margin: 20px 0;">
+            Exclusión de <span class="accent-highlight">Material Médico Chino</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Tras investigación (abril 2024 - enero 2025) por falta de reciprocidad de Pekín
           </div>
-          <p class="micro-number-label">Países analizados empíricamente por Bosio et al.</p>
         </div>
       </div>
         """,
         "subtitles": []
     },
 
-    # 39. 48 GPA VS 142 FUERA (Tipo C)
+    # 39. GPA: 22 PARTES Y 49 MIEMBROS OMC (Tipo C)
     {
         "id": "scene-39",
         "category": "ACUERDO ACP / GPA",
         "title": "El Límite del GPA de la OMC",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "El club restringido del comercio multilateral en compras",
+        "subtitle": "Acuerdo plurilateral: 22 partes cubren a 49 miembros de la OMC",
         "speaker": AG,
         "duration": 6,
         "content": """
@@ -1138,16 +1140,18 @@ scenes = [
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="48">0</span>
+              <span class="micro-number-val counter-val" data-target="49">0</span>
             </div>
-            <p class="micro-number-label">Países Miembros del GPA</p>
+            <p class="micro-number-label">Miembros OMC Cubiertos (22 Partes)</p>
           </div>
           <div class="micro-vs-pill">VS</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="142">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">≈</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="75">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Países Fuera del Tratado Multilateral</p>
+            <p class="micro-number-label">Miembros de la OMC Fuera del GPA (~3/4)</p>
           </div>
         </div>
       </div>
@@ -1246,18 +1250,18 @@ scenes = [
         "category": "SENTENCIA KOLIN",
         "title": "Sentencia Kolin del TJUE",
         "titleGradient": "text-gradient-amber",
-        "subtitle": "Asunto C-652/22 (2024): Precedente legal de máximo calado",
+        "subtitle": "Asunto C-652/22 (22 de octubre de 2024): Precedente legal histórico",
         "speaker": AG,
         "duration": 6,
         "content": """
       <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Jurisprudencia Vinculante</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Jurisprudencia Vinculante TJUE (22/10/2024)</span>
           <h2 class="micro-type-d-statement" style="font-size: 60px; margin: 20px 0;">
             Sin Tratado <span class="micro-type-d-arrow">➔</span> <span class="accent-highlight">Sin Recurso Legal</span>
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Licitadores de países sin GPA carecen de tutela judicial para impugnar exclusiones
+            Licitadores de países sin GPA carecen de tutela judicial para invocar directivas de la UE
           </div>
         </div>
       </div>
@@ -1386,7 +1390,7 @@ scenes = [
         "category": "DIGITALIZACIÓN",
         "title": "Digitalización e-Procurement",
         "titleGradient": "text-gradient-indigo",
-        "subtitle": "Implantación de plataformas electrónicas únicas de licitación",
+        "subtitle": "39 de 40 países encuestados (98%) publican en portales centrales",
         "speaker": AG,
         "duration": 6,
         "content": """
@@ -1397,7 +1401,7 @@ scenes = [
             <span class="micro-number-val accent-sage counter-val" data-target="98">0</span>
             <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
           </div>
-          <p class="micro-number-label">Países OCDE con portales digitales únicos de contratación</p>
+          <p class="micro-number-label">39 de 40 países con plataformas centrales en línea (e-procurement)</p>
         </div>
       </div>
         """,
@@ -1629,7 +1633,7 @@ standalone_html = f"""<!DOCTYPE html>
         </div>
 
         <!-- Pastilla del Ponente Activo -->
-        <div class="speaker-pill" id="speaker-pill-container" style="display: none;">
+        <div class="speaker-pill" id="speaker-pill-container">
           <div class="speaker-avatar" id="speaker-avatar">G14</div>
           <div class="speaker-info">
             <span class="speaker-name" id="speaker-name">Manuel, Jorge y Aleksandr</span>

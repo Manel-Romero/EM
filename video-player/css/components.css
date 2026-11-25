@@ -208,11 +208,6 @@
   margin-bottom: 14px;
 }
 
-#speaker-pill-container,
-.speaker-pill {
-  display: none !important;
-}
-
 .micro-title,
 .scene-title-large {
   font-family: var(--font-display);

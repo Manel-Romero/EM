@@ -1151,11 +1151,6 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   margin-bottom: 14px;
 }
 
-#speaker-pill-container,
-.speaker-pill {
-  display: none !important;
-}
-
 .micro-title,
 .scene-title-large {
   font-family: var(--font-display);
@@ -2640,7 +2635,7 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
         </div>
 
         <!-- Pastilla del Ponente Activo -->
-        <div class="speaker-pill" id="speaker-pill-container" style="display: none;">
+        <div class="speaker-pill" id="speaker-pill-container">
           <div class="speaker-avatar" id="speaker-avatar">G14</div>
           <div class="speaker-info">
             <span class="speaker-name" id="speaker-name">Manuel, Jorge y Aleksandr</span>
@@ -2764,7 +2759,7 @@ const SCENES_DATA = [
     title: "Contrataci\u00f3n P\u00fablica, Comercio y Pol\u00edtica Industrial",
     titleGradient: "text-gradient-indigo",
     subtitle: "OECD (2026) \u2022 Supporting National Priorities",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2789,8 +2784,8 @@ const SCENES_DATA = [
     category: "DEMANDA AGREGADA",
     title: "Demanda Agregada Mundial",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Volumen anual del mercado de contrataci\u00f3n p\u00fablica en el mundo",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    subtitle: "Gasto anual mundial estimado entre 11 y 13 billones de d\u00f3lares",
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2799,9 +2794,9 @@ const SCENES_DATA = [
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">$</span>
             <span class="micro-number-val counter-val" data-target="11">0</span>
-            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-secondary);">Billones</span>
+            <span class="micro-number-unit" style="font-size: 70px; color: var(--color-secondary);">–13 Billones</span>
           </div>
-          <p class="micro-number-label">Gasto público anual en compras gubernamentales</p>
+          <p class="micro-number-label">Gasto público anual en compras gubernamentales en todo el mundo</p>
         </div>
       </div>
     `,
@@ -2814,26 +2809,26 @@ const SCENES_DATA = [
     category: "IMPACTO MACROECON\u00d3MICO",
     title: "Impacto en las Econom\u00edas Avanzadas",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Media oficial en los pa\u00edses miembros de la OCDE",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    subtitle: "12,7% del PIB en 2023 (13% de media) y un tercio del gasto p\u00fablico",
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="13">0</span>
+              <span class="micro-number-val counter-val" data-target="12.7">0</span>
               <span class="micro-number-unit">%</span>
             </div>
-            <p class="micro-number-label">Del PIB de la OCDE</p>
+            <p class="micro-number-label">Del PIB de la OCDE (2023; media 13%)</p>
           </div>
           <div class="micro-vs-pill">VS</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="29">0</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="33">0</span>
               <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Del Gasto Público Total</p>
+            <p class="micro-number-label">Del Gasto Público Consolidado (≈1/3)</p>
           </div>
         </div>
       </div>
@@ -2848,7 +2843,7 @@ const SCENES_DATA = [
     title: "La Ruptura de Paradigma",
     titleGradient: "text-gradient-amber",
     subtitle: "De la minimizaci\u00f3n del coste contable a la soberan\u00eda geopol\u00edtica",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2875,7 +2870,7 @@ const SCENES_DATA = [
     title: "Descentralizaci\u00f3n Territorial",
     titleGradient: "text-gradient-indigo",
     subtitle: "Porcentaje ejecutado fuera del gobierno central",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2899,7 +2894,7 @@ const SCENES_DATA = [
     title: "Reparto Territorial del Gasto",
     titleGradient: "text-gradient-indigo",
     subtitle: "Dificultad de supervisi\u00f3n en tratados comerciales",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2938,7 +2933,7 @@ const SCENES_DATA = [
     title: "Gasto en Sanidad P\u00fablica",
     titleGradient: "text-gradient-rose",
     subtitle: "El sector prioritario de mayor cuant\u00eda en compras p\u00fablicas",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2963,7 +2958,7 @@ const SCENES_DATA = [
     title: "Colisi\u00f3n de Paradigmas",
     titleGradient: "text-gradient-indigo",
     subtitle: "El dilema central del comercio internacional",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -2997,21 +2992,21 @@ const SCENES_DATA = [
     title: "Los Shocks Catalizadores",
     titleGradient: "text-gradient-amber",
     subtitle: "Tres crisis consecutivas que transformaron la pol\u00edtica econ\u00f3mica",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Disrupciones de Suministro</span>
-          <h2 class="micro-type-d-statement" style="font-size: 58px; margin: 20px 0;">
+          <h2 class="micro-type-d-statement" style="font-size: 54px; margin: 20px 0;">
             <span style="color: var(--color-primary);">COVID-19</span>
             <span class="micro-type-d-arrow">➔</span>
-            <span class="accent-highlight">Guerra Ucrania</span>
+            <span class="accent-highlight">Crisis Ucrania</span>
             <span class="micro-type-d-arrow">➔</span>
-            <span class="accent-sage">Taiwán</span>
+            <span class="accent-sage">Tensiones China</span>
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Riesgo extremo de desabastecimiento en insumos críticos
+            Riesgo extremo de desabastecimiento en insumos y reactivación neomercantilista
           </div>
         </div>
       </div>
@@ -3026,7 +3021,7 @@ const SCENES_DATA = [
     title: "La Compra como Palanca",
     titleGradient: "text-gradient-indigo",
     subtitle: "El Estado genera mercados asegurados para sectores estrat\u00e9gicos",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3051,7 +3046,7 @@ const SCENES_DATA = [
     title: "El Arsenal de Medidas",
     titleGradient: "text-gradient-indigo",
     subtitle: "Clasificaci\u00f3n oficial de intervenciones seg\u00fan la OCDE",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3087,7 +3082,7 @@ const SCENES_DATA = [
     title: "Buy American Act en EE.UU.",
     titleGradient: "text-gradient-indigo",
     subtitle: "Umbral m\u00ednimo legal de componentes locales en 2024",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3111,7 +3106,7 @@ const SCENES_DATA = [
     title: "Escalada Proteccionista en EE.UU.",
     titleGradient: "text-gradient-amber",
     subtitle: "La senda legislativa de endurecimiento comercial",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3138,7 +3133,7 @@ const SCENES_DATA = [
     title: "Trayectoria del Buy American",
     titleGradient: "text-gradient-indigo",
     subtitle: "Evoluci\u00f3n porcentual del umbral exigido",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3186,7 +3181,7 @@ const SCENES_DATA = [
     title: "BABA Act: Infraestructura Federal",
     titleGradient: "text-gradient-rose",
     subtitle: "Build America, Buy America Act (2021)",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3210,7 +3205,7 @@ const SCENES_DATA = [
     title: "Plan M\u00e9xico 2025",
     titleGradient: "text-gradient-amber",
     subtitle: "Estrategia de sustituci\u00f3n de importaciones asi\u00e1ticas",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3235,7 +3230,7 @@ const SCENES_DATA = [
     title: "Doble Incentivo en M\u00e9xico",
     titleGradient: "text-gradient-indigo",
     subtitle: "Reserva de cuota y ventaja en precio para oferentes locales",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3264,21 +3259,22 @@ const SCENES_DATA = [
   // --- ESCENA 18: SCENE-18 ---
   {
     id: "scene-18",
-    category: "ARANCELES Y RECARGOS",
-    title: "Recargo a Importaciones",
+    category: "DIRECTIVA UE 2014/25",
+    title: "Excepci\u00f3n del Art\u00edculo 85",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Pol\u00edticas de penalizaci\u00f3n a bienes for\u00e1neos en Ocean\u00eda",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    subtitle: "Sectores de agua, energ\u00eda, transportes y servicios postales",
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Australia Occidental</span>
+          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Directiva 2014/25/UE • Art. 85</span>
           <div class="micro-number-hero">
-            <span class="micro-number-val counter-val" data-target="20">0</span>
+            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">&gt;</span>
+            <span class="micro-number-val counter-val" data-target="50">0</span>
             <span class="micro-number-unit">%</span>
           </div>
-          <p class="micro-number-label">Recargo evaluativo sobre bienes importados en licitaciones</p>
+          <p class="micro-number-label">Umbral de productos de terceros países que permite rechazar la oferta</p>
         </div>
       </div>
     `,
@@ -3288,30 +3284,29 @@ const SCENES_DATA = [
   // --- ESCENA 19: SCENE-19 ---
   {
     id: "scene-19",
-    category: "DEBATE EN LA UE",
-    title: "El Debate en la Uni\u00f3n Europea",
+    category: "PREFERENCIAS DE PRECIO",
+    title: "Bonificaciones de Precio Local",
     titleGradient: "text-gradient-amber",
-    subtitle: "Tensi\u00f3n pol\u00edtica interna en el mercado comunitario",
-    speaker: {"name": "Marco Macroeconómico", "role": "Política y Soberanía", "initials": "MM"},
+    subtitle: "Ontario BOBI (Canad\u00e1) y Ley Compre Argentino (Ley 27.437)",
+    speaker: {"name": "Manuel Romero Álvarez", "role": "Macroeconomía y Medidas Directas", "initials": "MR"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
-        <div class="micro-type-e-grid">
-          <div class="micro-type-e-card theme-terracotta">
-            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Francia • Informe Draghi</span>
-            <h3 class="micro-type-e-title">Preferencia Europea</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Buy European prioritario</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Subsidio a campeones industriales</div>
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-val counter-val" data-target="10">0</span>
+              <span class="micro-number-unit">%</span>
             </div>
+            <p class="micro-number-label">Ontario BOBI (Canadá): Ventaja a firmas locales</p>
           </div>
-          <div class="micro-type-e-card theme-sage">
-            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Finlandia • Nórdicos</span>
-            <h3 class="micro-type-e-title">Mercado Concurrente</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Alerta formal ante el sobrecoste fiscal</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon arrow">➔</span> Protección de la libre concurrencia</div>
+          <div class="micro-vs-pill">&amp;</div>
+          <div class="micro-contrast-box right">
+            <div class="micro-number-hero">
+              <span class="micro-number-val accent-terracotta counter-val" data-target="15">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
+            <p class="micro-number-label">Argentina Ley 27.437: 8% general y hasta 15% PYMEs</p>
           </div>
         </div>
       </div>
@@ -3325,8 +3320,8 @@ const SCENES_DATA = [
     category: "SUBSIDIOS ESTATALES",
     title: "Subsidios Estatales en China",
     titleGradient: "text-gradient-rose",
-    subtitle: "Apoyo p\u00fablico masivo a la cadena de automoci\u00f3n (2009-2023)",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    subtitle: "CSIS (OCDE): Subsidios p\u00fablicos a veh\u00edculos el\u00e9ctricos (2009-2023)",
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3334,10 +3329,10 @@ const SCENES_DATA = [
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Distorsión Global de Precios</span>
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">$</span>
-            <span class="micro-number-val accent-terracotta counter-val" data-target="231">0</span>
+            <span class="micro-number-val accent-terracotta counter-val" data-target="230.9">0</span>
             <span class="micro-number-unit" style="font-size: 70px; color: var(--color-accent-1);">Mil M</span>
           </div>
-          <p class="micro-number-label">Subsidios acumulados de China a vehículos eléctricos</p>
+          <p class="micro-number-label">230.900 millones $ a fabricantes chinos (CSIS / OCDE; 45.000 M$ en 2023)</p>
         </div>
       </div>
     `,
@@ -3350,19 +3345,19 @@ const SCENES_DATA = [
     category: "SUBSIDIOS FERROVIARIOS",
     title: "El Gigante Ferroviario CRRC",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Ayudas directas permanentes de la administraci\u00f3n china",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    subtitle: "Base MAGIC OCDE (2020-2024): Subsidios masivos al sector ferroviario",
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Sector Ferroviario</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Sector Ferroviario • Base MAGIC OCDE</span>
           <div class="micro-number-hero">
             <span class="micro-number-unit" style="font-size: 80px; color: var(--color-primary);">&gt;$</span>
             <span class="micro-number-val counter-val" data-target="1000">0</span>
             <span class="micro-number-unit" style="font-size: 60px; color: var(--color-secondary);">M / año</span>
           </div>
-          <p class="micro-number-label">Subvenciones anuales a CRRC para ofertar en el exterior</p>
+          <p class="micro-number-label">Subvenciones anuales a fabricantes chinos como CRRC para licitar en el exterior</p>
         </div>
       </div>
     `,
@@ -3373,26 +3368,28 @@ const SCENES_DATA = [
   {
     id: "scene-22",
     category: "DISTORSI\u00d3N DE PRECIOS",
-    title: "Precios Predatorios en Europa",
+    title: "Caso CRRC en Ruman\u00eda (2019)",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Distorsi\u00f3n de licitaciones p\u00fablicas por empresas subsidiadas",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    subtitle: "Impacto real de los subsidios en concursos p\u00fablicos de la UE",
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="100">0</span>
+              <span class="micro-number-val counter-val" data-target="957">0</span>
+              <span class="micro-number-unit">M€</span>
             </div>
-            <p class="micro-number-label">Precio Coste Europeo (Alstom / Siemens)</p>
+            <p class="micro-number-label">Contrato Ferroviario Ganado por CRRC</p>
           </div>
-          <div class="micro-vs-pill">VS</div>
+          <div class="micro-vs-pill">CON</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="75">0</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="80">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Oferta Subsidiada (-25% Baja Temeraria)</p>
+            <p class="micro-number-label">Peso del Criterio Precio en la Puntuación</p>
           </div>
         </div>
       </div>
@@ -3407,7 +3404,7 @@ const SCENES_DATA = [
     title: "El Mito Ecol\u00f3gico",
     titleGradient: "text-gradient-amber",
     subtitle: "Desmontando la falacia de la huella de transporte local",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3432,7 +3429,7 @@ const SCENES_DATA = [
     title: "La Paradoja de Emisiones",
     titleGradient: "text-gradient-indigo",
     subtitle: "Comparativa de eficiencia en ciclos de vida de producto",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3466,7 +3463,7 @@ const SCENES_DATA = [
     title: "F\u00e1rmacos Esenciales Cr\u00edticos",
     titleGradient: "text-gradient-rose",
     subtitle: "Critical Medicines Act de la Comisi\u00f3n Europea (2025)",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3489,17 +3486,17 @@ const SCENES_DATA = [
     title: "Dependencia en Antibi\u00f3ticos",
     titleGradient: "text-gradient-amber",
     subtitle: "Vulnerabilidad estrat\u00e9gica del sistema sanitario comunitario",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Principio Activo Esencial</span>
-          <h2 class="micro-type-d-statement" style="font-size: 64px; margin: 20px 0;">
-            Amoxicilina: <span class="accent-highlight">80%</span> Depende de China
+          <h2 class="micro-type-d-statement" style="font-size: 58px; margin: 20px 0;">
+            Amoxicilina: <span class="accent-highlight">65%</span> de China
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Riesgo inminente de colapso hospitalario ante shocks geopolíticos
+            Hasta el 80% en otros fármacos críticos (Agencia Europea de Medicamentos)
           </div>
         </div>
       </div>
@@ -3514,7 +3511,7 @@ const SCENES_DATA = [
     title: "Net-Zero Industry Act",
     titleGradient: "text-gradient-indigo",
     subtitle: "Reglamento UE 2024/1735 sobre tecnolog\u00edas limpias",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3535,28 +3532,27 @@ const SCENES_DATA = [
   {
     id: "scene-28",
     category: "INNOVACI\u00d3N P\u00daBLICA",
-    title: "Compra P\u00fablica de Innovaci\u00f3n",
+    title: "Patentes y Exportaci\u00f3n (Aghion et al.)",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Transformaci\u00f3n industrial documentada por la OCDE",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    subtitle: "Estudio en Francia (1995-2012) citado en el informe de la OCDE",
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="94">0</span>
-              <span class="micro-number-unit">%</span>
-            </div>
-            <p class="micro-number-label">Países OCDE usan compra de innovación</p>
-          </div>
-          <div class="micro-vs-pill">➔</div>
-          <div class="micro-contrast-box right">
-            <div class="micro-number-hero">
               <span class="micro-number-val accent-sage counter-val" data-target="95">0</span>
               <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
             </div>
-            <p class="micro-number-label">Adjudicatarias se vuelven exportadoras regulares</p>
+            <p class="micro-number-label">Empresas con patentes que exportan (Francia)</p>
+          </div>
+          <div class="micro-vs-pill">➔</div>
+          <div class="micro-contrast-box right" style="padding: 16px;">
+            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1); margin-bottom: 8px;">Aviso OCDE</span>
+            <p style="font-size: 15px; line-height: 1.35; color: var(--color-ink-light); margin: 0;">
+              La compra pública fortalece la competitividad, pero su vínculo causal directo con exportaciones no está formalmente demostrado.
+            </p>
           </div>
         </div>
       </div>
@@ -3571,7 +3567,7 @@ const SCENES_DATA = [
     title: "Cadenas Globales de Valor",
     titleGradient: "text-gradient-indigo",
     subtitle: "Estructura productiva real del comercio contempor\u00e1neo",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3595,7 +3591,7 @@ const SCENES_DATA = [
     title: "Composici\u00f3n del Comercio Global",
     titleGradient: "text-gradient-indigo",
     subtitle: "Insumos intermedios frente a productos finales terminados",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3633,7 +3629,7 @@ const SCENES_DATA = [
     title: "La Falacia del Producto Dom\u00e9stico",
     titleGradient: "text-gradient-amber",
     subtitle: "Imposibilidad f\u00edsica del aislamiento productivo en tecnolog\u00eda",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3658,7 +3654,7 @@ const SCENES_DATA = [
     title: "Coste del Reshoring Forzado",
     titleGradient: "text-gradient-rose",
     subtitle: "Simulaciones cuantitativas de la OCDE (Arriola et al., 2020)",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3682,7 +3678,7 @@ const SCENES_DATA = [
     title: "Destrucci\u00f3n del PIB Global",
     titleGradient: "text-gradient-rose",
     subtitle: "P\u00e9rdida irreversible de renta per c\u00e1pita mundial",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3706,7 +3702,7 @@ const SCENES_DATA = [
     title: "P\u00e9rdida de PIB por Pa\u00edses",
     titleGradient: "text-gradient-indigo",
     subtitle: "Impacto asim\u00e9trico del reshoring en econom\u00edas abiertas",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3754,7 +3750,7 @@ const SCENES_DATA = [
     title: "La Falacia de la Resiliencia",
     titleGradient: "text-gradient-amber",
     subtitle: "Por qu\u00e9 la econom\u00eda aut\u00e1rquica sufre mayores shocks",
-    speaker: {"name": "Cadenas Globales de Valor", "role": "Comercio y Reshoring", "initials": "CG"},
+    speaker: {"name": "Jorge Cañete Morató", "role": "Cadenas Globales y Subsidios", "initials": "JC"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3778,19 +3774,19 @@ const SCENES_DATA = [
     category: "FRIEND-SHORING",
     title: "El Coste del Friend-Shoring",
     titleGradient: "text-gradient-rose",
-    subtitle: "Impacto de la divisi\u00f3n del mundo en bloques geopol\u00edticos (Javorcik et al.)",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    subtitle: "Javorcik et al. (2023): Costes econ\u00f3micos de la fragmentaci\u00f3n en bloques",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
           <span class="micro-tag" style="background: rgba(var(--color-accent-2-rgb), 0.18); color: var(--color-accent-2);">Fragmentación Geoeconómica</span>
           <div class="micro-number-hero">
-            <span class="micro-number-unit" style="font-size: 80px; color: var(--color-accent-1);">-</span>
+            <span class="micro-number-unit" style="font-size: 60px; color: var(--color-accent-1);">-0,6% a</span>
             <span class="micro-number-val accent-terracotta counter-val" data-target="4.6">0</span>
             <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
           </div>
-          <p class="micro-number-label">Pérdida adicional de PIB global por fragmentación en bloques cerrados</p>
+          <p class="micro-number-label">Pérdida de PIB mundial a medio plazo por división en dos bloques comerciales</p>
         </div>
       </div>
     `,
@@ -3800,30 +3796,29 @@ const SCENES_DATA = [
   // --- ESCENA 37: SCENE-37 ---
   {
     id: "scene-37",
-    category: "TRAMPA BUROCR\u00c1TICA",
-    title: "La Trampa Burocr\u00e1tica",
+    category: "TEOR\u00cdA DEL COMERCIO",
+    title: "Sobrecoste del Proteccionismo",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Bosio, Djankov, Glaeser y Shleifer (AER 2022)",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    subtitle: "Ricardo, Heckscher-Ohlin y Modelo Gravitacional de Comercio",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
-        <div class="micro-type-e-grid">
-          <div class="micro-type-e-card theme-sage">
-            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary);">Capacidad Alta</span>
-            <h3 class="micro-type-e-title">Administración Eficaz</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Compra estratégica viable</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon check">✓</span> Control estricto de sobrecostes</div>
+        <div class="micro-contrast-grid">
+          <div class="micro-contrast-box left">
+            <div class="micro-number-hero">
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">+</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="15">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">–30%</span>
             </div>
+            <p class="micro-number-label">Sobrecoste de contratación por cuotas de contenido local</p>
           </div>
-          <div class="micro-type-e-card theme-terracotta">
-            <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Capacidad Baja</span>
-            <h3 class="micro-type-e-title">Burocracia Débil</h3>
-            <div class="micro-points-container">
-              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Disparo del gasto ineficiente</div>
-              <div class="micro-pill-point"><span class="micro-pill-icon cross">✕</span> Mayor riesgo de captura y corrupción</div>
-            </div>
+          <div class="micro-vs-pill">VS</div>
+          <div class="micro-contrast-box right" style="padding: 16px;">
+            <span class="micro-tag" style="background: rgba(var(--color-secondary-rgb), 0.14); color: var(--color-secondary); margin-bottom: 8px;">Aranceles Encubiertos</span>
+            <p style="font-size: 15px; line-height: 1.35; color: var(--color-ink-light); margin: 0;">
+              Destrucción de ventajas comparativas (Ricardo) y desconexión tecnológica de la industria nacional.
+            </p>
           </div>
         </div>
       </div>
@@ -3834,20 +3829,22 @@ const SCENES_DATA = [
   // --- ESCENA 38: SCENE-38 ---
   {
     id: "scene-38",
-    category: "EVIDENCIA EMP\u00cdRICA",
-    title: "Evidencia Emp\u00edrica Global",
-    titleGradient: "text-gradient-indigo",
-    subtitle: "Estudio publicado en American Economic Review",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    category: "PRIMER CASO IPI",
+    title: "Reglamento de Ejecuci\u00f3n UE 2025/1197",
+    titleGradient: "text-gradient-rose",
+    subtitle: "Primera aplicaci\u00f3n sancionadora del IPI en la historia comunitaria",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-primary-rgb), 0.12); color: var(--color-primary);">Muestra Cuantitativa Global</span>
-          <div class="micro-number-hero">
-            <span class="micro-number-val counter-val" data-target="187">0</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Primer Veto IPI • Junio 2025</span>
+          <h2 class="micro-type-d-statement" style="font-size: 52px; margin: 20px 0;">
+            Exclusión de <span class="accent-highlight">Material Médico Chino</span>
+          </h2>
+          <div class="micro-pill-point" style="font-size: 18px;">
+            Tras investigación (abril 2024 - enero 2025) por falta de reciprocidad de Pekín
           </div>
-          <p class="micro-number-label">Países analizados empíricamente por Bosio et al.</p>
         </div>
       </div>
     `,
@@ -3860,24 +3857,26 @@ const SCENES_DATA = [
     category: "ACUERDO ACP / GPA",
     title: "El L\u00edmite del GPA de la OMC",
     titleGradient: "text-gradient-indigo",
-    subtitle: "El club restringido del comercio multilateral en compras",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    subtitle: "Acuerdo plurilateral: 22 partes cubren a 49 miembros de la OMC",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-contrast-grid">
           <div class="micro-contrast-box left">
             <div class="micro-number-hero">
-              <span class="micro-number-val counter-val" data-target="48">0</span>
+              <span class="micro-number-val counter-val" data-target="49">0</span>
             </div>
-            <p class="micro-number-label">Países Miembros del GPA</p>
+            <p class="micro-number-label">Miembros OMC Cubiertos (22 Partes)</p>
           </div>
           <div class="micro-vs-pill">VS</div>
           <div class="micro-contrast-box right">
             <div class="micro-number-hero">
-              <span class="micro-number-val accent-terracotta counter-val" data-target="142">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">≈</span>
+              <span class="micro-number-val accent-terracotta counter-val" data-target="75">0</span>
+              <span class="micro-number-unit" style="color: var(--color-accent-1);">%</span>
             </div>
-            <p class="micro-number-label">Países Fuera del Tratado Multilateral</p>
+            <p class="micro-number-label">Miembros de la OMC Fuera del GPA (~3/4)</p>
           </div>
         </div>
       </div>
@@ -3892,7 +3891,7 @@ const SCENES_DATA = [
     title: "Los Grandes Emergentes",
     titleGradient: "text-gradient-amber",
     subtitle: "Por qu\u00e9 las mayores econom\u00edas del Sur Global no firman el GPA",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3917,7 +3916,7 @@ const SCENES_DATA = [
     title: "El Instrumento IPI Europeo",
     titleGradient: "text-gradient-indigo",
     subtitle: "Reglamento UE 2022/1031 de Contrataci\u00f3n Internacional",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3942,7 +3941,7 @@ const SCENES_DATA = [
     title: "Sanciones del Instrumento IPI",
     titleGradient: "text-gradient-rose",
     subtitle: "El r\u00e9gimen sancionador de la Comisi\u00f3n Europea",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -3976,18 +3975,18 @@ const SCENES_DATA = [
     category: "SENTENCIA KOLIN",
     title: "Sentencia Kolin del TJUE",
     titleGradient: "text-gradient-amber",
-    subtitle: "Asunto C-652/22 (2024): Precedente legal de m\u00e1ximo calado",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    subtitle: "Asunto C-652/22 (22 de octubre de 2024): Precedente legal hist\u00f3rico",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
         <div class="micro-card-atomic">
-          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Jurisprudencia Vinculante</span>
+          <span class="micro-tag" style="background: rgba(var(--color-accent-1-rgb), 0.14); color: var(--color-accent-1);">Jurisprudencia Vinculante TJUE (22/10/2024)</span>
           <h2 class="micro-type-d-statement" style="font-size: 60px; margin: 20px 0;">
             Sin Tratado <span class="micro-type-d-arrow">➔</span> <span class="accent-highlight">Sin Recurso Legal</span>
           </h2>
           <div class="micro-pill-point" style="font-size: 18px;">
-            Licitadores de países sin GPA carecen de tutela judicial para impugnar exclusiones
+            Licitadores de países sin GPA carecen de tutela judicial para invocar directivas de la UE
           </div>
         </div>
       </div>
@@ -4002,7 +4001,7 @@ const SCENES_DATA = [
     title: "El Nuevo Mapa Legal de Licitaci\u00f3n",
     titleGradient: "text-gradient-indigo",
     subtitle: "Diferenciaci\u00f3n estricta entre socios comerciales y terceros",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4036,7 +4035,7 @@ const SCENES_DATA = [
     title: "El D\u00e9ficit de Evaluaci\u00f3n",
     titleGradient: "text-gradient-indigo",
     subtitle: "La falta de medici\u00f3n de costes reales en los pa\u00edses de la OCDE",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4069,7 +4068,7 @@ const SCENES_DATA = [
     title: "Evaluaci\u00f3n Emp\u00edrica en la OCDE",
     titleGradient: "text-gradient-indigo",
     subtitle: "Porcentaje de administraciones que auditan los sobrecostes",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4116,8 +4115,8 @@ const SCENES_DATA = [
     category: "DIGITALIZACI\u00d3N",
     title: "Digitalizaci\u00f3n e-Procurement",
     titleGradient: "text-gradient-indigo",
-    subtitle: "Implantaci\u00f3n de plataformas electr\u00f3nicas \u00fanicas de licitaci\u00f3n",
-    speaker: {"name": "Gobernanza y Acuerdos", "role": "Reciprocidad y Digitalización", "initials": "GA"},
+    subtitle: "39 de 40 pa\u00edses encuestados (98%) publican en portales centrales",
+    speaker: {"name": "Aleksandr Globa", "role": "Marco Legal y Gobernanza", "initials": "AG"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4127,7 +4126,7 @@ const SCENES_DATA = [
             <span class="micro-number-val accent-sage counter-val" data-target="98">0</span>
             <span class="micro-number-unit" style="color: var(--color-secondary);">%</span>
           </div>
-          <p class="micro-number-label">Países OCDE con portales digitales únicos de contratación</p>
+          <p class="micro-number-label">39 de 40 países con plataformas centrales en línea (e-procurement)</p>
         </div>
       </div>
     `,
@@ -4141,7 +4140,7 @@ const SCENES_DATA = [
     title: "El Efecto Democratizador",
     titleGradient: "text-gradient-indigo",
     subtitle: "Impacto de la tecnolog\u00eda digital en la transparencia",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4166,7 +4165,7 @@ const SCENES_DATA = [
     title: "El Gran Dilema Global",
     titleGradient: "text-gradient-amber",
     subtitle: "La encrucijada estrat\u00e9gica documentada por la OCDE",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 7,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
@@ -4200,7 +4199,7 @@ const SCENES_DATA = [
     title: "Econom\u00eda Mundial \u2022 UPV",
     titleGradient: "text-gradient-indigo",
     subtitle: "Grado en ADE + INF / MAT \u2022 Curso 2026-2027",
-    speaker: {"name": "Equipo de Investigación", "role": "Presentación General", "initials": "EM"},
+    speaker: {"name": "Grupo 14", "role": "Presentación Conjunta (UPV)", "initials": "G14"},
     duration: 6,
     renderContent: () => `
 <div class="micro-stage-center stagger-in delay-2">
