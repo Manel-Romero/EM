@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Compras públicas y política industrial · Póster A3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Póster A3 horizontal = dos A4 verticales lado a lado. Pliegue central a 210 mm. */
+:root{
+  --bg:#eef2f4; --paper:#ffffff; --ink:#12212e; --muted:#53616d; --rule:#cdd6dc;
+  --teal:#0b6e6e; --teal-soft:#d5ebe9; --amber:#b86e00; --amber-soft:#f6e6cc; --red:#b3362b; --red-soft:#f5dcd8; --track:#dfe6ea;
+  --display:"Archivo","Arial Narrow",sans-serif; --body:"IBM Plex Sans","Segoe UI",sans-serif; --mono:"IBM Plex Mono",Consolas,monospace;
+  color-scheme:light;
+}
+@page{size:420mm 297mm;margin:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;padding:0;background:#9aa6ad}
+body{font-family:var(--body);color:var(--ink);font-size:8.4pt;line-height:1.4}
+@media print{html,body{background:var(--bg)}}
+.sheet{width:420mm;height:297mm;background:var(--bg);position:relative;overflow:hidden;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;}
+.sheet::after{content:"";position:absolute;top:0;bottom:0;left:210mm;border-left:.3mm dashed var(--rule)}
+.half{padding:11mm 11mm 9mm;display:flex;flex-direction:column;gap:5mm;min-width:0}
+.half.left{padding-right:9mm}.half.right{padding-left:9mm}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.05;text-wrap:balance}
+p{margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--mono);font-size:6.6pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* Cabecera (mitad izquierda) */
+header{display:grid;grid-template-columns:1fr 52mm;gap:6mm;align-items:end;padding-bottom:4mm;border-bottom:.6mm solid var(--ink)}
+header h1{font-size:25pt;font-weight:850;font-stretch:76%;margin-top:2mm;letter-spacing:-.01em}
+header h1 em{font-style:normal;color:var(--teal)}
+.byline{margin-top:2.5mm;color:var(--muted);font-size:7.3pt}
+.hero-num{background:var(--paper);border:.25mm solid var(--rule);padding:3mm 4mm;display:flex;flex-direction:column;gap:1mm}
+.hero-num .big{font-family:var(--display);font-weight:900;font-stretch:68%;font-size:46pt;line-height:.9;color:var(--teal)}
+.hero-num p{font-size:7.6pt}
+
+/* Secciones */
+section{display:flex;flex-direction:column;gap:3mm}
+.sh{display:grid;grid-template-columns:11mm 1fr;gap:3mm;align-items:start}
+.sh .n{font-family:var(--display);font-weight:900;font-stretch:70%;font-size:24pt;line-height:.9;color:var(--ink)}
+.sh h2{font-size:13.5pt;font-weight:800;font-stretch:85%}
+.sh p{color:var(--muted);margin-top:1mm;font-size:7.8pt}
+.grow{flex:1}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.25mm;background:var(--rule);border:.25mm solid var(--rule)}
+.stat{background:var(--paper);padding:2.6mm;display:flex;flex-direction:column;gap:1.5mm;align-items:flex-start}
+.stat .v{font-family:var(--display);font-weight:850;font-stretch:72%;font-size:15pt;line-height:1}
+.stat p{font-size:7pt;color:var(--muted)}
+.ring{width:12mm;height:12mm;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--teal) calc(var(--p)*1%),var(--track) 0)}
+.ring span{width:8.6mm;height:8.6mm;border-radius:50%;background:var(--paper);display:grid;place-items:center;font-family:var(--mono);font-size:6.4pt;font-weight:600}
+
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:1.6mm;height:.4mm;background:var(--rule)}
+.tl{position:relative;padding:4.6mm 2mm 0 0;font-size:6.9pt}
+.tl::before{content:"";position:absolute;top:0;left:0;width:3.2mm;height:3.2mm;border-radius:50%;background:var(--paper);border:.7mm solid var(--teal);box-sizing:border-box}
+.tl.shock::before{border-color:var(--red)}
+.tl .y{font-family:var(--mono);font-weight:600;display:block;font-size:7.4pt}
+.tl p{color:var(--muted)}
+.question{padding:2.6mm 4mm;background:var(--teal-soft);font-family:var(--display);font-weight:700;font-stretch:90%;font-size:10.5pt;line-height:1.2}
+
+.panel{background:var(--paper);border:.25mm solid var(--rule);padding:3.4mm;display:flex;flex-direction:column;gap:2.6mm;min-width:0}
+.panel h3{font-size:10pt;font-weight:800;font-stretch:90%}
+.ph{display:flex;align-items:center;gap:2.5mm}
+.tag{font-family:var(--mono);font-size:6.3pt;letter-spacing:.06em;text-transform:uppercase;padding:.6mm 1.6mm}
+.tag.direct{background:var(--amber-soft);color:var(--amber)}
+.tag.indirect{background:var(--teal-soft);color:var(--teal)}
+.bars{display:flex;flex-direction:column;gap:1.9mm}
+.bar{display:grid;grid-template-columns:38mm 1fr 12mm;gap:2.5mm;align-items:center;font-size:7.2pt}
+.bar .name{line-height:1.2}
+.bar .name small{display:block;color:var(--muted);font-size:6.3pt}
+.bar .t{height:3mm;background:var(--track);position:relative}
+.bar .f{position:absolute;inset:0 auto 0 0;background:var(--amber)}
+.bar .from{position:absolute;inset:0 auto 0 0;background:var(--amber);opacity:.38}
+.bar .v{font-family:var(--mono);font-weight:600;text-align:right}
+.axis{display:grid;grid-template-columns:38mm 1fr 12mm;gap:2.5mm;font-family:var(--mono);font-size:5.9pt;color:var(--muted)}
+.axis div:nth-child(2){display:flex;justify-content:space-between}
+.note{font-size:6.4pt;color:var(--muted)}
+.cols2{display:grid;grid-template-columns:1.25fr 1fr;gap:3.4mm}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm}
+.chip{border:.25mm solid var(--rule);padding:2mm;display:flex;flex-direction:column;gap:.8mm}
+.chip b{font-family:var(--display);font-stretch:78%;font-size:13pt;font-weight:850;color:var(--amber);line-height:1}
+.chip span{font-size:6.7pt;color:var(--muted);line-height:1.25}
+.list{display:flex;flex-direction:column;gap:2.2mm;margin:0;padding:0;list-style:none}
+.list li{display:grid;grid-template-columns:13mm 1fr;gap:2mm;font-size:7.2pt;align-items:start}
+.list li b{font-family:var(--display);font-weight:850;font-stretch:74%;font-size:13pt;color:var(--teal);line-height:1.05}
+.myth{border-left:.8mm solid var(--teal);padding-left:2.6mm;font-size:7.2pt}
+.myth strong{display:block;font-family:var(--display);font-stretch:90%;font-size:8.4pt}
+.warn{display:flex;gap:3mm;align-items:flex-start;padding:2.4mm 3.4mm;background:var(--red-soft);font-size:7.4pt}
+.warn .label{color:var(--red);white-space:nowrap;padding-top:.4mm}
+
+/* CGV */
+.giant{display:flex;gap:3mm;align-items:baseline}
+.giant .big{font-family:var(--display);font-weight:900;font-stretch:68%;font-size:34pt;line-height:.9;color:var(--red)}
+.giant p{font-size:7.4pt}
+.gdp .bar,.gdp .axis{grid-template-columns:20mm 1fr 13mm}
+.gdp .bar .f{background:var(--red)}
+.range{position:relative;height:3mm;background:var(--track)}
+.range .r{position:absolute;top:0;bottom:0;background:var(--red);opacity:.55}
+.raxis{display:flex;justify-content:space-between;font-family:var(--mono);font-size:5.9pt;color:var(--muted)}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:.25mm;background:var(--rule);border:.25mm solid var(--rule)}
+.mini div{background:var(--paper);padding:2.2mm 2.8mm;display:flex;flex-direction:column;gap:.6mm}
+.mini b{font-family:var(--display);font-stretch:74%;font-weight:850;font-size:12pt;line-height:1}
+.mini span{font-size:6.7pt;color:var(--muted);line-height:1.25}
+.theory{display:flex;flex-wrap:wrap;gap:1.6mm}
+.theory span{font-family:var(--mono);font-size:6.4pt;border:.25mm solid var(--rule);padding:.8mm 2mm;background:var(--paper)}
+
+/* Reciprocidad */
+.scales{display:grid;grid-template-columns:1fr 7mm 1fr;align-items:stretch}
+.side{background:var(--paper);border:.25mm solid var(--rule);padding:3mm;display:flex;flex-direction:column;gap:2mm}
+.vs{display:grid;place-items:center;font-family:var(--display);font-weight:900;font-stretch:70%;font-size:10pt;color:var(--muted)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:1.2mm 2.6mm;align-items:baseline;font-size:7pt;line-height:1.3}
+.kv b{font-family:var(--display);font-stretch:74%;font-weight:850;font-size:12pt;line-height:1.1;white-space:nowrap}
+.side.cn .kv b{color:var(--red)}
+.side.eu .kv b{color:var(--teal)}
+.legal{display:grid;grid-template-columns:repeat(4,1fr);gap:2mm}
+.doc{border-top:.7mm solid var(--ink);background:var(--paper);padding:2.2mm;display:flex;flex-direction:column;gap:.8mm;font-size:6.8pt;line-height:1.3}
+.doc .mono{font-size:6.2pt;color:var(--teal)}
+.doc strong{font-family:var(--display);font-stretch:90%;font-size:8pt;line-height:1.15}
+
+/* Conclusiones */
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.rec{background:var(--paper);border:.25mm solid var(--rule);padding:3mm;display:flex;flex-direction:column;gap:1.8mm}
+.rec .from{font-family:var(--mono);font-size:6.2pt;color:var(--muted);text-decoration:line-through;text-decoration-color:var(--red)}
+.rec h3{font-size:12pt;font-weight:800;font-stretch:85%}
+.rec p{font-size:8pt;color:var(--muted);line-height:1.45}
+.rec .num b{font-size:26pt!important}
+.rec .num span,.measure .row{font-size:7.2pt!important}
+.rec .num{margin-top:auto;padding-top:2mm;border-top:.25mm solid var(--rule);display:flex;gap:2mm;align-items:baseline}
+.rec .num b{font-family:var(--display);font-weight:900;font-stretch:68%;font-size:20pt;line-height:1;color:var(--teal)}
+.rec .num span{font-size:6.5pt;line-height:1.25}
+.measure{margin-top:auto;padding-top:2mm;border-top:.25mm solid var(--rule);display:flex;flex-direction:column;gap:1.6mm}
+.measure .row{display:flex;justify-content:space-between;font-size:6.5pt}
+.measure .row b{font-family:var(--mono);color:var(--teal)}
+.measure .t{height:2mm;background:var(--track);position:relative}
+.measure .f{position:absolute;inset:0 auto 0 0;background:var(--teal)}
+footer{display:flex;justify-content:space-between;gap:4mm;font-size:6.6pt;color:var(--muted);border-top:.25mm solid var(--rule);padding-top:2mm}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<!-- ===== MITAD IZQUIERDA (A4 1) ===== -->
+<div class="half left">
+  <header>
+    <div>
+      <div class="label">Economía Mundial · UPV · Grupo 14</div>
+      <h1>Comprar lo nacional: <em>compras públicas</em> como política industrial</h1>
+      <p class="byline">Infografía de la memoria sobre el informe OCDE (2026) <i>Public Procurement, Trade and Industrial Policies: Supporting National Priorities</i>.<br>Manuel Romero Álvarez · Jorge Cañete Morató · Aleksandr Globa — Prof. Ferran J. Portilla Salas</p>
+    </div>
+    <div class="hero-num">
+      <span class="label">Peso en la OCDE</span>
+      <span class="big mono" style="font-family:var(--display)">12,7%</span>
+      <p>del PIB de los países miembros se gasta en compras públicas (dato de 2023).</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="sh"><span class="n">1</span><div><h2>Un mercado enorme, gestionado en lo local</h2><p>Las licitaciones mueven billones y la mayor parte la adjudican regiones y ayuntamientos: hay una brecha entre los compromisos internacionales y lo que se compra de verdad.</p></div></div>
+    <div class="stats">
+      <div class="stat"><span class="label">Gasto global anual</span><span class="v">11–13 bill. $</span><p>en compras públicas en todo el mundo.</p></div>
+      <div class="stat"><div class="ring" style="--p:33.3"><span>≈33%</span></div><p>del gasto público consolidado.</p></div>
+      <div class="stat"><div class="ring" style="--p:30"><span>&gt;30%</span></div><p>del gasto OCDE en compras públicas va a sanidad.</p></div>
+      <div class="stat"><div class="ring" style="--p:62.5"><span>62,5%</span></div><p>del gasto OCDE en compras públicas es subnacional (2023).</p></div>
+    </div>
+    <div class="timeline">
+      <div class="tl"><span class="y">1948</span><p>GATT: comercio no discriminatorio.</p></div>
+      <div class="tl"><span class="y">1995</span><p>OMC y Acuerdo sobre Contratación Pública (GPA).</p></div>
+      <div class="tl shock"><span class="y">2020</span><p>COVID-19: cuellos de botella.</p></div>
+      <div class="tl shock"><span class="y">2022</span><p>Guerra en Ucrania y crisis energética.</p></div>
+      <div class="tl shock"><span class="y">Hoy</span><p>Tensiones geopolíticas con China.</p></div>
+      <div class="tl shock"><span class="y">→</span><p>Vuelve el neomercantilismo.</p></div>
+    </div>
+    <p class="question">¿Cómo proteger los sectores estratégicos sin fragmentar el comercio multilateral?</p>
+  </section>
+
+  <section class="grow">
+    <div class="sh"><span class="n">2</span><div><h2>Dos maneras de favorecer al proveedor nacional</h2><p>Las medidas directas dan una ventaja explícita al proveedor local; las indirectas actúan mediante requisitos técnicos, ambientales o de seguridad de suministro.</p></div></div>
+    <div class="panel">
+      <div class="ph"><span class="tag direct">Directas</span><h3>Requisitos de contenido nacional (DCR)</h3></div>
+      <div class="bars">
+        <div class="bar"><div class="name">EE. UU. · Buy American<small>55% → 65% (2024) → 75% (2029)</small></div><div class="t"><div class="from" style="width:75%"></div><div class="f" style="width:65%"></div></div><div class="v">65→75%</div></div>
+        <div class="bar"><div class="name">EE. UU. · Ley BABA (2021)<small>hierro, acero, manufacturas y materiales</small></div><div class="t"><div class="f" style="width:100%"></div></div><div class="v">100%</div></div>
+        <div class="bar"><div class="name">México · Plan México 2025<small>+ hasta 15% de preferencia de precio</small></div><div class="t"><div class="from" style="width:65%"></div><div class="f" style="width:50%"></div></div><div class="v">50→65%</div></div>
+        <div class="bar"><div class="name">Ucrania · maquinaria<small>15% (2023) → 40% (2028)</small></div><div class="t"><div class="from" style="width:40%"></div><div class="f" style="width:15%"></div></div><div class="v">15→40%</div></div>
+        <div class="bar"><div class="name">UE · art. 85 Dir. 2014/25<small>umbral para rechazar ofertas</small></div><div class="t"><div class="f" style="width:50%"></div></div><div class="v">&gt;50%</div></div>
+        <div class="axis"><div class="note">Tramo claro: subida prevista</div><div><span>0%</span><span>50%</span><span>100%</span></div><div></div></div>
+      </div>
+      <div class="chips">
+        <div class="chip"><b class="mono" style="font-family:var(--display)">10%</b><span>bonificación en Ontario (Canadá), ley BOBI</span></div>
+        <div class="chip"><b style="font-family:var(--display)">8–15%</b><span>Argentina, Ley 27.437 Compre Argentino (8% general, 15% pymes)</span></div>
+        <div class="chip"><b style="font-family:var(--display)">100%</b><span>de contratos federales de 10.000–250.000 $ reservados a pymes (EE. UU.)</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="ph"><span class="tag indirect">Indirectas</span><h3>Medio ambiente y seguridad de suministro</h3></div>
+      <div class="cols2">
+        <div class="myth"><strong>Mito: lo cercano contamina menos</strong>El transporte suele ser una parte menor de las emisiones. Calentar invernaderos en el norte de Europa en invierno puede emitir más CO₂ que traer alimentos por barco desde climas cálidos.</div>
+        <ul class="list">
+          <li><b>&gt;50%</b><span><strong>Ley Net-Zero</strong> (Reg. 2024/1735): criterios de resiliencia a partir de esa dependencia exterior.</span></li>
+          <li><b>299</b><span>medicamentos críticos identificados por la EMA. <strong>Propuesta de Ley de Medicamentos Críticos</strong> (marzo 2025): favorecer a quien produzca en la UE.</span></li>
+          <li><b>65%</b><span>de los principios activos de la amoxicilina en Europa venían de China (hasta el 80% en otros medicamentos).</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn"><span class="label">Aviso OCDE</span><span>Las preferencias nacionales pueden encarecer las compras y reducir la competencia, y la evidencia sobre su eficacia es mixta. Comprar cerca no garantiza mejores resultados.</span></div>
+  </section>
+</div>
+
+<!-- ===== MITAD DERECHA (A4 2) ===== -->
+<div class="half right">
+  <section>
+    <div class="sh"><span class="n">3</span><div><h2>Cadenas globales de valor: los límites del reshoring</h2><p>Un tren de alta velocidad o un escáner médico lleva piezas y licencias de decenas de países. Las cuotas de contenido local funcionan como aranceles encubiertos.</p></div></div>
+    <div class="cols2" style="grid-template-columns:1.15fr 1fr">
+      <div class="panel">
+        <span class="label">Relocalizar la producción (simulación OCDE)</span>
+        <div class="giant"><span class="big">−18%</span><p>de comercio internacional y más de un 5% menos de PIB mundial.</p></div>
+        <div class="bars gdp">
+          <div class="bar"><div class="name">Canadá</div><div class="t"><div class="f" style="width:93.6%"></div></div><div class="v">−13,1%</div></div>
+          <div class="bar"><div class="name">Reino Unido</div><div class="t"><div class="f" style="width:87.1%"></div></div><div class="v">−12,2%</div></div>
+          <div class="bar"><div class="name">PIB mundial</div><div class="t"><div class="f" style="width:35.7%"></div></div><div class="v">&gt;−5%</div></div>
+          <div class="axis"><div></div><div><span>0</span><span>−7%</span><span>−14%</span></div><div></div></div>
+        </div>
+        <p class="note">Más pierden las economías muy integradas en cadenas concretas, como el automóvil en Canadá y Reino Unido.</p>
+      </div>
+      <div class="panel">
+        <span class="label">Friendshoring: economía dividida en dos bloques</span>
+        <div class="giant"><span class="big" style="font-size:24pt">−0,6 a −4,6%</span></div>
+        <p style="font-size:7.3pt">del PIB mundial a medio plazo, y la incertidumbre sobre quién es "amigo" frena la inversión.</p>
+        <div class="range"><div class="r" style="left:12%;width:80%"></div></div>
+        <div class="raxis"><span>0%</span><span>−2,5%</span><span>−5%</span></div>
+        <p class="note">Ante shocks de oferta, un sistema localizado no estabiliza el PIB ni el consumo mejor que uno interconectado.</p>
+      </div>
+    </div>
+    <div class="mini">
+      <div><b>≈70%</b><span>del comercio mundial son bienes y servicios intermedios (OCDE)</span></div>
+      <div><b>+15–30%</b><span>de sobrecoste en contratación si se exigen solo piezas nacionales</span></div>
+      <div><b>PIB ÷ distancia</b><span>modelo gravitacional: las barreras actúan como más distancia</span></div>
+    </div>
+    <div class="theory"><span>Ventaja comparativa · Ricardo</span><span>Dotación de factores · Heckscher-Ohlin</span><span>Modelo gravitacional</span></div>
+  </section>
+
+  <section>
+    <div class="sh"><span class="n">4</span><div><h2>Mercados cerrados, subsidios y la respuesta europea</h2><p>El GPA es plurilateral: 22 partes que cubren a <strong>49 miembros</strong> de la OMC, la mayoría países OCDE. China, India y Brasil se quedaron fuera para reservar sus licitaciones a sus empresas públicas.</p></div></div>
+    <div class="scales">
+      <div class="side cn">
+        <span class="label">China · Made in China 2025</span>
+        <div class="kv">
+          <b>230.900 M$</b><span>en subsidios a fabricantes de vehículos eléctricos (2009–2023)</span>
+          <b>&gt;1.000 M$</b><span>al año en subsidios al sector ferroviario chino (2020–2024), del que forma parte CRRC</span>
+          <b>957 M€</b><span>contrato de CRRC en Rumanía (2019), con el precio como el 80% de la puntuación</span>
+        </div>
+      </div>
+      <div class="vs">vs</div>
+      <div class="side eu">
+        <span class="label">Unión Europea · reciprocidad efectiva</span>
+        <div class="kv">
+          <b>−50%</b><span>de la puntuación como ajuste máximo del IPI (100% si solo cuenta el precio)</span>
+          <b>Veto</b><span>posible exclusión total de la licitación</span>
+          <b>Sin igualdad</b><span>de trato garantizada para empresas de países sin acuerdo (caso Kolin)</span>
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <div class="doc"><span class="mono">Reg. UE 2022/1031</span><strong>Instrumento de Contratación Internacional (IPI)</strong></div>
+      <div class="doc"><span class="mono">Reg. UE 2022/2560</span><strong>Reglamento sobre Subvenciones Extranjeras (FSR)</strong></div>
+      <div class="doc"><span class="mono">Abr. 2024 → jun. 2025</span><strong>Primer caso IPI</strong><span>China, dispositivos médicos: se excluye a sus empresas.</span></div>
+      <div class="doc"><span class="mono">TJUE C-652/22 · 22/10/2024</span><strong>Sentencia Kolin</strong><span>No pueden invocar las directivas de contratación de la UE.</span></div>
+    </div>
+  </section>
+
+  <section class="grow">
+    <div class="sh"><span class="n">5</span><div><h2>Tres recomendaciones</h2><p>La soberanía productiva se construye con innovación, medición y diversificación, no con barreras.</p></div></div>
+    <div class="recs grow">
+      <div class="rec">
+        <span class="from">Cuotas cerradas y reservas</span>
+        <h3>Compra Pública Innovadora</h3>
+        <p>CPI, PCP y PPI: orientar las compras hacia retos tecnológicos refuerza la competitividad y la productividad.</p>
+        <div class="num"><b>95%</b><span>de las empresas francesas que patentaron (1995–2012) exportaron. El vínculo compra pública → exportación no está demostrado.</span></div>
+      </div>
+      <div class="rec">
+        <span class="from">Barreras encubiertas</span>
+        <h3>Medir el impacto</h3>
+        <p>Que los requisitos ambientales, de ciberseguridad o de soberanía digital no se usen como proteccionismo.</p>
+        <div class="measure">
+          <div class="row"><span>Miden impacto económico</span><b>23%</b></div><div class="t"><div class="f" style="width:23%"></div></div>
+          <div class="row"><span>Miden impacto social y ambiental</span><b>10%</b></div><div class="t"><div class="f" style="width:10%"></div></div>
+        </div>
+      </div>
+      <div class="rec">
+        <span class="from">Aislamiento autárquico</span>
+        <h3>Diversificar y digitalizar</h3>
+        <p>El e-procurement abarata la participación de las pymes, da transparencia frente a la corrupción y favorece la competencia.</p>
+        <div class="num"><b>98%</b><span>de los países encuestados (39 de 40) publica sus compras en una plataforma central en línea.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Fuente: OECD (2026). <i>Public Procurement, Trade and Industrial Policies: Supporting National Priorities</i>. OECD Publishing, París.</span>
+    <span>Entrega: 29/11/2026</span>
+  </footer>
+</div>
+
+</div>
+</body>
+</html>
