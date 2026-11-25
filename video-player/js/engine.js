@@ -54,6 +54,7 @@ class MotionGraphicsPlayer {
   init() {
     this.setupResponsiveScaling();
     this.setupPaletteSystem();
+    this.setupTypographySystem();
     this.setupScrubber();
     this.renderTimelineDots();
     this.bindKeyboardShortcuts();
@@ -100,6 +101,17 @@ class MotionGraphicsPlayer {
         subtitle: 'Navy & Vermilion Suizo',
         gradient: 'linear-gradient(135deg, #1A365D 0%, #D64527 50%, #2A6F5B 100%)'
       }
+    ];
+  }
+
+  // --- CATÁLOGO DE PRESETS TIPOGRÁFICOS DE ALTO IMPACTO ---
+  static get TYPOGRAPHY_PRESETS() {
+    return [
+      { id: '0', name: 'Archivo', desc: 'Grotesca suiza contundente (Activa)' },
+      { id: '1', name: 'Sora', desc: 'Geométrica ancha & limpia' },
+      { id: '2', name: 'Space Grotesk', desc: 'Editorial tech & nítida' },
+      { id: '3', name: 'Plus Jakarta', desc: 'Moderna & ultra-legible' },
+      { id: '4', name: 'Syne', desc: 'Display retro' }
     ];
   }
 
@@ -221,6 +233,165 @@ class MotionGraphicsPlayer {
         this.paletteToast.classList.remove('show');
       }
     }, 1500);
+  }
+
+  // --- SISTEMA DINÁMICO DE TIPOGRAFÍAS (0 A 4) ---
+  setupTypographySystem() {
+    this.fonts = MotionGraphicsPlayer.TYPOGRAPHY_PRESETS;
+    this.currentFont = '0';
+    this.fontToastTimeout = null;
+
+    try {
+      // Migración a versión 2: Archivo como preset '0' predeterminado
+      const version = localStorage.getItem('em_font_version');
+      if (version !== '2') {
+        localStorage.setItem('em_font_version', '2');
+        localStorage.setItem('em_active_font', '0');
+        this.currentFont = '0';
+      } else {
+        const saved = localStorage.getItem('em_active_font');
+        if (saved !== null && ['0', '1', '2', '3', '4'].includes(saved)) {
+          this.currentFont = saved;
+        }
+      }
+    } catch (e) {}
+
+    // Cachear elementos de UI de fuente
+    this.fontPicker = document.getElementById('hud-font-picker');
+    this.fontNameDisplay = document.getElementById('font-name-display');
+    this.fontPresetsStrip = document.getElementById('font-presets-strip');
+    this.fontToast = document.getElementById('font-toast');
+    this.fontToastBadge = document.getElementById('font-toast-badge');
+    this.fontToastName = document.getElementById('font-toast-name');
+    this.fontToastDesc = document.getElementById('font-toast-desc');
+
+    this.renderFontPills();
+
+    const cycleBtn = document.getElementById('btn-font-cycle');
+    if (cycleBtn) {
+      cycleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.cycleFont();
+      });
+    }
+
+    this.setFont(this.currentFont, false);
+  }
+
+  renderFontPills() {
+    if (!this.fontPresetsStrip) return;
+    this.fontPresetsStrip.innerHTML = '';
+
+    this.fonts.forEach(f => {
+      const btn = document.createElement('button');
+      btn.className = `font-pill-btn ${f.id === this.currentFont ? 'active' : ''}`;
+      btn.setAttribute('data-font', f.id);
+      btn.title = `${f.name}: ${f.desc}`;
+      btn.textContent = f.name.includes('Jakarta') ? 'Jakarta' : f.name.split(' ')[0];
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.setFont(f.id, true);
+      });
+      this.fontPresetsStrip.appendChild(btn);
+    });
+  }
+
+  setFont(fontId, showNotice = true) {
+    this.currentFont = String(fontId);
+    const fontInfo = (this.fonts || MotionGraphicsPlayer.TYPOGRAPHY_PRESETS).find(f => f.id === this.currentFont) || (this.fonts || MotionGraphicsPlayer.TYPOGRAPHY_PRESETS)[0];
+
+    document.documentElement.setAttribute('data-font', this.currentFont);
+    if (document.body) {
+      document.body.setAttribute('data-font', this.currentFont);
+    }
+
+    // Sobrescritura directa de CSS custom properties para sincronización instantánea
+    const fontMap = {
+      '0': { display: "'Archivo', sans-serif", body: "'Plus Jakarta Sans', 'Outfit', sans-serif", ui: "'Archivo', 'Plus Jakarta Sans', sans-serif" },
+      '1': { display: "'Sora', 'Plus Jakarta Sans', sans-serif", body: "'Plus Jakarta Sans', 'Outfit', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" },
+      '2': { display: "'Space Grotesk', sans-serif", body: "'Plus Jakarta Sans', sans-serif", ui: "'Space Grotesk', sans-serif" },
+      '3': { display: "'Plus Jakarta Sans', sans-serif", body: "'Plus Jakarta Sans', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" },
+      '4': { display: "'Syne', sans-serif", body: "'Outfit', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" }
+    };
+    const currentMap = fontMap[this.currentFont] || fontMap['0'];
+    document.documentElement.style.setProperty('--font-display', currentMap.display);
+    document.documentElement.style.setProperty('--font-body', currentMap.body);
+    if (currentMap.ui) {
+      document.documentElement.style.setProperty('--font-ui', currentMap.ui);
+    }
+
+    try {
+      localStorage.setItem('em_active_font', this.currentFont);
+    } catch (e) {}
+
+    // Actualizar nombre visible en el HUD
+    if (this.fontNameDisplay && fontInfo) {
+      this.fontNameDisplay.textContent = fontInfo.name;
+    }
+
+    // Actualizar botones de fuente en el HUD
+    if (this.fontPresetsStrip) {
+      this.fontPresetsStrip.querySelectorAll('.font-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-font') === this.currentFont);
+      });
+    }
+    document.querySelectorAll('.font-pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-font') === this.currentFont);
+    });
+
+    if (showNotice && fontInfo) {
+      this.showFontToast(fontInfo);
+    }
+  }
+
+  cycleFont() {
+    const currentNum = parseInt(this.currentFont || '0', 10);
+    const totalFonts = (this.fonts ? this.fonts.length : 5);
+    const next = (currentNum + 1) % totalFonts;
+    this.setFont(String(next), true);
+  }
+
+  showFontToast(fontInfo) {
+    if (!this.fontToast) {
+      this.fontToast = document.getElementById('font-toast');
+      this.fontToastBadge = document.getElementById('font-toast-badge');
+      this.fontToastName = document.getElementById('font-toast-name');
+      this.fontToastDesc = document.getElementById('font-toast-desc');
+    }
+    if (!this.fontToast) {
+      this.fontToast = document.createElement('div');
+      this.fontToast.className = 'palette-toast font-toast';
+      this.fontToast.id = 'font-toast';
+      this.fontToast.setAttribute('aria-live', 'polite');
+      this.fontToast.innerHTML = `
+        <span class="palette-toast-badge font-toast-badge" id="font-toast-badge">FUENTE ${fontInfo.id}</span>
+        <span class="palette-toast-name font-toast-name" id="font-toast-name">${fontInfo.name}</span>
+        <span class="font-toast-desc" id="font-toast-desc">${fontInfo.desc}</span>
+      `;
+      const stage = this.stage || document.body;
+      stage.appendChild(this.fontToast);
+      this.fontToastBadge = document.getElementById('font-toast-badge');
+      this.fontToastName = document.getElementById('font-toast-name');
+      this.fontToastDesc = document.getElementById('font-toast-desc');
+    }
+
+    if (this.fontToastBadge) {
+      this.fontToastBadge.textContent = `FUENTE ${fontInfo.id}`;
+    }
+    if (this.fontToastName) {
+      this.fontToastName.textContent = fontInfo.name;
+    }
+    if (this.fontToastDesc) {
+      this.fontToastDesc.textContent = fontInfo.desc;
+    }
+
+    this.fontToast.classList.add('show');
+    clearTimeout(this.fontToastTimeout);
+    this.fontToastTimeout = setTimeout(() => {
+      if (this.fontToast) {
+        this.fontToast.classList.remove('show');
+      }
+    }, 1600);
   }
 
   // --- ESCALADO RESPONSIVO PROPORCIONAL 16:9 NATIVO ---
@@ -675,6 +846,10 @@ class MotionGraphicsPlayer {
           this.loadScene(Math.min(this.scenes.length - 1, this.currentIndex + 5), true);
           break;
         case 'KeyF':
+          e.preventDefault();
+          this.cycleFont();
+          break;
+        case 'KeyM':
           e.preventDefault();
           this.toggleFullscreen();
           break;

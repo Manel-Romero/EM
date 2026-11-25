@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-font="0">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo 14 • Contratación Pública y Comercio Internacional (OECD 2026)</title>
 
-  <!-- Google Fonts: Syne, Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Sora, Space Grotesk, Archivo, Plus Jakarta Sans, JetBrains Mono, Syne, Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
 /* ==========================================================================
@@ -17,7 +17,7 @@
    Estilo editorial vintage, minimalista, fondo blanco, ultra-redondeado, alta legibilidad.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
 
 :root,
 [data-palette="0"] {
@@ -203,10 +203,10 @@
   --border-subtle: rgba(var(--color-primary-rgb), 0.08);
   --border-card: rgba(var(--color-primary-rgb), 0.06);
 
-  /* --- TIPOGRAFÍAS MODERNAS Y ANCHAS --- */
-  --font-display: 'Syne', 'Outfit', sans-serif;
-  --font-body: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-ui: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  /* --- TIPOGRAFÍAS MODERNAS, ANCHAS Y ULTRA-LEGIBLES --- */
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Archivo', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* --- PESOS Y TRACKING --- */
@@ -217,11 +217,11 @@
   --weight-extrabold: 800;
   --weight-black: 900;
 
-  --tracking-tightest: -0.04em;
-  --tracking-tight: -0.02em;
+  --tracking-tightest: -0.02em;
+  --tracking-tight: -0.01em;
   --tracking-normal: 0em;
   --tracking-wide: 0.04em;
-  --tracking-widest: 0.10em;
+  --tracking-widest: 0.08em;
 
   /* --- RADIO DE ESQUINAS ULTRA-REDONDEADAS --- */
   --radius-xs: 14px;
@@ -249,6 +249,51 @@
   --duration-normal: 240ms;
   --duration-scene: 350ms;
   --duration-fade: 280ms; /* Fundido a negro dinámico de ~280ms para DaVinci */
+}
+
+/* ==========================================================================
+   SELECTORES DE TIPOGRAFÍAS DINÁMICAS (DATA-FONT)
+   Permite alternar sets tipográficos dinámicamente preservando alta legibilidad:
+   0: Archivo (Grotesca suiza contundente - DEFAULT)
+   1: Sora (Geométrica ancha & limpia)
+   2: Space Grotesk (Editorial tech)
+   3: Plus Jakarta Sans (Moderna y neutra)
+   4: Syne (Display retro)
+   ========================================================================== */
+:root,
+[data-font="0"] {
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Archivo', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="1"] {
+  --font-display: 'Sora', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="2"] {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-ui: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="3"] {
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="4"] {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* Reset y Reglas Base */
@@ -530,6 +575,152 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
+}
+
+/* ==========================================================================
+   SELECTOR VISUAL DE FUENTES EN HUD Y NOTIFICACIÓN TOAST (TECLA F)
+   ========================================================================== */
+.font-picker-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.font-picker-pill:hover {
+  background: var(--bg-surface-1);
+}
+
+.font-picker-label-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  transition: color 0.2s ease;
+}
+
+.font-picker-label-btn:hover {
+  color: var(--color-accent-1);
+}
+
+.font-picker-label {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.font-name-display {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.font-presets-strip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.font-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: all 0.2s var(--ease-spring);
+}
+
+.font-pill-btn:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  transform: translateY(-1px);
+}
+
+.font-pill-btn.active {
+  background: rgba(var(--color-primary-rgb), 0.12);
+  border-color: rgba(var(--color-primary-rgb), 0.28);
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.12);
+}
+
+/* Toast Flotante Discreto para Notificación de Fuente (Tecla F) */
+.font-toast {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-spring), transform 0.28s var(--ease-spring);
+}
+
+.font-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.font-toast-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  background: var(--color-sand);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+
+.font-toast-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.font-toast-desc {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.85;
 }
 
 /* ==========================================================================
@@ -965,12 +1156,13 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   display: none !important;
 }
 
+.micro-title,
 .scene-title-large {
   font-family: var(--font-display);
   font-size: 54px;
-  font-weight: var(--weight-extrabold);
-  line-height: 1.08;
-  letter-spacing: var(--tracking-tightest);
+  font-weight: 700;
+  line-height: 1.10;
+  letter-spacing: -0.02em;
   color: var(--color-primary);
 }
 
@@ -1098,11 +1290,12 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   gap: 12px;
 }
 
-.metric-giant-number {
+.metric-giant-number,
+.micro-giant-number {
   font-family: var(--font-display);
   font-size: 92px;
-  font-weight: var(--weight-black);
-  letter-spacing: var(--tracking-tightest);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 0.95;
   color: var(--color-petroleum);
 }
@@ -1625,8 +1818,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 14px;
   box-shadow: 0 2px 10px rgba(246, 226, 179, 0.45);
@@ -1644,12 +1837,13 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 
 .hero-metric-val,
 .hero-metric-value,
-.micro-number-val {
+.micro-number-val,
+.micro-giant-number-hero {
   font-family: var(--font-display);
   font-size: 136px; /* Titánico 120px+ */
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.90;
-  letter-spacing: var(--tracking-tightest);
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
 }
 
@@ -1671,7 +1865,7 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .hero-metric-prefix {
   font-family: var(--font-display);
   font-size: 78px;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--color-mustard);
   line-height: 1;
 }
@@ -1680,8 +1874,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .micro-number-unit {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--color-sage);
   line-height: 1;
 }
@@ -1690,9 +1884,9 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .micro-number-label {
   font-family: var(--font-ui);
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-petroleum);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: 1.25;
   margin-top: 20px;
   max-width: 860px;
@@ -1779,9 +1973,9 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: 0.05em;
   margin-bottom: 14px;
 }
 
@@ -1818,23 +2012,25 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .dual-stat-number {
   font-family: var(--font-display);
   font-size: 88px;
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.92;
-  letter-spacing: var(--tracking-tightest);
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
 }
 
 .dual-stat-unit {
   font-family: var(--font-display);
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-sage);
 }
 
 .dual-stat-label {
   font-family: var(--font-ui);
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
   margin-top: 16px;
   line-height: 1.25;
@@ -1933,7 +2129,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .micro-chart-bar-val {
   font-family: var(--font-mono);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
 }
 
@@ -1999,8 +2196,10 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 }
 
 .pure-ratio-pct {
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
@@ -2087,7 +2286,7 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .concept-pill-text {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--color-petroleum);
   line-height: 1.25;
@@ -2128,12 +2327,13 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 }
 
 .impact-quote-text,
+.micro-statement,
 .micro-type-d-statement {
   font-family: var(--font-display);
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
   margin: 0;
   max-width: 1100px;
@@ -2142,16 +2342,19 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 
 .impact-quote-text .quote-accent-terracotta,
 .impact-quote-text .accent-highlight,
+.micro-statement .accent-highlight,
 .micro-type-d-statement .accent-highlight {
   color: var(--color-terracotta);
 }
 
 .impact-quote-text .quote-accent-sage,
+.micro-statement .accent-sage,
 .micro-type-d-statement .accent-sage {
   color: var(--color-sage);
 }
 
 .impact-quote-text .quote-accent-mustard,
+.micro-statement .accent-mustard,
 .micro-type-d-statement .accent-mustard {
   color: var(--color-mustard);
 }
@@ -2211,8 +2414,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 16px;
   box-shadow: none;
@@ -2247,7 +2450,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 .micro-type-e-title {
   font-family: var(--font-display);
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
   margin-bottom: 20px;
   line-height: 1.2;
@@ -2269,7 +2473,8 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
   box-shadow: none !important;
 }
@@ -2418,6 +2623,22 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
           </button>
         </div>
 
+        <!-- Selector Rápido de Fuentes en el HUD (Atajo: Tecla F) -->
+        <div class="font-picker-pill" id="hud-font-picker" title="Cambiar Fuente Tipográfica (Atajo: Tecla F)">
+          <button class="font-picker-label-btn" id="btn-font-cycle" title="Ciclar fuente tipográfica (Tecla F)" onclick="window.playerInstance.cycleFont()">
+            <span class="key-kbd" style="font-size: 10px; padding: 1px 5px; margin-right: 4px;">F</span>
+            <span class="font-picker-label">FUENTE:</span>
+            <span class="font-name-display" id="font-name-display">Archivo</span>
+          </button>
+          <div class="font-presets-strip" id="font-presets-strip">
+            <button class="font-pill-btn active" data-font="0" title="Archivo: Grotesca suiza contundente (DEFAULT)" onclick="window.playerInstance.setFont('0')">Archivo</button>
+            <button class="font-pill-btn" data-font="1" title="Sora: Geométrica ancha & limpia" onclick="window.playerInstance.setFont('1')">Sora</button>
+            <button class="font-pill-btn" data-font="2" title="Space Grotesk: Editorial tech" onclick="window.playerInstance.setFont('2')">Space</button>
+            <button class="font-pill-btn" data-font="3" title="Plus Jakarta Sans: Moderna y neutra" onclick="window.playerInstance.setFont('3')">Jakarta</button>
+            <button class="font-pill-btn" data-font="4" title="Syne: Display retro" onclick="window.playerInstance.setFont('4')">Syne</button>
+          </div>
+        </div>
+
         <!-- Pastilla del Ponente Activo -->
         <div class="speaker-pill" id="speaker-pill-container" style="display: none;">
           <div class="speaker-avatar" id="speaker-avatar">G14</div>
@@ -2451,6 +2672,19 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
         <!-- Contenido Inyectado Dinámicamente -->
         <div id="scene-content-area" style="min-height: 520px;"></div>
       </section>
+
+      <!-- Notificación Flotante Discreta de Cambio de Paleta (Tecla P) -->
+      <div class="palette-toast" id="palette-toast" aria-live="polite">
+        <span class="palette-toast-badge" id="palette-toast-badge">PALETA 0</span>
+        <span class="palette-toast-name" id="palette-toast-name">Retro Vintage</span>
+      </div>
+
+      <!-- Notificación Flotante Discreta de Cambio de Fuente (Tecla F) -->
+      <div class="palette-toast font-toast" id="font-toast" aria-live="polite">
+        <span class="palette-toast-badge font-toast-badge" id="font-toast-badge">FUENTE 0</span>
+        <span class="palette-toast-name font-toast-name" id="font-toast-name">Archivo</span>
+        <span class="font-toast-desc" id="font-toast-desc">Grotesca suiza contundente (DEFAULT)</span>
+      </div>
 
       <!-- BARRA INFERIOR (BOTTOM HUD & RECORDING CONTROLS) -->
       <footer class="hud-bottom">
@@ -2495,13 +2729,18 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
 
         <!-- Herramientas y Atajos para Grabación de Pantalla -->
         <div class="hud-recording-tools">
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente">
+          <div class="tool-pill-btn" onclick="window.playerInstance.cycleFont()" title="Cambiar familia tipográfica (Atajo: Tecla F)">
+            <span class="key-kbd">F</span>
+            <span>Fuente</span>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente (Atajo: Tecla H)">
             <span class="key-kbd">H</span>
             <span>Modo Grabación Limpia</span>
           </div>
 
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p">
-            <span class="key-kbd">F</span>
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p (Atajo: Tecla M o Doble Clic)">
+            <span class="key-kbd">M</span>
             <span>Pantalla Completa</span>
           </div>
         </div>
@@ -4037,6 +4276,7 @@ class MotionGraphicsPlayer {
   init() {
     this.setupResponsiveScaling();
     this.setupPaletteSystem();
+    this.setupTypographySystem();
     this.setupScrubber();
     this.renderTimelineDots();
     this.bindKeyboardShortcuts();
@@ -4083,6 +4323,17 @@ class MotionGraphicsPlayer {
         subtitle: 'Navy & Vermilion Suizo',
         gradient: 'linear-gradient(135deg, #1A365D 0%, #D64527 50%, #2A6F5B 100%)'
       }
+    ];
+  }
+
+  // --- CATÁLOGO DE PRESETS TIPOGRÁFICOS DE ALTO IMPACTO ---
+  static get TYPOGRAPHY_PRESETS() {
+    return [
+      { id: '0', name: 'Archivo', desc: 'Grotesca suiza contundente (DEFAULT)' },
+      { id: '1', name: 'Sora', desc: 'Geométrica ancha & limpia' },
+      { id: '2', name: 'Space Grotesk', desc: 'Editorial tech' },
+      { id: '3', name: 'Plus Jakarta Sans', desc: 'Moderna y neutra' },
+      { id: '4', name: 'Syne', desc: 'Display retro' }
     ];
   }
 
@@ -4204,6 +4455,165 @@ class MotionGraphicsPlayer {
         this.paletteToast.classList.remove('show');
       }
     }, 1500);
+  }
+
+  // --- SISTEMA DINÁMICO DE TIPOGRAFÍAS (0 A 4) ---
+  setupTypographySystem() {
+    this.fonts = MotionGraphicsPlayer.TYPOGRAPHY_PRESETS;
+    this.currentFont = '0';
+    this.fontToastTimeout = null;
+
+    try {
+      // Migración a versión 2: Archivo como preset '0' predeterminado
+      const version = localStorage.getItem('em_font_version');
+      if (version !== '2') {
+        localStorage.setItem('em_font_version', '2');
+        localStorage.setItem('em_active_font', '0');
+        this.currentFont = '0';
+      } else {
+        const saved = localStorage.getItem('em_active_font');
+        if (saved !== null && ['0', '1', '2', '3', '4'].includes(saved)) {
+          this.currentFont = saved;
+        }
+      }
+    } catch (e) {}
+
+    // Cachear elementos de UI de fuente
+    this.fontPicker = document.getElementById('hud-font-picker');
+    this.fontNameDisplay = document.getElementById('font-name-display');
+    this.fontPresetsStrip = document.getElementById('font-presets-strip');
+    this.fontToast = document.getElementById('font-toast');
+    this.fontToastBadge = document.getElementById('font-toast-badge');
+    this.fontToastName = document.getElementById('font-toast-name');
+    this.fontToastDesc = document.getElementById('font-toast-desc');
+
+    this.renderFontPills();
+
+    const cycleBtn = document.getElementById('btn-font-cycle');
+    if (cycleBtn) {
+      cycleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.cycleFont();
+      });
+    }
+
+    this.setFont(this.currentFont, false);
+  }
+
+  renderFontPills() {
+    if (!this.fontPresetsStrip) return;
+    this.fontPresetsStrip.innerHTML = '';
+
+    this.fonts.forEach(f => {
+      const btn = document.createElement('button');
+      btn.className = `font-pill-btn ${f.id === this.currentFont ? 'active' : ''}`;
+      btn.setAttribute('data-font', f.id);
+      btn.title = `${f.name}: ${f.desc}`;
+      btn.textContent = f.name.includes('Jakarta') ? 'Jakarta' : f.name.split(' ')[0];
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.setFont(f.id, true);
+      });
+      this.fontPresetsStrip.appendChild(btn);
+    });
+  }
+
+  setFont(fontId, showNotice = true) {
+    this.currentFont = String(fontId);
+    const fontInfo = (this.fonts || MotionGraphicsPlayer.TYPOGRAPHY_PRESETS).find(f => f.id === this.currentFont) || (this.fonts || MotionGraphicsPlayer.TYPOGRAPHY_PRESETS)[0];
+
+    document.documentElement.setAttribute('data-font', this.currentFont);
+    if (document.body) {
+      document.body.setAttribute('data-font', this.currentFont);
+    }
+
+    // Sobrescritura directa de CSS custom properties para sincronización instantánea
+    const fontMap = {
+      '0': { display: "'Archivo', sans-serif", body: "'Plus Jakarta Sans', 'Outfit', sans-serif", ui: "'Archivo', 'Plus Jakarta Sans', sans-serif" },
+      '1': { display: "'Sora', 'Plus Jakarta Sans', sans-serif", body: "'Plus Jakarta Sans', 'Outfit', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" },
+      '2': { display: "'Space Grotesk', sans-serif", body: "'Plus Jakarta Sans', sans-serif", ui: "'Space Grotesk', sans-serif" },
+      '3': { display: "'Plus Jakarta Sans', sans-serif", body: "'Plus Jakarta Sans', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" },
+      '4': { display: "'Syne', sans-serif", body: "'Outfit', sans-serif", ui: "'Plus Jakarta Sans', sans-serif" }
+    };
+    const currentMap = fontMap[this.currentFont] || fontMap['0'];
+    document.documentElement.style.setProperty('--font-display', currentMap.display);
+    document.documentElement.style.setProperty('--font-body', currentMap.body);
+    if (currentMap.ui) {
+      document.documentElement.style.setProperty('--font-ui', currentMap.ui);
+    }
+
+    try {
+      localStorage.setItem('em_active_font', this.currentFont);
+    } catch (e) {}
+
+    // Actualizar nombre visible en el HUD
+    if (this.fontNameDisplay && fontInfo) {
+      this.fontNameDisplay.textContent = fontInfo.name;
+    }
+
+    // Actualizar botones de fuente en el HUD
+    if (this.fontPresetsStrip) {
+      this.fontPresetsStrip.querySelectorAll('.font-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-font') === this.currentFont);
+      });
+    }
+    document.querySelectorAll('.font-pill-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-font') === this.currentFont);
+    });
+
+    if (showNotice && fontInfo) {
+      this.showFontToast(fontInfo);
+    }
+  }
+
+  cycleFont() {
+    const currentNum = parseInt(this.currentFont || '0', 10);
+    const totalFonts = (this.fonts ? this.fonts.length : 5);
+    const next = (currentNum + 1) % totalFonts;
+    this.setFont(String(next), true);
+  }
+
+  showFontToast(fontInfo) {
+    if (!this.fontToast) {
+      this.fontToast = document.getElementById('font-toast');
+      this.fontToastBadge = document.getElementById('font-toast-badge');
+      this.fontToastName = document.getElementById('font-toast-name');
+      this.fontToastDesc = document.getElementById('font-toast-desc');
+    }
+    if (!this.fontToast) {
+      this.fontToast = document.createElement('div');
+      this.fontToast.className = 'palette-toast font-toast';
+      this.fontToast.id = 'font-toast';
+      this.fontToast.setAttribute('aria-live', 'polite');
+      this.fontToast.innerHTML = `
+        <span class="palette-toast-badge font-toast-badge" id="font-toast-badge">FUENTE ${fontInfo.id}</span>
+        <span class="palette-toast-name font-toast-name" id="font-toast-name">${fontInfo.name}</span>
+        <span class="font-toast-desc" id="font-toast-desc">${fontInfo.desc}</span>
+      `;
+      const stage = this.stage || document.body;
+      stage.appendChild(this.fontToast);
+      this.fontToastBadge = document.getElementById('font-toast-badge');
+      this.fontToastName = document.getElementById('font-toast-name');
+      this.fontToastDesc = document.getElementById('font-toast-desc');
+    }
+
+    if (this.fontToastBadge) {
+      this.fontToastBadge.textContent = `FUENTE ${fontInfo.id}`;
+    }
+    if (this.fontToastName) {
+      this.fontToastName.textContent = fontInfo.name;
+    }
+    if (this.fontToastDesc) {
+      this.fontToastDesc.textContent = fontInfo.desc;
+    }
+
+    this.fontToast.classList.add('show');
+    clearTimeout(this.fontToastTimeout);
+    this.fontToastTimeout = setTimeout(() => {
+      if (this.fontToast) {
+        this.fontToast.classList.remove('show');
+      }
+    }, 1600);
   }
 
   // --- ESCALADO RESPONSIVO PROPORCIONAL 16:9 NATIVO ---
@@ -4658,6 +5068,10 @@ class MotionGraphicsPlayer {
           this.loadScene(Math.min(this.scenes.length - 1, this.currentIndex + 5), true);
           break;
         case 'KeyF':
+          e.preventDefault();
+          this.cycleFont();
+          break;
+        case 'KeyM':
           e.preventDefault();
           this.toggleFullscreen();
           break;

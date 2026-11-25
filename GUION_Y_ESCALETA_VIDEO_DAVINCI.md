@@ -83,7 +83,7 @@ PISTAS DE AUDIO:
 * **Transición de Salida:** Corte directo hacia `[ESCENA HTML 1]` al pronunciar la palabra *"prioridades"*.
 
 #### Guión Textual de Manuel a Cámara:
-> *"Hola a todos y bienvenidos. Mi nombre es Manuel Romero Álvarez y, en nombre del Grupo 14 —que formo junto a mis compañeros Jorge Cañete y Aleksandr Globa—, presentamos hoy nuestro proyecto de investigación para la asignatura de Economía Mundial del Grado en ADE y Ciencia de Datos en la Universidad Politécnica de Valencia.*  
+> *"Hola a todos y bienvenidos. Mi nombre es Manuel Romero Álvarez y, en nombre del Grupo 14 —que formo junto a mis compañeros Jorge Cañete y Aleksandr Globa—, presentamos hoy nuestro proyecto de investigación para la asignatura de Economía Mundial del Grado en ADE y Ingeniería Informática en la Universidad Politécnica de Valencia.*  
 > 
 > *Durante décadas, la compra pública se consideró un simple proceso administrativo: comprar al precio más bajo posible respetando la libre concurrencia internacional. Sin embargo, el reciente informe de la OCDE de 2026 demuestra que nos encontramos ante un giro radical. Hoy, los gobiernos de todo el mundo están convirtiendo sus presupuestos de compras en la principal trinchera de su política industrial y de su seguridad nacional.*  
 > 

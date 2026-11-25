@@ -1540,16 +1540,16 @@ components_css = open(f"{base_dir}/css/components.css", "r", encoding="utf-8").r
 engine_js = open(f"{base_dir}/js/engine.js", "r", encoding="utf-8").read()
 
 standalone_html = f"""<!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-font="0">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo 14 • Contratación Pública y Comercio Internacional (OECD 2026)</title>
 
-  <!-- Google Fonts: Syne, Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Sora, Space Grotesk, Archivo, Plus Jakarta Sans, JetBrains Mono, Syne, Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
 {theme_css}
@@ -1612,6 +1612,22 @@ standalone_html = f"""<!DOCTYPE html>
           </button>
         </div>
 
+        <!-- Selector Rápido de Fuentes en el HUD (Atajo: Tecla F) -->
+        <div class="font-picker-pill" id="hud-font-picker" title="Cambiar Fuente Tipográfica (Atajo: Tecla F)">
+          <button class="font-picker-label-btn" id="btn-font-cycle" title="Ciclar fuente tipográfica (Tecla F)" onclick="window.playerInstance.cycleFont()">
+            <span class="key-kbd" style="font-size: 10px; padding: 1px 5px; margin-right: 4px;">F</span>
+            <span class="font-picker-label">FUENTE:</span>
+            <span class="font-name-display" id="font-name-display">Archivo</span>
+          </button>
+          <div class="font-presets-strip" id="font-presets-strip">
+            <button class="font-pill-btn active" data-font="0" title="Archivo: Grotesca suiza contundente (DEFAULT)" onclick="window.playerInstance.setFont('0')">Archivo</button>
+            <button class="font-pill-btn" data-font="1" title="Sora: Geométrica ancha & limpia" onclick="window.playerInstance.setFont('1')">Sora</button>
+            <button class="font-pill-btn" data-font="2" title="Space Grotesk: Editorial tech" onclick="window.playerInstance.setFont('2')">Space</button>
+            <button class="font-pill-btn" data-font="3" title="Plus Jakarta Sans: Moderna y neutra" onclick="window.playerInstance.setFont('3')">Jakarta</button>
+            <button class="font-pill-btn" data-font="4" title="Syne: Display retro" onclick="window.playerInstance.setFont('4')">Syne</button>
+          </div>
+        </div>
+
         <!-- Pastilla del Ponente Activo -->
         <div class="speaker-pill" id="speaker-pill-container" style="display: none;">
           <div class="speaker-avatar" id="speaker-avatar">G14</div>
@@ -1645,6 +1661,19 @@ standalone_html = f"""<!DOCTYPE html>
         <!-- Contenido Inyectado Dinámicamente -->
         <div id="scene-content-area" style="min-height: 520px;"></div>
       </section>
+
+      <!-- Notificación Flotante Discreta de Cambio de Paleta (Tecla P) -->
+      <div class="palette-toast" id="palette-toast" aria-live="polite">
+        <span class="palette-toast-badge" id="palette-toast-badge">PALETA 0</span>
+        <span class="palette-toast-name" id="palette-toast-name">Retro Vintage</span>
+      </div>
+
+      <!-- Notificación Flotante Discreta de Cambio de Fuente (Tecla F) -->
+      <div class="palette-toast font-toast" id="font-toast" aria-live="polite">
+        <span class="palette-toast-badge font-toast-badge" id="font-toast-badge">FUENTE 0</span>
+        <span class="palette-toast-name font-toast-name" id="font-toast-name">Archivo</span>
+        <span class="font-toast-desc" id="font-toast-desc">Grotesca suiza contundente (DEFAULT)</span>
+      </div>
 
       <!-- BARRA INFERIOR (BOTTOM HUD & RECORDING CONTROLS) -->
       <footer class="hud-bottom">
@@ -1689,13 +1718,18 @@ standalone_html = f"""<!DOCTYPE html>
 
         <!-- Herramientas y Atajos para Grabación de Pantalla -->
         <div class="hud-recording-tools">
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente">
+          <div class="tool-pill-btn" onclick="window.playerInstance.cycleFont()" title="Cambiar familia tipográfica (Atajo: Tecla F)">
+            <span class="key-kbd">F</span>
+            <span>Fuente</span>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente (Atajo: Tecla H)">
             <span class="key-kbd">H</span>
             <span>Modo Grabación Limpia</span>
           </div>
 
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p">
-            <span class="key-kbd">F</span>
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p (Atajo: Tecla M o Doble Clic)">
+            <span class="key-kbd">M</span>
             <span>Pantalla Completa</span>
           </div>
         </div>

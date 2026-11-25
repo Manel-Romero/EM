@@ -4,7 +4,7 @@
    Estilo editorial vintage, minimalista, fondo blanco, ultra-redondeado, alta legibilidad.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
 
 :root,
 [data-palette="0"] {
@@ -190,10 +190,10 @@
   --border-subtle: rgba(var(--color-primary-rgb), 0.08);
   --border-card: rgba(var(--color-primary-rgb), 0.06);
 
-  /* --- TIPOGRAFÍAS MODERNAS Y ANCHAS --- */
-  --font-display: 'Syne', 'Outfit', sans-serif;
-  --font-body: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-ui: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  /* --- TIPOGRAFÍAS MODERNAS, ANCHAS Y ULTRA-LEGIBLES --- */
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Archivo', 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* --- PESOS Y TRACKING --- */
@@ -204,11 +204,11 @@
   --weight-extrabold: 800;
   --weight-black: 900;
 
-  --tracking-tightest: -0.04em;
-  --tracking-tight: -0.02em;
+  --tracking-tightest: -0.02em;
+  --tracking-tight: -0.01em;
   --tracking-normal: 0em;
   --tracking-wide: 0.04em;
-  --tracking-widest: 0.10em;
+  --tracking-widest: 0.08em;
 
   /* --- RADIO DE ESQUINAS ULTRA-REDONDEADAS --- */
   --radius-xs: 14px;
@@ -236,6 +236,51 @@
   --duration-normal: 240ms;
   --duration-scene: 350ms;
   --duration-fade: 280ms; /* Fundido a negro dinámico de ~280ms para DaVinci */
+}
+
+/* ==========================================================================
+   SELECTORES DE TIPOGRAFÍAS DINÁMICAS (DATA-FONT)
+   Permite alternar sets tipográficos dinámicamente preservando alta legibilidad:
+   0: Archivo (Grotesca suiza contundente - DEFAULT)
+   1: Sora (Geométrica ancha & limpia)
+   2: Space Grotesk (Editorial tech)
+   3: Plus Jakarta Sans (Moderna y neutra)
+   4: Syne (Display retro)
+   ========================================================================== */
+:root,
+[data-font="0"] {
+  --font-display: 'Archivo', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Archivo', 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="1"] {
+  --font-display: 'Sora', 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="2"] {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-ui: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="3"] {
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-font="4"] {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-ui: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* Reset y Reglas Base */
@@ -517,4 +562,150 @@ body, .player-stage, .scene-title-large, .stat-badge, .pill-tag {
   font-size: 14px;
   font-weight: 700;
   color: var(--color-primary);
+}
+
+/* ==========================================================================
+   SELECTOR VISUAL DE FUENTES EN HUD Y NOTIFICACIÓN TOAST (TECLA F)
+   ========================================================================== */
+.font-picker-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px 6px 10px;
+  background: var(--bg-glass-hud);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-ambient-md);
+  transition: all 0.25s var(--ease-spring);
+}
+
+.font-picker-pill:hover {
+  background: var(--bg-surface-1);
+}
+
+.font-picker-label-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-bold);
+  transition: color 0.2s ease;
+}
+
+.font-picker-label-btn:hover {
+  color: var(--color-accent-1);
+}
+
+.font-picker-label {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  color: var(--color-primary);
+  opacity: 0.85;
+}
+
+.font-name-display {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.font-presets-strip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 8px;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.font-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: all 0.2s var(--ease-spring);
+}
+
+.font-pill-btn:hover {
+  background: rgba(var(--color-primary-rgb), 0.08);
+  transform: translateY(-1px);
+}
+
+.font-pill-btn.active {
+  background: rgba(var(--color-primary-rgb), 0.12);
+  border-color: rgba(var(--color-primary-rgb), 0.28);
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(var(--color-primary-rgb), 0.12);
+}
+
+/* Toast Flotante Discreto para Notificación de Fuente (Tecla F) */
+.font-toast {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-14px);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-spring), transform 0.28s var(--ease-spring);
+}
+
+.font-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.font-toast-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  background: var(--color-sand);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
+}
+
+.font-toast-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.font-toast-desc {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.85;
 }

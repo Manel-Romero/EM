@@ -213,12 +213,13 @@
   display: none !important;
 }
 
+.micro-title,
 .scene-title-large {
   font-family: var(--font-display);
   font-size: 54px;
-  font-weight: var(--weight-extrabold);
-  line-height: 1.08;
-  letter-spacing: var(--tracking-tightest);
+  font-weight: 700;
+  line-height: 1.10;
+  letter-spacing: -0.02em;
   color: var(--color-primary);
 }
 
@@ -346,11 +347,12 @@
   gap: 12px;
 }
 
-.metric-giant-number {
+.metric-giant-number,
+.micro-giant-number {
   font-family: var(--font-display);
   font-size: 92px;
-  font-weight: var(--weight-black);
-  letter-spacing: var(--tracking-tightest);
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 0.95;
   color: var(--color-petroleum);
 }
@@ -873,8 +875,8 @@
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 14px;
   box-shadow: 0 2px 10px rgba(246, 226, 179, 0.45);
@@ -892,12 +894,13 @@
 
 .hero-metric-val,
 .hero-metric-value,
-.micro-number-val {
+.micro-number-val,
+.micro-giant-number-hero {
   font-family: var(--font-display);
   font-size: 136px; /* Titánico 120px+ */
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.90;
-  letter-spacing: var(--tracking-tightest);
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
 }
 
@@ -919,7 +922,7 @@
 .hero-metric-prefix {
   font-family: var(--font-display);
   font-size: 78px;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--color-mustard);
   line-height: 1;
 }
@@ -928,8 +931,8 @@
 .micro-number-unit {
   font-family: var(--font-display);
   font-size: 56px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
   color: var(--color-sage);
   line-height: 1;
 }
@@ -938,9 +941,9 @@
 .micro-number-label {
   font-family: var(--font-ui);
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-petroleum);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: 1.25;
   margin-top: 20px;
   max-width: 860px;
@@ -1027,9 +1030,9 @@
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: 0.05em;
   margin-bottom: 14px;
 }
 
@@ -1066,23 +1069,25 @@
 .dual-stat-number {
   font-family: var(--font-display);
   font-size: 88px;
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.92;
-  letter-spacing: var(--tracking-tightest);
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
 }
 
 .dual-stat-unit {
   font-family: var(--font-display);
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-sage);
 }
 
 .dual-stat-label {
   font-family: var(--font-ui);
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
   margin-top: 16px;
   line-height: 1.25;
@@ -1181,7 +1186,8 @@
 .micro-chart-bar-val {
   font-family: var(--font-mono);
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
 }
 
@@ -1247,8 +1253,10 @@
 }
 
 .pure-ratio-pct {
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 900;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
@@ -1335,7 +1343,7 @@
 .concept-pill-text {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--color-petroleum);
   line-height: 1.25;
@@ -1376,12 +1384,13 @@
 }
 
 .impact-quote-text,
+.micro-statement,
 .micro-type-d-statement {
   font-family: var(--font-display);
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
   margin: 0;
   max-width: 1100px;
@@ -1390,16 +1399,19 @@
 
 .impact-quote-text .quote-accent-terracotta,
 .impact-quote-text .accent-highlight,
+.micro-statement .accent-highlight,
 .micro-type-d-statement .accent-highlight {
   color: var(--color-terracotta);
 }
 
 .impact-quote-text .quote-accent-sage,
+.micro-statement .accent-sage,
 .micro-type-d-statement .accent-sage {
   color: var(--color-sage);
 }
 
 .impact-quote-text .quote-accent-mustard,
+.micro-statement .accent-mustard,
 .micro-type-d-statement .accent-mustard {
   color: var(--color-mustard);
 }
@@ -1459,8 +1471,8 @@
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 800;
-  letter-spacing: var(--tracking-wide);
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 16px;
   box-shadow: none;
@@ -1495,7 +1507,8 @@
 .micro-type-e-title {
   font-family: var(--font-display);
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--color-petroleum);
   margin-bottom: 20px;
   line-height: 1.2;
@@ -1517,7 +1530,8 @@
   border-radius: var(--radius-pill);
   font-family: var(--font-ui);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-petroleum);
   box-shadow: none !important;
 }

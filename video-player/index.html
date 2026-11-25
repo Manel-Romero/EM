@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-font="0">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo 14 • Contratación Pública y Comercio Internacional (OECD 2026)</title>
 
-  <!-- Google Fonts: Syne, Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <!-- Google Fonts: Sora, Space Grotesk, Plus Jakarta Sans, Archivo, Outfit, JetBrains Mono, Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
   <!-- Estilos Modulares Retro-Minimalistas -->
   <link rel="stylesheet" href="css/theme.css">
@@ -81,6 +81,13 @@
         <span class="palette-toast-name" id="palette-toast-name">Retro Vintage</span>
       </div>
 
+      <!-- Notificación Flotante Discreta de Cambio de Fuente (Tecla F) -->
+      <div class="palette-toast font-toast" id="font-toast" aria-live="polite">
+        <span class="palette-toast-badge font-toast-badge" id="font-toast-badge">FUENTE 0</span>
+        <span class="palette-toast-name font-toast-name" id="font-toast-name">Archivo</span>
+        <span class="font-toast-desc" id="font-toast-desc">Grotesca suiza contundente (DEFAULT)</span>
+      </div>
+
       <!-- BARRA INFERIOR (BOTTOM HUD & RECORDING CONTROLS) -->
       <footer class="hud-bottom">
         
@@ -135,13 +142,22 @@
             <div class="palette-swatches-strip" id="palette-swatches-strip"></div>
           </div>
 
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente">
+          <!-- Selector Visual de Fuentes (Tecla F) -->
+          <div class="font-picker-pill" id="hud-font-picker" title="Cambiar familia tipográfica (Atajo: Tecla F)">
+            <button class="font-picker-label-btn" id="btn-font-cycle" title="Ciclar fuente tipográfica (Tecla F)" onclick="window.playerInstance.cycleFont()">
+              <span class="key-kbd">F</span>
+              <span class="font-name-display" id="font-name-display">Archivo</span>
+            </button>
+            <div class="font-presets-strip" id="font-presets-strip"></div>
+          </div>
+
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleCleanRecordingMode()" title="Ocultar toda la interfaz para grabar la pantalla limpiamente (Atajo: Tecla H)">
             <span class="key-kbd">H</span>
             <span>Modo Grabación Limpia</span>
           </div>
 
-          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p">
-            <span class="key-kbd">F</span>
+          <div class="tool-pill-btn" onclick="window.playerInstance.toggleFullscreen()" title="Pantalla completa para grabación a 1080p (Atajo: Tecla M o Doble Clic)">
+            <span class="key-kbd">M</span>
             <span>Pantalla Completa</span>
           </div>
         </div>
